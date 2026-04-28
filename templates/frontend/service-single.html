@@ -1,0 +1,181 @@
+{% extends "frontend/base.html" %}
+{% load static %}
+{% block content %}
+
+<!-- preloader start-->
+<div id="preloader">
+    <div class="preloader">
+        <img src="{% static 'assets/img/thumbs/preloader.gif' %}" alt="preloader">
+    </div>
+</div>
+<!-- preloader end  -->
+
+<main>
+    <section class="breadcrumb-section">
+        <div class="container-fluid">
+            <div class="row g-0">
+                <div class="col-xl-6 col-lg-6">
+                    <div class="breadcrumb-content" style="background-image: url('{% static "assets/img/bg/breadcrumb-bg.webp" %}');">
+                        <div class="breadcrumb-nav" data-aos="fade-up" data-aos-duration="1000" data-aos-delay="200">
+                            <ul>
+                                <li><a href="{% url 'home' %}">Home</a></li>
+                                <li><a href="{% url 'services' %}">Service</a></li>
+                                <li><a href="#">{{ package.name }}</a></li>
+                            </ul>
+                        </div>
+                        <div class="breadcrumb-title" data-aos="fade-up" data-aos-duration="1000" data-aos-delay="400">
+                            <h2>{{ package.name }}</h2>
+                        </div>
+                        <div class="shape-1">
+                            <img src="{% static 'assets/img/shapes/shape-1.webp' %}" alt="shape">
+                        </div>
+                    </div>
+                </div>
+                <div class="col-xl-6 col-lg-6 d-none d-lg-block">
+                    <div class="breadcrumb-thumb">
+                        <img src="{{ package.main_image.url }}" alt="{{ package.name }}">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="services-details-section p-t-120 p-b-250 p-t-lg-80 p-t-md-80 p-t-xs-60">
+        <div class="container">
+            <div class="row">
+                <div class="col-xl-8">
+                    <div class="details-content" data-aos="fade-up" data-aos-duration="1000" data-aos-delay="400">
+                        <div class="thumb-wrap m-b-50">
+                            <img src="{{ package.main_image.url }}" alt="{{ package.name }}">
+                        </div>
+                        <div class="details-title m-b-15">
+                            <h2>{{ package.name }}</h2>
+                        </div>
+                        <div class="detail-text m-b-30">
+                            <p>{{ package.description }}</p>
+                        </div>
+                        <div class="details-title m-b-15">
+                            <h2>Stay Details</h2>
+                        </div>
+                        <div class="list-wrapper m-b-40">
+                            <ul class="list-wrap">
+                                <li><div class="icon"><i class="fa-solid fa-check"></i></div><p>Check In: {{ package.check_in }}</p></li>
+                                <li><div class="icon"><i class="fa-solid fa-check"></i></div><p>Check Out: {{ package.check_out }}</p></li>
+                                {% if package.normal_price %}<li><div class="icon"><i class="fa-solid fa-check"></i></div><p>Price: {{ package.normal_price }}</p></li>{% endif %}
+                                {% if package.special_price %}<li><div class="icon"><i class="fa-solid fa-check"></i></div><p>Special Price: {{ package.special_price }}</p></li>{% endif %}
+                            </ul>
+                        </div>
+                        <div class="d-cta-wrap">
+                            <div class="content-wrap">
+                                <div class="common-title text-start">
+                                    <h2>Need help choosing your stay?</h2>
+                                </div>
+                                <div class="blog-btn">
+                                    <a href="{% url 'contact' %}" class="e-primary-btn has-icon">
+                                        Contact Us
+                                        <span class="icon-wrap">
+                                            <span class="icon"><i class="fa-regular fa-arrow-right"></i><i class="fa-regular fa-arrow-right"></i></span>
+                                        </span>
+                                    </a>
+                                </div>
+                            </div>
+                            <div class="thumb-wrap">
+                                <img src="{% static 'assets/img/shapes/shape-45.webp' %}" alt="shape">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-xl-4">
+                    <div class="detail-sidebar" data-aos="fade-up" data-aos-duration="1000" data-aos-delay="600">
+                        <div class="detail-sidebar-inner">
+                            <div class="s-widget-wrap m-b-30">
+                                <div class="w-title">
+                                    <h3>Dome Stays</h3>
+                                    <div class="bar-wrap">
+                                        <div class="bar-1"></div>
+                                        <div class="bar-2"></div>
+                                    </div>
+                                </div>
+                                <div class="detail-list">
+                                    <ul>
+                                        {% for item in recent_packages %}
+                                        <li>
+                                            <a href="{% url 'service_single' item.slug %}">
+                                                {{ item.name }}
+                                                <span class="icon"><i class="fa-regular fa-arrow-up-right"></i></span>
+                                            </a>
+                                        </li>
+                                        {% empty %}
+                                        <li><a href="{% url 'services' %}">No other stays available</a></li>
+                                        {% endfor %}
+                                    </ul>
+                                </div>
+                            </div>
+                            <div class="s-widget-wrap">
+                                <div class="detail-form-wrap">
+                                    <h3>Book this stay</h3>
+                                    <a href="{% url 'booking' %}" class="e-primary-btn has-icon">
+                                        Go to Booking
+                                        <span class="icon-wrap">
+                                            <span class="icon"><i class="fa-regular fa-arrow-right"></i><i class="fa-regular fa-arrow-right"></i></span>
+                                        </span>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+ 	<!-- contact-info-section start -->
+ 	<section class="contact-info-section">
+ 		<div class="container">
+ 			<div class="row">
+ 				<div class="col-xl-12">
+ 					<div class="contact-info-layout">
+ 						<a class="contact-info active" href="mailto:support.Domes@gmail.com">
+ 							<div class="icon-wrap">
+ 								<div class="icon-shape"></div>
+ 								<div class="icon">
+ 									<i class="fa-solid fa-paper-plane"></i>
+ 								</div>
+ 							</div>
+ 							<h3>support.Domes@gmail.com</h3>
+ 							<p>Send a Email</p></a> <a class="contact-info" href="tel:+70264566579">
+ 						<div class="icon-wrap">
+ 							<div class="icon-shape"></div>
+ 							<div class="icon">
+ 								<i class="fa-solid fa-phone-arrow-up-right"></i>
+ 							</div>
+ 						</div>
+ 						<h3>+70 264 566 579</h3>
+ 						<p>Any Time Call Us</p></a> <a class="contact-info" href="#">
+ 						<div class="icon-wrap">
+ 							<div class="icon-shape"></div>
+ 							<div class="icon">
+ 								<i class="fa-solid fa-location-dot"></i>
+ 							</div>
+ 						</div>
+ 						<h3>Jones Street, New York, USA</h3>
+ 						<p>Our Address</p></a>
+ 					</div>
+ 				</div>
+ 			</div>
+ 		</div>
+ 	</section>
+ 	<!-- contact-info-section end -->
+</main>
+
+<!-- Vendors Js -->
+<script src="{% static 'assets/vendor/jquery/jquery.min.js' %}"></script>
+<script src="{% static 'assets/vendor/popper/popper.min.js' %}"></script>
+<script src="{% static 'assets/vendor/bootstrap/bootstrap.min.js' %}"></script>
+<script src="{% static 'assets/vendor/swiper/swiper-bundle.min.js' %}"></script>
+<script src="{% static 'assets/vendor/aos/aos.js' %}"></script>
+<script src="{% static 'assets/vendor/fancybox/fancybox.umd.js' %}"></script>
+<script src="{% static 'assets/vendor/counter/purecounter.js' %}"></script>
+
+<!-- Main Js -->
+<script src="{% static 'assets/js/script.js' %}"></script>
+{% endblock %}

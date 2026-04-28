@@ -18,6 +18,7 @@ urlpatterns = [
     path('blog-grid/', views.blog_grid, name='blog_grid'),
     path('blog-standard/', views.blog_standard, name='blog_standard'),
     path('blog-details/', views.blog_details, name='blog_details'),
+    path('blogs/<slug:slug>/', views.blog_details, name='blog_detail_slug'),
 
     path('camping/', views.camping, name='camping'),
     path('camping-details/', views.camping_details, name='camping_details'),

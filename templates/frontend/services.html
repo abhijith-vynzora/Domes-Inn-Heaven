@@ -41,7 +41,7 @@
 	</section>
 	<!-- breadcrumb-section end -->
 
-	<!-- services-section start -->
+	{% comment %} <!-- services-section start -->
 	<section class="services-section bg-cream p-t-100 p-b-70">
 		<div class="container">
 			<div class="row justify-content-center text-center m-b-50 m-b-xs-40">
@@ -159,6 +159,51 @@
 						</div>
 					</div>
 				</div>
+			</div>
+		</div>
+		<div class="c-shape-1"><img alt="shape-30" src="{% static 'assets/img/shapes/shape-30.webp' %}"></div>
+		<div class="c-shape-2"><img alt="shape-31" src="{% static 'assets/img/shapes/shape-31.webp' %}"></div>
+	</section>
+	<!-- services-section end --> {% endcomment %}
+	<!-- services-section start -->
+	<section class="services-section bg-cream p-t-100 p-b-70">
+		<div class="container">
+			<div class="row justify-content-center text-center m-b-50 m-b-xs-40">
+				<div class="col-xl-6">
+					<div class="common-subtitle" data-aos="fade-up" data-aos-delay="600" data-aos-duration="1000">
+						<img alt="icon-1" src="{% static 'assets/img/icons/icon-2.svg' %}"> <span>What We Do</span>
+					</div>
+					<div class="common-title m-b-0" data-aos="fade-up" data-aos-delay="800" data-aos-duration="1000">
+						<h2>We Offer Different Services For Helped You</h2>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="container">
+			<div class="row" data-aos="fade-up" data-aos-delay="200" data-aos-duration="1000">
+				{% for package in packages %}
+				<div class="col-xl-4 m-b-30">
+					<div class="project-card style-service">
+						<div class="thumb">
+							<a href="{% url 'service_single' package.slug %}"><img alt="{{ package.name }}" src="{{ package.main_image.url }}"></a>
+							<div class="tag">
+								<p>No - {{ forloop.counter|stringformat:"02d" }}</p>
+							</div>
+							<div class="content">
+								<h5>{{ package.name }}</h5>
+								<p>{{ package.description|truncatewords:14 }}</p>
+								<div class="join-us">
+									<a class="e-primary-btn has-icon is-hover-white" href="{% url 'service_single' package.slug %}">Read More <span class="icon-wrap"><span class="icon"><i class="fa-regular fa-arrow-right"></i> <i class="fa-regular fa-arrow-right"></i></span></span></a>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+				{% empty %}
+				<div class="col-12">
+					<p class="text-center">No Dome Stays available yet.</p>
+				</div>
+				{% endfor %}
 			</div>
 		</div>
 		<div class="c-shape-1"><img alt="shape-30" src="{% static 'assets/img/shapes/shape-30.webp' %}"></div>

@@ -163,6 +163,7 @@ class ContactMessage(models.Model):
     phone = models.CharField(max_length=20)
     email = models.EmailField(blank=True, null=True) 
     message = models.TextField(blank=True)
+    best_time_to_contact = models.CharField(max_length=100, blank=True, null=True)
     is_read = models.BooleanField(default=False)
     created_at = models.DateTimeField(auto_now_add=True)
 

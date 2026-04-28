@@ -32,13 +32,30 @@ def project_details(request):
     return render(request, 'frontend/project-details.html')
 
 def blog_grid(request):
-    return render(request, 'frontend/blog-grid.html')
+    blogs_qs = Blog.objects.all().order_by("-created_at")
+    paginator = Paginator(blogs_qs, 9)
+    page_number = request.GET.get("page")
+    blogs = paginator.get_page(page_number)
+    testimonials = Testimonial.objects.all().order_by("-created_at")[:3]
+    return render(request, "frontend/blog-grid.html", {"blogs": blogs, "testimonials": testimonials})
 
 def blog_standard(request):
     return render(request, 'frontend/blog-standard.html')
 
-def blog_details(request):
-    return render(request, 'frontend/blog-details.html')
+def blog_details(request, slug=None):
+    if slug:
+        blog = get_object_or_404(Blog, slug=slug)
+    else:
+        blog = Blog.objects.order_by("-created_at").first()
+        if not blog:
+            return redirect("blog_grid")
+    recent_blogs = Blog.objects.exclude(id=blog.id).order_by("-created_at")[:4]
+    testimonials = Testimonial.objects.all().order_by("-created_at")[:3]
+    return render(
+        request,
+        "frontend/blog-details.html",
+        {"blog": blog, "recent_blogs": recent_blogs, "testimonials": testimonials},
+    )
 
 def camping(request):
     return render(request, 'frontend/camping.html')
@@ -60,7 +77,6 @@ def contact(request):
         user_message = (request.POST.get("message") or "").strip()
 
         location = (request.POST.get("location") or "").strip()
-        dob = (request.POST.get("date") or "").strip()
         contact_time = (request.POST.get("contact_time") or "").strip()
 
         if not full_name or not phone:
@@ -75,18 +91,7 @@ def contact(request):
         first_name = name_parts[0]
         last_name = name_parts[1] if len(name_parts) > 1 else ""
 
-        extra_lines = []
-        if location:
-            extra_lines.append(f"Location: {location}")
-        if dob:
-            extra_lines.append(f"Date of Birth: {dob}")
-        if contact_time:
-            extra_lines.append(f"Best Time to Contact: {contact_time}")
-
         final_message = user_message
-        if extra_lines:
-            extra_block = "\n".join(extra_lines)
-            final_message = f"{user_message}\n\nAdditional Details:\n{extra_block}" if user_message else f"Additional Details:\n{extra_block}"
 
         ContactMessage.objects.create(
             first_name=first_name,
@@ -94,6 +99,7 @@ def contact(request):
             phone=phone,
             email=email or None,
             message=final_message,
+            best_time_to_contact=contact_time or None,
         )
         messages.success(request, "Your message has been sent successfully. We will contact you soon.")
         return redirect("contact")

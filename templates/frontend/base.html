@@ -21,7 +21,18 @@
 </head>
 <body>
 {% block header_menu %}
-<!-- header-section start -->
+ <!-- header-section start -->
+ <style>
+    /* Reduce only the thumbnail/header height */
+    .breadcrumb-section,
+    .breadcrumb-thumb {
+        height: 500px !important;
+    }
+    .breadcrumb-thumb img {
+        height: 100% !important;
+        object-fit: cover !important; /* Ensures it looks good in any orientation */
+    }
+ </style>
 <header class="header-section">
     <div class="top-bar d-none d-md-block">
         <div class="container-fluid">
@@ -54,7 +65,7 @@
                                     <li><a href="{% url 'home' %}">Home</a></li>
                                     <li><a href="{% url 'about' %}">Who we are?</a></li>
                                     <li><a href="{% url 'services' %}">Services</a></li>
-                                    <li><a href="{% url 'project' %}">Projects</a></li>
+                                    {% comment %} <li><a href="{% url 'project' %}">Projects</a></li> {% endcomment %}
                                     <li><a href="{% url 'blog_grid' %}">Blog</a></li>
                                     <li><a href="{% url 'contact' %}">Contact Us</a></li>
                                 </ul>

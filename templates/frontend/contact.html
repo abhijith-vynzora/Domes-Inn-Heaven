@@ -102,19 +102,7 @@
 			<div class="row justify-content-center">
 				<div class="col-xl-9">
 					<div class="contact-form-wrap" data-aos="fade-up" data-aos-duration="1000" data-aos-delay="200">
-						<style>
-							/* Keep DOB text normal-weight; some themes/browsers render date inputs bolder. */
-							.contact-form-wrap input[type="date"] {
-								font-weight: 400;
-							}
-							.contact-form-wrap input[type="date"]::-webkit-datetime-edit,
-							.contact-form-wrap input[type="date"]::-webkit-datetime-edit-text,
-							.contact-form-wrap input[type="date"]::-webkit-datetime-edit-month-field,
-							.contact-form-wrap input[type="date"]::-webkit-datetime-edit-day-field,
-							.contact-form-wrap input[type="date"]::-webkit-datetime-edit-year-field {
-								font-weight: 400;
-							}
-						</style>
+
 						<h3>Get in touch with our team</h3>
 						<p>Fill out the form and Feel free to say !!</p>
 						<form id="contact-form" action="{% url 'contact' %}" method="post">
@@ -144,13 +132,8 @@
 								</div>
 							</div>
 							<div class="row form-row">
-								<div class="col-xl-6">
-									<div class="input-wrap">
-										<input type="date" name="date" value="{{ contact_form_data.date|default:'' }}" max="{% now 'Y-m-d' %}" style="font-weight: 400 !important; font-family: inherit;">
-									</div>
-								</div>
-								<div class="col-xl-6">
-									<div class="select-wrap">
+								<div class="col-xl-12">
+									<div class="select-wrap mb-4">
 										<select name="contact_time">
 											<option value="" {% if not contact_form_data.contact_time %}selected{% endif %}>Best Time to Contact</option>
 											<option value="Morning" {% if contact_form_data.contact_time == "Morning" %}selected{% endif %}>Morning</option>
