@@ -1,0 +1,690 @@
+@use "../common" as *;
+
+/* 24 About Us Css */
+
+.shape-wrapped-thumb-1 {
+    position: relative;
+    z-index: 1;
+    margin-bottom: 140px;
+
+    @include mq(lg) {
+        margin: 0 200px 180px;
+    }
+    @include mq(md) {
+        margin: 0 20px 180px;
+    }
+    @include mq(xs) {
+        margin: 0 0 240px;
+    }
+
+    > img {
+        border-radius: 10px;
+        @include mq(xl) {
+            width: 70%;
+        }
+        @include mq(lg) {
+            width: 80%;
+        }
+    }
+
+    .experience-shape-2 {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        gap: 15px;
+        padding: 20px 25px;
+        background-color: $theme-color-2;
+        border-radius: 12px;
+        position: absolute;
+        top: 84px;
+        right: 50px;
+        z-index: 2;
+
+        @include mq(xl) {
+            gap: 10px;
+            right: 10px;
+        }
+
+        @include mq(lg) {
+            gap: 10px;
+            right: -80px;
+        }
+        @include mq(md) {
+            gap: 10px;
+            right: 70px;
+        }
+        @include mq(xs) {
+            gap: 10px;
+            top: -8%;
+            transform: translateX(50%);
+            right: 50%;
+        }
+
+        h3 {
+            line-height: 86%;
+            margin-bottom: 0;
+            color: transparent;
+            -webkit-text-stroke: 1px $theme-color-3;
+            font-style: normal;
+            font-weight: 600;
+            font-size: 70px;
+
+            @include mq(xl) {
+                font-size: 52px;
+            }
+            @include mq(md) {
+                font-size: 44px;
+            }
+            @include mq(xs) {
+                font-size: 40px;
+            }
+        }
+
+        p {
+            max-width: 92px;
+            width: 100%;
+            font-weight: 600;
+            font-size: 17px;
+            line-height: 26px;
+            color: $theme-color-3;
+
+            @include mq(xl) {
+                font-size: 16px;
+                line-height: 1.4;
+            }
+            @include mq(md) {
+                font-size: 16px;
+                line-height: 1.4;
+            }
+            @include mq(xs) {
+                font-size: 16px;
+                line-height: 1.2;
+            }
+        }
+    }
+
+    .award-shape {
+        position: absolute;
+        bottom: 140px;
+        left: -60px;
+        background-position: left;
+        background-repeat: no-repeat;
+        background-size: contain;
+        display: inline-flex;
+        align-items: center;
+        gap: 16px;
+        padding: 20px 30px;
+        border-radius: 6px;
+        background-color: $theme-color-3;
+        z-index: 2;
+
+        img {
+            max-width: 36px;
+            width: 100%;
+
+            @include mq(xl) {
+                max-width: 28px;
+            }
+            @include mq(md) {
+                max-width: 28px;
+            }
+            @include mq(xs) {
+                max-width: 28px;
+            }
+        }
+
+        @include mq(xxl) {
+            left: -20px;
+        }
+        @include mq(xl) {
+            gap: 12px;
+            left: -40px;
+        }
+        @include mq(md) {
+            gap: 12px;
+            left: -40px;
+        }
+        @include mq(xs) {
+            gap: 12px;
+            left: 15%;
+            bottom: -34%;
+        }
+
+        p {
+            color: $white;
+            max-width: 140px;
+            width: 100%;
+        }
+    }
+
+    .box-shape {
+        position: absolute;
+        bottom: -32px;
+        left: -16px;
+        z-index: -1;
+    }
+}
+
+.positioned-shape {
+    position: absolute;
+    top: 45%;
+    right: 70px;
+    border-radius: 150px 150px 12px 12px;
+
+    @include mq(xl) {
+        right: -20px;
+    }
+    @include mq(lg) {
+        right: -60px;
+    }
+    @include mq(md) {
+        right: 50px;
+    }
+    @include mq(xs) {
+        right: 6%;
+        width: 88%;
+    }
+
+    .shape-wrapped-thumb-2 {
+        position: relative;
+
+        @include mq(xl) {
+            width: 85%;
+        }
+        @include mq(lg) {
+            width: 100%;
+        }
+
+        .video-thumb {
+            position: relative;
+            width: fit-content;
+
+            img {
+                width: 100%;
+                border-radius: 150px 150px 12px 12px;
+                border: 4px solid $white;
+            }
+
+            .video-play-btn {
+                width: 80px;
+                height: 80px;
+                text-align: center;
+                position: absolute;
+                top: 50%;
+                left: 50%;
+                transform: translate(-50%, -50%);
+                color: $light;
+                padding: 23px 21px;
+                border-radius: 100%;
+                border: 1px solid $light;
+                font-weight: 500;
+                font-size: 20px;
+                line-height: 30px;
+                background: rgba(255, 255, 255, 0.015);
+                backdrop-filter: blur(13px);
+                @include transition(0.3s);
+                animation: animate-pulse 3s linear infinite;
+
+                &:hover {
+                    color: $theme-color-3;
+                    background: $theme-color-2;
+                    border-color: $theme-color-2;
+                }
+            }
+        }
+
+        .vector-shape {
+            position: absolute;
+            bottom: 0;
+            width: 100%;
+
+            img {
+                width: 100%;
+            }
+        }
+    }
+}
+
+.about-us-content {
+    .text {
+        margin-bottom: 20px;
+    }
+
+    .annual-donation-wrap {
+        display: flex;
+        align-items: center;
+        gap: 20px;
+
+        @include mq(xs) {
+            flex-direction: column;
+            align-items: start;
+            gap: 14px;
+        }
+
+        .annual-donation {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+
+            p {
+                margin-bottom: 5px;
+            }
+
+            h5 {
+                margin-bottom: 0;
+            }
+
+            img {
+                padding: 17px 15px;
+                border-radius: 100%;
+                border: 2px solid rgba(0, 69, 64, 0.1)
+            }
+        }
+    }
+}
+
+.c-tabs-wrapper {
+    .nav-tabs {
+        display: flex;
+        align-items: center;
+        gap: 10px;
+        margin-bottom: 30px;
+        border: 0;
+
+        @include mq(md) {
+            margin-bottom: 20px;
+        }
+        @include mq(xs) {
+            margin-bottom: 20px;
+        }
+
+        .nav-item {
+            .nav-link {
+                background-color: $white;
+                color: $body-color;
+                border: 1.5px solid transparent;
+                padding: 14px 28px;
+                font-weight: 600;
+                border-radius: 53px;
+                line-height: 24px;
+                @include transition(0.3s);
+
+                @include mq(xs) {
+                    padding: 4px 8px;
+                }
+
+                &.active,
+                &:hover {
+                    background-color: #F8F7F0;
+                    color: $theme-color-3;
+                    border: 1.5px solid $theme-color-2;
+                    box-shadow: 0 6px 15.9px -3px rgba(0, 69, 64, 0.11);
+                    @include transition(0.3s);
+                }
+            }
+        }
+    }
+
+    .tab-content {
+        outline: none;
+    }
+}
+
+.benefits {
+    margin-bottom: 40px;
+
+    @include mq(md) {
+        margin-bottom: 30px;
+    }
+    @include mq(xs) {
+        margin-bottom: 24px;
+    }
+
+    ul {
+        display: flex;
+        flex-direction: column;
+        gap: 12px;
+        list-style: none;
+        padding: 0;
+        margin-bottom: 0;
+
+        li {
+            position: relative;
+            padding-left: 36px;
+            display: flex;
+            align-items: center;
+
+            @include mq(xs) {
+                padding-left: 30px;
+                line-height: 1.4;
+            }
+
+            &::before {
+                content: "";
+                width: 20px;
+                height: 20px;
+                background: white;
+                border-radius: 50%;
+                display: block;
+                position: absolute;
+                left: 0;
+                top: 50%;
+                transform: translateY(-50%);
+                box-shadow: 0 6px 10px -3px rgba(0, 69, 64, 0.11);
+            }
+
+            &::after {
+                content: "";
+                width: 6px;
+                height: 6px;
+                border-radius: 50%;
+                position: absolute;
+                left: 7px;
+                top: 50%;
+                transform: translateY(-50%);
+                background: radial-gradient(92.09% 85.42% at 86.3% 87.5%, rgba(0, 0, 0, 0.23) 0%, rgba(0, 0, 0, 0) 86.18%), radial-gradient(65.28% 65.28% at 26.39% 20.83%, rgba(255, 255, 255, 0.413) 0%, rgba(255, 255, 255, 0) 69.79%, rgba(255, 255, 255, 0) 100%), #004540;
+            }
+        }
+    }
+}
+
+.rating-wrap {
+    .star-rating {
+        display: flex;
+        align-items: center;
+        gap: 12px;
+        margin-bottom: 10px;
+
+        @include mq(md) {
+            margin-bottom: 0;
+        }
+        @include mq(xs) {
+            margin-bottom: 0;
+        }
+    }
+
+    .stars {
+        display: flex;
+        align-items: center;
+        gap: 2px;
+
+        i {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: $theme-color-2;
+            width: 20px;
+            height: 20px;
+            background-color: $theme-color-3;
+        }
+    }
+}
+
+.shape-wrapped-thumb-2 {
+    position: relative;
+    z-index: 1;
+
+    @include mq(lg) {
+        margin: 0 90px 80px;
+    }
+
+    @include mq(md) {
+        margin: 0 60px 60px;
+    }
+
+    @include mq(xs) {
+        margin: 0 0 40px;
+    }
+
+    .thumb-wrapper {
+        display: flex;
+        align-items: center;
+
+        img:first-child {
+            border: 4px solid $white;
+            border-radius: 10px;
+            width: 42%;
+        }
+
+        img:last-child {
+            width: 58%;
+        }
+    }
+
+    .positioned-thumb {
+        margin: -50px 0 0 25px;
+        width: 88%;
+
+        @include mq(lg) {
+            width: 90%;
+        }
+        @include mq(xs) {
+            margin: -40px 0 0 25px;
+        }
+
+        > img {
+            border: 4px solid $white;
+            border-radius: 10px;
+
+            @include mq(lg) {
+                width: 100%;
+            }
+        }
+    }
+
+    .shape-1 {
+        position: absolute;
+        left: -50px;
+        top: 45%;
+        z-index: -1;
+
+        @include mq(xs) {
+            left: 0;
+            top: 58%;
+        }
+    }
+
+    .shape-2 {
+        position: absolute;
+        bottom: 0;
+        z-index: -1;
+    }
+}
+
+.section-top-5 {
+    display: flex;
+    justify-content: space-between;
+
+    @include mq(md) {
+        flex-direction: column;
+        margin-bottom: 50px;
+        gap: 10px;
+    }
+    @include mq(xs) {
+        flex-direction: column;
+        gap: 10px;
+        margin-bottom: 50px;
+    }
+
+    .left {
+        max-width: 780px;
+        width: 100%;
+
+        @include mq(lg) {
+            max-width: 600px;
+        }
+        @include mq(md) {
+            max-width: 80%;
+        }
+        @include mq(xs) {
+            max-width: 100%;
+        }
+
+        .common-subtitle {
+            span {
+                color: $theme-color-3;
+            }
+        }
+
+        .common-title {
+            margin-bottom: 0;
+
+            h2 {
+                color: $theme-color-3;
+
+                @include mq(lg) {
+                    font-size: 32px;
+                }
+            }
+        }
+    }
+
+    .right {
+        max-width: 440px;
+        width: 100%;
+
+        @include mq(md) {
+            max-width: 80%;
+        }
+        @include mq(xs) {
+            max-width: 100%;
+        }
+
+        h6 {
+            font-style: normal;
+            font-weight: 500;
+            font-size: 18px;
+            line-height: 28px;
+            color: $theme-color-3;
+            margin-bottom: 16px;
+        }
+
+        p {
+            margin-bottom: 50px;
+
+            @include mq(md) {
+                margin-bottom: 30px;
+            }
+            @include mq(xs) {
+                margin-bottom: 30px;
+            }
+        }
+    }
+}
+
+.about-us-section-2 {
+    padding-bottom: 300px;
+
+    @include mq(md) {
+        padding-bottom: 460px;
+    }
+    @include mq(xs) {
+        padding-bottom: 80px;
+    }
+
+    .thumb {
+        position: relative;
+        margin-top: -28px;
+        border-radius: 12px;
+        z-index: -1;
+
+        @include mq(md) {
+            margin-top: 0;
+        }
+        @include mq(xs) {
+            margin-top: 0;
+        }
+
+        img {
+            border-radius: 12px;
+
+            @include mq(xs) {
+                margin-bottom: 50px;
+            }
+        }
+    }
+}
+
+.about-us-section-3 {
+    background-position: bottom right, bottom left 30%;
+    background-repeat: no-repeat, no-repeat;
+    background-size: contain, contain;
+
+    @include cmaq(1399px) {
+        background-position: bottom right, bottom left 0;
+    }
+
+    @include mq(xxl) {
+        background-size: 60%;
+    }
+    @include cmaq(1399px) {
+        background-size: 50%;
+    }
+    @include mq(xs) {
+        background-size: 100%, 0;
+    }
+
+    .adjusted-margin {
+        margin-left: 32%;
+
+        @include mq(xxl) {
+            margin-left: 26%;
+        }
+        @include mq(xl) {
+            margin-left: 5%;
+        }
+        @include cmaq(1199px) {
+            margin-left: 0;
+        }
+
+        .adjusted-padding {
+            padding: 185px 50px 230px;
+
+            @include mq(xl) {
+                padding: 140px 20px 180px;
+            }
+            @include mq(lg) {
+                padding: 100px 200px 160px;
+            }
+            @include mq(md) {
+                padding: 100px 80px 150px;
+            }
+            @include mq(xs) {
+                padding: 80px 0 80px;
+            }
+        }
+    }
+
+    .tab-content {
+        .year {
+            margin-bottom: 8px;
+
+            h6 {
+                font-style: normal;
+                font-weight: 500;
+                font-size: 18px;
+                line-height: 30px;
+                color: $theme-color-3;
+                margin-bottom: 0;
+            }
+        }
+
+        .reward {
+            margin-bottom: 10px;
+
+            h5 {
+                font-family: $Outfit;
+                font-style: normal;
+                font-weight: 600;
+                font-size: 24px;
+                line-height: 36px;
+                color: $theme-color-3;
+                margin-bottom: 0;
+            }
+        }
+
+        .text {
+            margin-bottom: 34px;
+        }
+    }
+}

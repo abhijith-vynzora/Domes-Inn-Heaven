@@ -1,0 +1,108 @@
+@use "../common" as *;
+
+/* 26 News Letter Css */
+
+.news-letter {
+    margin: 0 50px -300px;
+    padding: 50px 0 370px;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    border-radius: 16px;
+
+    @include cmaq(1399px) {
+        margin: 0 0 -300px;
+    }
+}
+
+.news-letter-content {
+    max-width: 560px;
+    margin: 0 auto;
+    width: 100%;
+    text-align: center;
+    position: relative;
+
+    .shape {
+        position: absolute;
+        bottom: -80px;
+        left: -250px;
+
+        @include mq(xl) {
+            bottom: -73px;
+            left: -170px;
+            width: 30%;
+        }
+        @include mq(lg) {
+            bottom: -73px;
+            left: -95px;
+            width: 25%;
+        }
+        @include mq(md) {
+            bottom: -73px;
+            left: -40px;
+            width: 20%;
+        }
+        @include mq(xs) {
+            bottom: -72px;
+            left: 20px;
+            width: 25%;
+        }
+    }
+}
+
+.section-top-12 {
+    text-align: center;
+    margin-bottom: 40px;
+
+    .common-title {
+        h2 {
+            img {
+                @include mq(md) {
+                    width: 32px;
+                }
+                @include mq(xs) {
+                    width: 22px;
+                }
+            }
+        }
+    }
+}
+
+.form-2 {
+    @include mq(lg) {
+        width: 80%;
+        margin: 0 auto;
+    }
+    @include mq(md) {
+        width: 70%;
+        margin: 0 auto;
+    }
+    @include mq(xs) {
+        width: 80%;
+        margin: 0 auto;
+    }
+
+    input {
+        background: $white;
+        border: 1px solid argb(#004540, 0.2);
+        border-radius: 53px;
+        resize: none;
+        padding: 18px 22px;
+
+        &:focus {
+            background: $white;
+            border: 1px solid $theme-color-2;
+        }
+
+        &::placeholder {
+            font-size: 17px;
+            line-height: 28px;
+            color: $body-color;
+            opacity: 0.8;
+        }
+    }
+
+    button {
+        border: none;
+    }
+}

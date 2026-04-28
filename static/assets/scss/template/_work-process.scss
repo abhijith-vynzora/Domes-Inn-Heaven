@@ -1,0 +1,260 @@
+@use "../common" as *;
+
+/* 29 Work Process Css */
+
+.work-process {
+    overflow: hidden;
+
+    .common-title {
+        width: 60%;
+        margin: 0 auto 50px;
+
+        @include mq(xl) {
+            width: 65%;
+        }
+        @include mq(lg) {
+            width: 75%;
+        }
+        @include mq(md) {
+            width: 75%;
+        }
+        @include mq(xs) {
+            width: 100%;
+        }
+    }
+}
+
+.contact-form-3 {
+    background-color: $theme-color-3;
+    padding: 36px 54px 48px 36px;
+    border-radius: 10px;
+
+    @include cmaq(1399px) {
+        padding: 36px 38px 48px 36px;
+    }
+
+    .form-content {
+        position: relative;
+        z-index: 1;
+    }
+
+    h3 {
+        font-weight: 500;
+        font-size: 36px;
+        line-height: 48px;
+        color: $light;
+        margin-bottom: 15px;
+
+        @include mq(xl) {
+            font-size: 30px;
+        }
+
+        @include mq(md) {
+            font-size: 28px;
+            line-height: 1.5;
+        }
+
+        @include mq(xs) {
+            font-size: 22px;
+            line-height: 1.4;
+        }
+
+        span {
+            color: $theme-color-2;
+        }
+    }
+
+    p {
+        max-width: 357px;
+        width: 100%;
+        font-size: 17px;
+        line-height: 28px;
+        color: $light;
+        opacity: 0.9;
+        margin-bottom: 30px;
+
+        @include mq(lg) {
+            max-width: 100%;
+        }
+
+        @include mq(md) {
+            max-width: 100%;
+            font-size: 16px;
+            line-height: 1.5;
+        }
+
+        @include mq(xs) {
+            max-width: 100%;
+            font-size: 16px;
+            line-height: 1.4;
+        }
+    }
+
+    input,
+    textarea {
+        background: argb(#f8f7f0, 0.1);
+        border: 2px solid rgba(255, 255, 255, 0.2);
+        border-radius: 10px;
+        padding: 14px 20px;
+        resize: none;
+
+        &:focus {
+            border: 2px solid $theme-color-2;
+
+            &::placeholder {
+                color: $light;
+            }
+        }
+
+        &::placeholder {
+            font-size: 17px;
+            line-height: 28px;
+            color: #f8f7f0;
+
+            @include cmaq(991px) {
+                font-size: 16px;
+            }
+        }
+    }
+
+    button {
+        border: none;
+    }
+
+    img {
+        position: absolute;
+        top: -220px;
+        right: -260px;
+        z-index: -1;
+
+        @include mq(xl) {
+            top: -190px;
+            right: -210px;
+        }
+
+        @include mq(xs) {
+            top: -160px;
+            right: -180px;
+        }
+    }
+}
+
+.work-process-cards {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 30px;
+
+    @include mq(xs) {
+        grid-template-columns: 1fr;
+        gap: 20px;
+    }
+
+    .work-process-card {
+        background-color: $white;
+        box-shadow: 0 35px 41.5px -16px rgba(0, 69, 64, 0.08);
+        border-radius: 10px;
+        padding: 35px 30px;
+
+        @include cmaq(1399px) {
+            padding: 30px;
+        }
+
+        &:hover {
+            @include transition(0.3s);
+
+            .card-top {
+                .number {
+                    background: #f8f7f0;
+
+                    h4 {
+                        color: $body-color;
+                    }
+                }
+            }
+        }
+
+        .card-top {
+            display: flex;
+            gap: 24px;
+            align-items: center;
+            margin-bottom: 34px;
+
+            @include cmaq(1199px) {
+                justify-content: end;
+            }
+
+            img {
+                @include mq(xl) {
+                    max-width: 65%;
+                }
+                @include mq(md) {
+                    max-width: 68%;
+                }
+            }
+
+            .number {
+                width: 70px;
+                height: 70px;
+                border: 2px solid $white;
+                border-radius: 100px;
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                justify-content: center;
+                background: $theme-color-3;
+                box-shadow: 0 15px 32.2px -9px rgba(0, 24, 25, 0.2);
+
+                @include cmaq(1399px) {
+                    width: 60px;
+                    height: 60px;
+                }
+
+                h4 {
+                    font-style: normal;
+                    font-weight: 600;
+                    font-size: 24px;
+                    line-height: 36px;
+                    color: $theme-color-2;
+                    margin-bottom: 0;
+
+                    @include cmaq(991px) {
+                        font-size: 20px;
+                    }
+                }
+            }
+        }
+
+        .card-content {
+            h4 {
+                max-width: 210px;
+                width: 100%;
+                font-style: normal;
+                font-weight: 500;
+                font-size: 28px;
+                line-height: 20px;
+                color: $theme-color-3;
+
+                @include mq(xl) {
+                    font-size: 24px;
+                    line-height: 14px;
+                }
+                @include mq(lg) {
+                    font-size: 24px;
+                    line-height: 14px;
+                }
+                @include cmaq(991px) {
+                    font-size: 20px;
+                    line-height: 8px;
+                }
+            }
+
+            p {
+                font-style: normal;
+                font-weight: 400;
+                font-size: 17px;
+                line-height: 28px;
+                color: $body-color;
+            }
+        }
+    }
+}

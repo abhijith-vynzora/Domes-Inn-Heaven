@@ -1,0 +1,320 @@
+@use "../common" as *;
+
+/* 15 Contact Us Css */
+
+.contact-us {
+    position: relative;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center center;
+    z-index: 1;
+    padding-top: 20px;
+    overflow-x: clip;
+
+    @include mq(md) {
+        padding: 60px 0;
+    }
+    @include mq(xs) {
+        padding: 40px 0;
+    }
+
+    .shape-6 {
+        position: absolute;
+        top: 0;
+        right: 0;
+        z-index: -1;
+    }
+
+    .shape-7 {
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        z-index: -1;
+    }
+}
+
+.contact-form {
+    max-width: 580px;
+    width: 100%;
+    background-color: $theme-color-3;
+    padding: 60px;
+    border: 2px solid $light;
+    border-radius: 10px;
+    margin: -40px 0 0 auto;
+
+    @include mq(md) {
+        margin: 0 auto 0;
+        padding: 40px;
+    }
+
+    @include mq(xs) {
+        margin: 0 auto 0;
+        padding: 30px;
+    }
+
+    .form-content {
+        position: relative;
+        z-index: 1;
+    }
+
+    .form-content-top {
+        h3 {
+            font-weight: 500;
+            font-size: 36px;
+            line-height: 48px;
+            color: $light;
+            margin-bottom: 15px;
+
+            @include mq(md) {
+                font-size: 28px;
+                line-height: 1.5;
+            }
+
+            @include mq(xs) {
+                font-size: 22px;
+                line-height: 1.4;
+            }
+
+            span {
+                color: $theme-color-2;
+            }
+        }
+
+        p {
+            max-width: 357px;
+            width: 100%;
+            font-size: 17px;
+            line-height: 28px;
+            color: $light;
+            opacity: 0.9;
+            margin-bottom: 30px;
+
+            @include mq(md) {
+                font-size: 16px;
+                line-height: 1.5;
+            }
+
+            @include mq(xs) {
+                font-size: 16px;
+                line-height: 1.4;
+            }
+        }
+    }
+
+    input,
+    textarea {
+        background: argb(#f8f7f0, 0.1);
+        border: 2px solid rgba(255, 255, 255, 0.2);
+        border-radius: 10px;
+        padding: 14px 20px;
+        resize: none;
+        width: 100%;
+        font-size: 17px;
+        line-height: 28px;
+        @include transition(0.3s);
+        color: $white;
+
+        @include placeholder() {
+            color: #f8f7f0;
+        }
+
+        &:focus {
+            border: 2px solid $theme-color-2;
+
+            @include placeholder() {
+                color: transparent;
+            }
+        }
+
+
+    }
+
+    textarea {
+        height: 120px;
+    }
+
+    button {
+        border: none;
+    }
+
+    .shape {
+        position: absolute;
+        top: -220px;
+        right: -210px;
+        z-index: -1;
+        pointer-events: none;
+    }
+}
+
+.form-message.success{
+    margin-bottom: 0;
+    color: $white;
+    margin-top: 10px;
+}
+.form-message.error{
+    margin-bottom: 0;
+    color: red;
+    margin-top: 10px;
+}
+
+//contact-us-2
+
+.contact-us-2 {
+    position: relative;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center center;
+    z-index: 1;
+    margin: 0 85px;
+    padding: 120px 0;
+    border-radius: 20px;
+    background-attachment: fixed;
+
+    @include cmaq(1700px) {
+        margin: 0 20px;
+    }
+
+    @include mq(lg) {
+        padding: 100px 0;
+    }
+    @include mq(md) {
+        padding: 100px 0;
+    }
+    @include mq(xs) {
+        padding: 80px 0;
+        margin: 0;
+        border-radius: 0;
+    }
+
+    .icon {
+        img {
+            display: inline-block;
+            position: absolute;
+            top: 27%;
+            right: 41.5%;
+            transform: rotate(120deg);
+            z-index: -1;
+
+            @include mq(xxl) {
+                right: 43.5%;
+            }
+            @include mq(xl) {
+                right: 53%;
+            }
+        }
+    }
+}
+
+.contact-form-2 {
+    max-width: 550px;
+    width: 100%;
+    padding: 50px;
+    border: 2px solid $light;
+    border-radius: 10px;
+    margin-left: auto;
+    margin-top: 0;
+    background: rgba(0, 69, 64, 0.2);
+    box-shadow: 4px 4px 0 #ffe175;
+    backdrop-filter: blur(10px);
+
+    @include mq(xxl) {
+        margin: 0 60px 0 auto;
+    }
+    @include mq(xl) {
+        margin: 0 60px 0 auto;
+    }
+    @include mq(lg) {
+        margin: 0 40px 0 auto;
+    }
+    @include mq(md) {
+        padding: 40px;
+        margin: 0 auto;
+    }
+    @include mq(xs) {
+        padding: 30px;
+        margin: 0 auto;
+    }
+
+    .form-content {
+        position: relative;
+        z-index: 1;
+    }
+
+    h3 {
+        font-weight: 500;
+        font-size: 36px;
+        line-height: 48px;
+        color: $light;
+        margin-bottom: 15px;
+
+        @include mq(md) {
+            font-size: 28px;
+            line-height: 1.5;
+        }
+
+        @include mq(xs) {
+            font-size: 22px;
+            line-height: 1.4;
+        }
+
+        span {
+            color: $theme-color-2;
+        }
+    }
+
+    p {
+        max-width: 357px;
+        width: 100%;
+        font-size: 17px;
+        line-height: 28px;
+        color: $light;
+        opacity: 0.9;
+        margin-bottom: 30px;
+
+        @include mq(md) {
+            font-size: 16px;
+            line-height: 1.5;
+        }
+
+        @include mq(xs) {
+            font-size: 16px;
+            line-height: 1.4;
+        }
+    }
+
+    input,
+    textarea {
+        background: #f8f7f0;
+        border: 2px solid rgba(255, 255, 255, 0.2);
+        border-radius: 10px;
+        padding: 14px 20px;
+        resize: none;
+        font-size: 17px;
+        line-height: 28px;
+
+        @include placeholder() {
+            color: $body-color;
+
+            @include cmaq(991px) {
+                font-size: 16px;
+            }
+        }
+
+        &:focus {
+            background: #f8f7f0;
+            border-color: $theme-color-3;
+
+
+            @include placeholder() {
+                color: $theme-color-3;
+            }
+        }
+
+    }
+
+    button {
+        border: none;
+    }
+}
+
+//contact-us-2

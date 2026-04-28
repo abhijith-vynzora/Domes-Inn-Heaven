@@ -1,0 +1,1213 @@
+@use "../common" as *;
+
+/* 10 Camping Css */
+
+.our-camping-section {
+    background-color: #f8f7f0;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center center;
+}
+
+.our-camping-section-3 {
+    position: relative;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    z-index: 1;
+
+    .shape {
+        position: absolute;
+        top: 0;
+        left: 0;
+        z-index: -1;
+
+        img {
+            @include cmaq(1700px) {
+                width: 80%;
+            }
+        }
+    }
+
+    .icon-1 {
+        position: absolute;
+        top: 18%;
+        right: 6%;
+
+        @include mq(lg) {
+            top: 10%;
+            right: 0;
+        }
+        @include mq(md) {
+            top: 10%;
+            right: 0;
+        }
+        @include mq(xs) {
+            top: 8%;
+            right: 0;
+        }
+
+        img {
+            @include mq(lg) {
+                width: 70%;
+            }
+            @include mq(md) {
+                width: 70%;
+            }
+            @include mq(xs) {
+                width: 60%;
+            }
+        }
+    }
+}
+
+.camping-card {
+    background-color: $white;
+    border-radius: 10px;
+    box-shadow: 0 4px 56.5px rgba(0, 0, 0, 0.06);
+    padding: 10px;
+    @include transition(0.3s);
+
+    &.active,
+    &:hover {
+        .thumb {
+            a {
+                img {
+                    transform: scale(1.1);
+                }
+            }
+        }
+
+        .content {
+            .donation-wrap {
+                background: $theme-color-3;
+
+                .d-top {
+                    p {
+                        color: $theme-color-2;
+                    }
+                }
+
+                .progress {
+                    background: argb($theme-color-2-rgb, 0.1);
+
+                    .progress-bar {
+                        background: $theme-color-2;
+                    }
+                }
+
+                .fund {
+                    p {
+                        color: $white;
+
+                        span {
+                            color: $theme-color-2;
+                        }
+                    }
+                }
+
+                .d-bottom {
+                    .d-btn {
+                        color: $theme-color-3;
+
+                        &:before {
+                            background: $theme-color-2;
+                            left: -10%;
+                            transform: translateX(0%) translateY(-50%);
+                        }
+
+                        .icon-wrap {
+                            background: $theme-color-3;
+                            color: $theme-color-2;
+                        }
+                    }
+
+                    .d-wishlist {
+                        color: $theme-color-2;
+                        border-color: argb($theme-color-2-rgb, 0.1);
+                    }
+                }
+            }
+        }
+    }
+
+    .thumb {
+        position: relative;
+        overflow: hidden;
+
+        > a {
+            display: block;
+            border-radius: 10px;
+            overflow: hidden;
+        }
+
+        img {
+            width: 100%;
+            border-radius: 10px;
+        }
+
+        .category {
+            position: absolute;
+            top: 20px;
+            left: 20px;
+
+            a {
+                display: inline-block;
+                padding: 8px 18px;
+                background: argb(#fff, 0.01);
+                border: 1.5px solid rgba(255, 255, 255, 0.3);
+                box-shadow: inset 0px 4px 11px rgba(255, 255, 255, 0.4),
+                inset -1px -4px 23.1px rgba(0, 24, 25, 0.28);
+                backdrop-filter: blur(23.9px);
+                border-radius: 53px;
+                color: $white;
+
+                &:hover {
+                    color: $theme-color-3;
+                    background: $white;
+                }
+            }
+        }
+    }
+
+    .content {
+        .content-top {
+            padding: 20px;
+        }
+
+        .date {
+            display: inline-flex;
+            align-items: center;
+            padding: 6px 10px;
+            gap: 10px;
+            background: #f8f7f0;
+            border: 2px solid $white;
+            box-shadow: 0px 6px 30px rgba(0, 69, 64, 0.09);
+            border-radius: 10px;
+            margin-bottom: 10px;
+            font-weight: 500;
+            font-size: 17px;
+            line-height: 28px;
+            color: #868681;
+
+            img {
+                width: 18px;
+                height: 18px;
+            }
+
+            span {
+                @include mq(xs) {
+                    font-size: 16px;
+                }
+            }
+        }
+
+        .title {
+            h3 {
+                font-weight: 600;
+                font-size: 23px;
+                line-height: 36px;
+                color: $theme-color-3;
+                margin-bottom: 5px;
+
+                @include mq(md) {
+                    font-size: 20px;
+                    line-height: 1.5;
+                }
+                @include mq(xs) {
+                    line-height: 1.4;
+                    font-size: 20px;
+                }
+
+                a {
+                    color: $theme-color-3;
+                }
+            }
+        }
+
+        .text {
+            p {
+                font-size: 17px;
+                line-height: 28px;
+            }
+        }
+
+        .donation-wrap {
+            padding: 16px 20px 25px;
+            background-color: #f8f7f0;
+            border-radius: 8px;
+            @include transition(0.3s);
+
+            .d-top {
+                display: flex;
+                justify-content: space-between;
+                align-items: center;
+                margin-bottom: 10px;
+                gap: 10px;
+
+                p {
+                    font-weight: 500;
+                    font-size: 18px;
+                    line-height: 28px;
+                    color: $theme-color-3;
+                    margin-bottom: 0;
+                    @include transition(0.3s);
+                }
+            }
+
+            .progress {
+                background: argb($theme-color-3-rgb, 0.1);
+                height: 8px;
+                border-radius: 100px;
+                @include transition(0.3s);
+
+                .progress-bar {
+                    background: $theme-color-3;
+                    border-radius: 100px;
+                    @include transition(0.3s);
+                }
+            }
+
+            .fund {
+                display: flex;
+                justify-content: space-between;
+                align-items: center;
+                margin-top: 10px;
+                margin-bottom: 24px;
+                gap: 20px;
+
+                p {
+                    font-weight: 400;
+                    font-size: 15px;
+                    line-height: 100%;
+                    color: #868681;
+                    margin-bottom: 0;
+                    @include transition(0.3s);
+
+                    span {
+                        color: $theme-color-3;
+                        font-weight: 600;
+                        @include transition(0.3s);
+                    }
+                }
+            }
+
+            .d-bottom {
+                display: flex;
+                justify-content: space-between;
+                align-items: center;
+                gap: 20px;
+
+                .d-btn {
+                    color: $theme-color-2;
+                    background: $theme-color-3;
+
+                    &:before {
+                        background: $theme-color-3;
+                    }
+
+                    .icon-wrap {
+                        background: $theme-color-2;
+                        color: $theme-color-3;
+                    }
+                }
+
+                .d-wishlist {
+                    display: inline-flex;
+                    align-items: center;
+                    justify-content: center;
+                    gap: 5px;
+                    border: 1.5px solid rgba(0, 24, 25, 0.1);
+                    border-radius: 10px;
+                    padding: 10px;
+                    background: none;
+                    color: $theme-color-3;
+                    font-family: $AlbertSans;
+                    font-weight: 600;
+                    font-size: 15px;
+                    line-height: 18px;
+                    letter-spacing: -0.01em;
+                    @include transition(0.3s);
+                }
+            }
+        }
+    }
+}
+
+.camping-card-2 {
+    background-color: #f8f7f0;
+    border-radius: 10px;
+    padding: 10px;
+
+    &.widget-style {
+        padding: 0;
+        background: none !important;
+        box-shadow: none !important;
+
+        .content {
+            .donation-wrap {
+                padding-bottom: 0;
+            }
+        }
+    }
+
+    &.active,
+    &:hover {
+        @include transition(0.3s);
+        background-color: $white;
+        box-shadow: 0 35px 41.5px -16px rgba(0, 69, 64, 0.08);
+
+        .thumb {
+            a {
+                img {
+                    transform: scale(1.1);
+                }
+            }
+        }
+
+        .content {
+            .donation-wrap {
+                .d-bottom {
+                    .d-btn {
+                        color: $theme-color-2;
+
+                        &:before {
+                            background: $theme-color-3;
+                            left: -10%;
+                            transform: translateX(0%) translateY(-50%);
+                        }
+
+                        .icon-wrap {
+                            background: $theme-color-2;
+                            color: $theme-color-3;
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+    .thumb {
+        position: relative;
+        overflow: hidden;
+
+        > a {
+            display: block;
+            border-radius: 10px;
+            overflow: hidden;
+        }
+
+        img {
+            width: 100%;
+            border-radius: 10px;
+        }
+
+        .date {
+            position: absolute;
+            top: 20px;
+            left: 20px;
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            font-weight: 500;
+            font-size: 17px;
+            line-height: 28px;
+            padding: 12px 18px;
+            background: argb(#fff, 0.01);
+            border: 1.5px solid rgba(255, 255, 255, 0.3);
+            box-shadow: inset 0px 4px 11px rgba(255, 255, 255, 0.4),
+            inset -1px -4px 23.1px rgba(0, 24, 25, 0.28);
+            backdrop-filter: blur(23.9px);
+            border-radius: 53px;
+            color: $white;
+
+            &:hover {
+                background: $white;
+                color: $theme-color-3;
+            }
+
+            span {
+                line-height: 0;
+
+                @include mq(xs) {
+                    font-size: 16px;
+                }
+            }
+        }
+    }
+
+    .content {
+        .title {
+            margin-bottom: 15px;
+
+            h3 {
+                font-weight: 600;
+                font-size: 24px;
+                line-height: 36px;
+                color: $theme-color-3;
+                margin-bottom: 5px;
+
+                @include mq(xl) {
+                    font-size: 22px;
+                    line-height: 1.5;
+                }
+
+                @include mq(lg) {
+                    font-size: 21px;
+                    line-height: 1.5;
+                }
+                @include mq(md) {
+                    font-size: 20px;
+                    line-height: 1.5;
+                }
+                @include mq(xs) {
+                    line-height: 1.4;
+                    font-size: 20px;
+                }
+
+                a {
+                    color: $theme-color-3;
+                }
+            }
+        }
+
+        .text {
+            p {
+                font-size: 17px;
+                line-height: 28px;
+            }
+        }
+
+        .donation-wrap {
+            padding: 16px 20px 25px;
+            @include transition(0.3s);
+
+            .d-top {
+                display: flex;
+                justify-content: space-between;
+                align-items: center;
+                margin-bottom: 10px;
+                gap: 10px;
+
+                p {
+                    font-weight: 500;
+                    font-size: 18px;
+                    line-height: 28px;
+                    color: $theme-color-3;
+                    margin-bottom: 0;
+                    @include transition(0.3s);
+                }
+            }
+
+            .progress {
+                background: argb($theme-color-3-rgb, 0.1);
+                height: 8px;
+                border-radius: 100px;
+                @include transition(0.3s);
+
+                .progress-bar {
+                    background: $theme-color-3;
+                    border-radius: 100px;
+                    @include transition(0.3s);
+                }
+            }
+
+            .fund {
+                display: flex;
+                justify-content: space-between;
+                align-items: center;
+                margin-top: 10px;
+                margin-bottom: 24px;
+                gap: 20px;
+
+                p {
+                    font-weight: 400;
+                    font-size: 15px;
+                    line-height: 100%;
+                    color: #868681;
+                    margin-bottom: 0;
+                    @include transition(0.3s);
+
+                    span {
+                        color: $theme-color-3;
+                        font-weight: 600;
+                        @include transition(0.3s);
+                    }
+                }
+            }
+
+            .d-bottom {
+                display: flex;
+                justify-content: space-between;
+                align-items: center;
+                gap: 20px;
+
+                .d-btn {
+                    color: $theme-color-3;
+                    background: $theme-color-2;
+
+                    &:before {
+                        background: $theme-color-3;
+                    }
+
+                    .icon-wrap {
+                        background: $theme-color-3;
+                        color: $light;
+                    }
+                }
+            }
+        }
+    }
+}
+
+.recent-course-slider-active {
+    margin-left: -30px;
+    margin-right: -30px;
+    position: relative;
+    z-index: 1;
+
+    @include  mq(xs){
+        margin-left: -10px;
+        margin-right: -10px;
+    }
+
+    .recent-course-pagination {
+        position: absolute;
+        right: 24px;
+        left: auto;
+        top: -70px;
+        bottom: auto;
+        z-index: 99;
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        gap: 10px;
+        border-radius: 100px;
+        width: auto;
+        padding: 0;
+        @include mq(xs){
+            right: 10px;
+        }
+
+
+        .swiper-pagination-bullet {
+            width: 20px;
+            height: 20px;
+            background: transparent;
+            border: 1px solid transparent;
+            margin: 0;
+            opacity: 1;
+            border-radius: 100%;
+            position: relative;
+            cursor: pointer;
+            @include transition(0.3s);
+
+
+            &:before {
+                content: '';
+                width: 7px;
+                height: 7px;
+                border-radius: 100%;
+                background: #868681;
+                position: absolute;
+                left: 50%;
+                top: 50%;
+                transform: translateX(-50%) translateY(-50%);
+            }
+
+            &.swiper-pagination-bullet-active {
+                border: 1px solid $theme-color-3;
+
+                &:before {
+                    background: radial-gradient(92.09% 85.42% at 86.3% 87.5%, rgba(0, 0, 0, 0.23) 0%, rgba(0, 0, 0, 0) 86.18%) /* warning: gradient uses a rotation that is not supported by CSS and may not behave as expected */
+                    , radial-gradient(65.28% 65.28% at 26.39% 20.83%, rgba(255, 255, 255, 0.413) 0%, rgba(255, 255, 255, 0) 69.79%, rgba(255, 255, 255, 0) 100%) /* warning: gradient uses a rotation that is not supported by CSS and may not behave as expected */
+                    , #004540;
+                }
+            }
+        }
+    }
+}
+
+.camping-slider-active-3 {
+    position: relative;
+    z-index: 1;
+
+    @include mq(lg) {
+        padding-bottom: 80px;
+    }
+
+    @include mq(md) {
+        padding-bottom: 80px;
+    }
+
+    @include mq(xs) {
+        padding-bottom: 80px;
+    }
+
+    .camping-button-prev-3 {
+        position: absolute;
+        left: -82px;
+        top: 50%;
+        transform: translateY(-50%);
+        z-index: 10;
+        width: 50px;
+        height: 50px;
+        border-radius: 100%;
+        background: #FFFFFF;
+        color: #868681;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        cursor: pointer;
+        @include transition(0.3s);
+
+        @include mq(xxl) {
+            left: -25px;
+        }
+
+        @include mq(xl) {
+            left: -25px;
+        }
+
+        @include mq(lg) {
+            left: -25px;
+        }
+
+        @include mq(lg) {
+            left: 0;
+            top: auto;
+            bottom: 0;
+            margin-top: 0;
+            transform: translateY(0);
+        }
+
+        @include mq(md) {
+            left: 0;
+            top: auto;
+            bottom: 0;
+            margin-top: 0;
+            transform: translateY(0);
+        }
+
+        @include mq(xs) {
+            left: 0;
+            top: auto;
+            bottom: 0;
+            margin-top: 0;
+            transform: translateY(0);
+        }
+
+        &:hover {
+            background: $theme-color-2;
+            color: $theme-color-3;
+        }
+    }
+
+    .camping-button-next-3 {
+        position: absolute;
+        right: -82px;
+        top: 50%;
+        transform: translateY(-50%);
+        z-index: 10;
+        width: 50px;
+        height: 50px;
+        border-radius: 100%;
+        background: #FFFFFF;
+        color: #868681;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        cursor: pointer;
+        @include transition(0.3s);
+
+        @include mq(xxl) {
+            right: -25px;
+        }
+
+        @include mq(xl) {
+            right: -25px;
+        }
+
+        @include mq(lg) {
+            right: 0;
+            top: auto;
+            bottom: 0;
+            margin-top: 0;
+            transform: translateY(0);
+        }
+
+        @include mq(md) {
+            right: 0;
+            top: auto;
+            bottom: 0;
+            margin-top: 0;
+            transform: translateY(0);
+        }
+
+        @include mq(xs) {
+            right: 0;
+            top: auto;
+            bottom: 0;
+            margin-top: 0;
+            transform: translateY(0);
+        }
+
+        &:hover {
+            background: $theme-color-2;
+            color: $theme-color-3;
+        }
+    }
+}
+
+.section-top-7 {
+    text-align: center;
+
+    .common-subtitle {
+        span {
+            color: $theme-color-2;
+        }
+    }
+
+    .common-title {
+        h2 {
+            color: $white;
+        }
+    }
+}
+
+.camping-slider-active {
+    position: relative;
+    z-index: 1;
+
+    .camping-button-prev {
+        position: absolute;
+        left: -82px;
+        top: 50%;
+        transform: translateY(-50%);
+        z-index: 10;
+        width: 50px;
+        height: 50px;
+        border-radius: 100%;
+        background: #FFFFFF;
+        color: #868681;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        cursor: pointer;
+        @include transition(0.3s);
+        margin-top: -80px;
+
+        @include mq(xxl) {
+            left: -25px;
+        }
+
+        @include mq(xl) {
+            left: -25px;
+        }
+
+        @include mq(lg) {
+            left: -25px;
+        }
+
+        @include mq(lg) {
+            left: 0;
+            top: auto;
+            bottom: 0;
+            margin-top: 0;
+            transform: translateY(0);
+        }
+
+        @include mq(md) {
+            left: 0;
+            top: auto;
+            bottom: 0;
+            margin-top: 0;
+            transform: translateY(0);
+        }
+
+        @include mq(xs) {
+            left: 0;
+            top: auto;
+            bottom: 0;
+            margin-top: 0;
+            transform: translateY(0);
+        }
+
+        &:hover {
+            background: $theme-color-3;
+            color: $theme-color-2;
+        }
+    }
+
+    .camping-button-next {
+        position: absolute;
+        right: -82px;
+        top: 50%;
+        transform: translateY(-50%);
+        z-index: 10;
+        width: 50px;
+        height: 50px;
+        border-radius: 100%;
+        background: #FFFFFF;
+        color: #868681;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        cursor: pointer;
+        @include transition(0.3s);
+        margin-top: -80px;
+
+        @include mq(xxl) {
+            right: -25px;
+        }
+
+        @include mq(xl) {
+            right: -25px;
+        }
+
+        @include mq(lg) {
+            right: 0;
+            top: auto;
+            bottom: 0;
+            margin-top: 0;
+            transform: translateY(0);
+        }
+
+        @include mq(md) {
+            right: 0;
+            top: auto;
+            bottom: 0;
+            margin-top: 0;
+            transform: translateY(0);
+        }
+
+        @include mq(xs) {
+            right: 0;
+            top: auto;
+            bottom: 0;
+            margin-top: 0;
+            transform: translateY(0);
+        }
+
+        &:hover {
+            background: $theme-color-3;
+            color: $theme-color-2;
+        }
+    }
+
+    .camping-pagination-wrap {
+        display: flex;
+        justify-content: center;
+
+        .camping-pagination {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            gap: 10px;
+            background: #FFFFFF;
+            border: 1.5px solid rgba(255, 255, 255, 0.3);
+            backdrop-filter: blur(8.5px);
+            border-radius: 100px;
+            width: auto;
+            padding: 10px 16px;
+            margin-top: 50px;
+
+            .swiper-pagination-bullet {
+                width: 20px;
+                height: 20px;
+                background: none;
+                border: 1px solid transparent;
+                backdrop-filter: blur(4.75px);
+                margin: 0;
+                opacity: 1;
+                border-radius: 100%;
+                position: relative;
+                cursor: pointer;
+                @include transition(0.3s);
+
+                &:before {
+                    content: '';
+                    width: 7px;
+                    height: 7px;
+                    border-radius: 100%;
+                    background: #868681;
+                    position: absolute;
+                    left: 50%;
+                    top: 50%;
+                    transform: translateX(-50%) translateY(-50%);
+                }
+
+                &.swiper-pagination-bullet-active {
+                    border-color: $theme-color-3;
+
+                    &:before {
+                        background: radial-gradient(92.09% 85.42% at 86.3% 87.5%, rgba(0, 0, 0, 0.23) 0%, rgba(0, 0, 0, 0) 86.18%) /* warning: gradient uses a rotation that is not supported by CSS and may not behave as expected */
+                        , radial-gradient(65.28% 65.28% at 26.39% 20.83%, rgba(255, 255, 255, 0.413) 0%, rgba(255, 255, 255, 0) 69.79%, rgba(255, 255, 255, 0) 100%) /* warning: gradient uses a rotation that is not supported by CSS and may not behave as expected */
+                        , #004540;
+                    }
+                }
+            }
+        }
+    }
+}
+
+.camping-slider-active-2 {
+    position: relative;
+    z-index: 1;
+
+    @include mq(xs) {
+        padding-bottom: 80px;
+    }
+
+    .camping-button-prev-2 {
+        position: absolute;
+        left: -82px;
+        top: 50%;
+        transform: translateY(-50%);
+        z-index: 10;
+        width: 50px;
+        height: 50px;
+        border-radius: 100%;
+        background: #F8F7F0;
+        color: #868681;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        cursor: pointer;
+        @include transition(0.3s);
+
+        @include mq(xxl) {
+            left: -25px;
+        }
+
+        @include mq(xl) {
+            left: -25px;
+        }
+
+        @include mq(lg) {
+            left: -25px;
+        }
+
+        @include mq(md) {
+            left: -25px;
+        }
+
+        @include mq(xs) {
+            left: 0;
+            top: auto;
+            bottom: 0;
+            margin-top: 0;
+            transform: translateY(0);
+        }
+
+        &:hover {
+            background: $theme-color-3;
+            color: $theme-color-2;
+        }
+    }
+
+    .camping-button-next-2 {
+        position: absolute;
+        right: -82px;
+        top: 50%;
+        transform: translateY(-50%);
+        z-index: 10;
+        width: 50px;
+        height: 50px;
+        border-radius: 100%;
+        background: #F8F7F0;
+        color: #868681;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        cursor: pointer;
+        @include transition(0.3s);
+
+        @include mq(xxl) {
+            right: -25px;
+        }
+
+        @include mq(xl) {
+            right: -25px;
+        }
+
+        @include mq(lg) {
+            right: -25px;
+        }
+
+        @include mq(md) {
+            right: -25px;
+        }
+
+        @include mq(xs) {
+            right: 0;
+            top: auto;
+            bottom: 0;
+            margin-top: 0;
+            transform: translateY(0);
+        }
+
+        &:hover {
+            background: $theme-color-3;
+            color: $theme-color-2;
+        }
+    }
+
+    .camping-pagination-wrap-2 {
+        display: flex;
+        justify-content: center;
+
+        .camping-pagination {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            gap: 10px;
+            background: #FFFFFF;
+            border: 1.5px solid rgba(255, 255, 255, 0.3);
+            backdrop-filter: blur(8.5px);
+            border-radius: 100px;
+            width: auto;
+            padding: 10px 16px;
+            margin-top: 50px;
+
+            .swiper-pagination-bullet {
+                width: 20px;
+                height: 20px;
+                background: none;
+                border: 1px solid transparent;
+                backdrop-filter: blur(4.75px);
+                margin: 0;
+                opacity: 1;
+                border-radius: 100%;
+                position: relative;
+                cursor: pointer;
+                @include transition(0.3s);
+
+                &:before {
+                    content: '';
+                    width: 7px;
+                    height: 7px;
+                    border-radius: 100%;
+                    background: #868681;
+                    position: absolute;
+                    left: 50%;
+                    top: 50%;
+                    transform: translateX(-50%) translateY(-50%);
+                }
+
+                &.swiper-pagination-bullet-active {
+                    border-color: $theme-color-3;
+
+                    &:before {
+                        background: radial-gradient(92.09% 85.42% at 86.3% 87.5%, rgba(0, 0, 0, 0.23) 0%, rgba(0, 0, 0, 0) 86.18%) /* warning: gradient uses a rotation that is not supported by CSS and may not behave as expected */
+                        , radial-gradient(65.28% 65.28% at 26.39% 20.83%, rgba(255, 255, 255, 0.413) 0%, rgba(255, 255, 255, 0) 69.79%, rgba(255, 255, 255, 0) 100%) /* warning: gradient uses a rotation that is not supported by CSS and may not behave as expected */
+                        , #004540;
+                    }
+                }
+            }
+        }
+    }
+
+    .swiper {
+        overflow: visible;
+        overflow-x: clip;
+    }
+}
+
+.swiper-slide-active {
+    .camping-card {
+        .thumb {
+            a {
+                img {
+                    transform: scale(1.1);
+                }
+            }
+        }
+
+        .content {
+            .donation-wrap {
+                background: $theme-color-3;
+
+                .d-top {
+                    p {
+                        color: $theme-color-2;
+                    }
+                }
+
+                .progress {
+                    background: argb($theme-color-2-rgb, 0.1);
+
+                    .progress-bar {
+                        background: $theme-color-2;
+                    }
+                }
+
+                .fund {
+                    p {
+                        color: $white;
+
+                        span {
+                            color: $theme-color-2;
+                        }
+                    }
+                }
+
+                .d-bottom {
+                    .d-btn {
+                        color: $theme-color-3;
+
+                        &:before {
+                            background: $theme-color-2;
+                            left: -10%;
+                            transform: translateX(0%) translateY(-50%);
+                        }
+
+                        .icon-wrap {
+                            background: $theme-color-3;
+                            color: $theme-color-2;
+                        }
+                    }
+
+                    .d-wishlist {
+                        color: $theme-color-2;
+                        border-color: argb($theme-color-2-rgb, 0.1);
+                    }
+                }
+            }
+        }
+    }
+
+    .camping-card-2 {
+        background-color: $white;
+        box-shadow: 0 35px 41.5px -16px rgba(0, 69, 64, 0.08);
+
+        .thumb {
+            a {
+                img {
+                    transform: scale(1.1);
+                }
+            }
+        }
+
+        .content {
+            .donation-wrap {
+                .d-bottom {
+                    .d-btn {
+                        color: $theme-color-2;
+
+                        &:before {
+                            background: $theme-color-3;
+                            left: -10%;
+                            transform: translateX(0%) translateY(-50%);
+                        }
+
+                        .icon-wrap {
+                            background: $theme-color-2;
+                            color: $theme-color-3;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

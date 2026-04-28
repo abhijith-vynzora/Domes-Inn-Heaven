@@ -1,0 +1,407 @@
+@use "../common" as *;
+
+/* 05 OffCanvas Css */
+
+.off-canvas-sidebar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    z-index: 99;
+    visibility: hidden;
+    opacity: 0;
+    @include transition(0.3s);
+
+    &.active {
+        visibility: visible;
+        opacity: 1;
+    }
+
+    .off-canvas-sidebar-close {
+        position: absolute;
+        top: 0;
+        left: 0;
+        cursor: pointer;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 40px;
+        height: 40px;
+        background: $theme-color-3;
+        color: $white;
+        font-size: 20px;
+        cursor: pointer;
+        border-radius: 0 0 4px 0;
+        @include transition(0.3s);
+
+
+        i {
+            @include transition(0.3s);
+        }
+
+        &:hover {
+            background: $error-color;
+
+            i {
+                transform: rotate(180deg);
+            }
+        }
+    }
+
+    .off-canvas-logo {
+        img {
+            width: 100%;
+            max-width: 165px;
+        }
+    }
+}
+
+.off-canvas-sidebar-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.6);
+    z-index: 20;
+    cursor: pointer;
+}
+
+.off-canvas-sidebar-body {
+    position: fixed;
+    right: -100%;
+    top: 0;
+    width: 400px;
+    background: #fff;
+    z-index: 30;
+    padding: 24px;
+    padding-top: 70px;
+    height: 100%;
+    overflow-y: auto;
+    -webkit-overflow-scrolling: touch;
+    -webkit-transition: all 0.4s cubic-bezier(0.785, 0.135, 0.15, 0.86);
+    -moz-transition: all 0.4s cubic-bezier(0.785, 0.135, 0.15, 0.86);
+    transition: all 0.4s cubic-bezier(0.785, 0.135, 0.15, 0.86);
+
+    @include mq(xs){
+        max-width: 100%;
+    }
+
+    &.active {
+        right: 0;
+        visibility: visible;
+        opacity: 1;
+        z-index: 99999;
+        -webkit-transition: all 0.4s cubic-bezier(0.785, 0.135, 0.15, 0.86);
+        -moz-transition: all 0.4s cubic-bezier(0.785, 0.135, 0.15, 0.86);
+        transition: all 0.4s cubic-bezier(0.785, 0.135, 0.15, 0.86);
+        transition-duration: 0.6s;
+    }
+
+    &::-webkit-scrollbar {
+        width: 10px;
+        height: 10px;
+    }
+
+    &::-webkit-scrollbar-track {
+        background: #c1c1c1;
+    }
+
+    &::-webkit-scrollbar-thumb {
+        background-color: #222;
+        outline: none;
+    }
+
+    &::-webkit-scrollbar-thumb:active {
+        background: $theme-color-2;
+    }
+}
+
+.off-canvas-text {
+    p {
+        font-weight: 400;
+        font-size: 16px;
+        line-height: 28px;
+        color: $body-color;
+    }
+}
+
+.off-canvas-thumb {
+    img {
+        width: 100%;
+        border-radius: 10px;
+    }
+}
+
+.off-canvas-contact {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.off-canvas-contact-item {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+
+    &:hover {
+        .icon {
+            color: $theme-color-3;
+            background: $theme-color-2;
+        }
+    }
+
+    .icon {
+        width: 50px;
+        height: 50px;
+        background: $theme-color-3;
+        color: $white;
+        font-size: 20px;
+        border-radius: 100%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        @include transition(0.3s);
+    }
+
+    .text {
+        h6 {
+            font-style: normal;
+            font-weight: 600;
+            font-size: 16px;
+            line-height: 22px;
+            color: $heading-color;
+            margin-bottom: 4px;
+        }
+
+        p {
+            font-style: normal;
+            font-weight: 300;
+            font-size: 17px;
+            line-height: 28px;
+            color: $body-color;
+        }
+    }
+}
+
+.off-canvas-social-links {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+
+    a {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        width: 40px;
+        height: 40px;
+        color: $white;
+        background: $theme-color-3;
+        border-radius: 50px;
+
+        &:hover {
+            color: $theme-color-3;
+            background: $theme-color-2;
+        }
+    }
+}
+
+// Off Canvas Menu Bar
+
+.off-canvas-menubar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    z-index: 99;
+    visibility: hidden;
+    opacity: 0;
+    @include transition(0.3s);
+
+    &.active {
+        visibility: visible;
+        opacity: 1;
+    }
+
+    .off-canvas-head {
+        padding: 0 0 0 24px;
+        display: flex;
+        gap: 24px;
+        justify-content: space-between;
+        align-items: center;
+        border-bottom: 1px solid #E5E5E5;
+    }
+
+    .off-canvas-menubar-close {
+        padding: 20px 30px 20px 30px;
+        border-left: 1px solid #E5E5E5;
+        cursor: pointer;
+        @include transition(0.3s);
+
+
+        i {
+            @include transition(0.3s);
+        }
+
+        &:hover {
+            color: $white;
+            background: $error-color;
+
+            i {
+                transform: rotate(180deg);
+            }
+        }
+    }
+
+    .off-canvas-logo {
+        img {
+            width: 100%;
+            max-width: 165px;
+        }
+    }
+}
+
+.off-canvas-menubar-body {
+    position: fixed;
+    left: -100%;
+    top: 0;
+    width: 400px;
+    background: #fff;
+    z-index: 30;
+    height: 100%;
+    overflow-y: auto;
+    -webkit-overflow-scrolling: touch;
+    -webkit-transition: all 0.4s cubic-bezier(0.785, 0.135, 0.15, 0.86);
+    -moz-transition: all 0.4s cubic-bezier(0.785, 0.135, 0.15, 0.86);
+    transition: all 0.4s cubic-bezier(0.785, 0.135, 0.15, 0.86);
+
+    @include mq(xs){
+        max-width: 100%;
+    }
+
+    &.active {
+        left: 0;
+        visibility: visible;
+        opacity: 1;
+        z-index: 99999;
+        -webkit-transition: all 0.4s cubic-bezier(0.785, 0.135, 0.15, 0.86);
+        -moz-transition: all 0.4s cubic-bezier(0.785, 0.135, 0.15, 0.86);
+        transition: all 0.4s cubic-bezier(0.785, 0.135, 0.15, 0.86);
+        transition-duration: 0.6s;
+    }
+
+    &::-webkit-scrollbar {
+        width: 10px;
+        height: 10px;
+    }
+
+    &::-webkit-scrollbar-track {
+        background: #c1c1c1;
+    }
+
+    &::-webkit-scrollbar-thumb {
+        background-color: #222;
+        outline: none;
+    }
+
+    &::-webkit-scrollbar-thumb:active {
+        background: $theme-color-2;
+    }
+}
+
+.off-canvas-menu {
+    overflow-y: scroll;
+    max-height: calc(100vh - 200px);
+    text-align: left;
+    padding: 20px 30px 40px;
+
+    ul {
+        list-style: none;
+        margin: 0;
+        padding: 0;
+
+        li {
+            display: block;
+            border-bottom: 1px solid #fdedf1;
+
+            &:hover {
+                > a {
+                    color: $theme-color-3;
+                }
+            }
+
+            a {
+                display: block;
+                position: relative;
+                padding: 12px 0;
+                line-height: 1.4;
+                font-size: 16px;
+                text-transform: capitalize;
+                color: $heading-color;
+                padding-left: 0px;
+            }
+        }
+
+        .has-dropdown {
+            > a {
+                &:after {
+                    content: "\f078";
+                    font-family: $icon-font;
+                    font-weight: 900;
+                    position: absolute;
+                    right: 0;
+                    top: 50%;
+                    transform: translateY(-50%);
+                    font-size: 12px;
+                    @include transition(0.3s);
+                }
+            }
+
+            &.active {
+                > a {
+                    color: $theme-color-3;
+
+                    &:after {
+                        transform: translateY(-50%) rotate(180deg);
+                    }
+                }
+            }
+
+            li {
+                padding-left: 20px;
+
+                &:first-child {
+                    border-top: 1px solid #fdedf1;
+                }
+
+                &:last-child {
+                    border-bottom: 0;
+                }
+
+                a{
+                    font-size: 14px;
+                    padding: 10px 0;
+                }
+            }
+
+            .sub-menu {
+                display: none;
+            }
+        }
+    }
+}
+
+.off-canvas-menubar-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.6);
+    z-index: 20;
+    cursor: pointer;
+}

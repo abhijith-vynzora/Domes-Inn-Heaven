@@ -1,0 +1,38 @@
+@use "../common" as *;
+
+/* 07 Topbar Css */
+
+.top-bar {
+    background: $theme-color-3;
+    padding-top: 6px;
+    padding-bottom: 6px;
+}
+
+.top-bar-content {
+    color: $white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 7px;
+    flex-wrap: wrap;
+
+    .text-wrap {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 5px;
+        @include mq(xs) {
+            align-items: flex-start;
+        }
+    }
+}
+
+.top-btn {
+    padding: 7px 10px;
+    border-radius: 6px;
+}
+
+.top-btn-2{
+    background: #85BF18;
+    color: $white;
+}

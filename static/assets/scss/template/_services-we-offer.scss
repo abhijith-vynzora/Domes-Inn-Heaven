@@ -1,0 +1,197 @@
+@use "../common" as *;
+
+/* 28 Services We Offer Css */
+
+.services-we-offer-section {
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-color: $theme-color-3;
+
+    .common-title {
+        h2 {
+            color: $white;
+        }
+    }
+
+    .common-subtitle {
+        color: #F8F7F0;
+    }
+}
+
+.service-card-3 {
+    background-color: #F8F7F0;
+    border-radius: 10px;
+    padding: 10px;
+    position: relative;
+
+    &.active,
+    &:hover {
+        background-color: #F8F7F0;
+        box-shadow: 0 35px 41.5px -16px rgba(0, 69, 64, 0.08);
+        @include transition(0.3s);
+
+        .thumb {
+            a {
+                img {
+                    transform: scale(1.1);
+                }
+            }
+        }
+
+        .content {
+            .d-btn {
+                border: 2px solid $theme-color-2;
+                color: $theme-color-3;
+
+                &:before {
+                    background: $theme-color-2;
+                    left: -10%;
+                    transform: translateX(0%) translateY(-50%);
+                }
+            }
+        }
+
+        .card-number-2 {
+            h1 {
+                color: $white;
+                opacity: 1;
+            }
+        }
+    }
+
+
+    .thumb {
+        position: relative;
+        overflow: hidden;
+
+        > a {
+            display: block;
+            border-radius: 10px;
+            overflow: hidden;
+        }
+
+        img {
+            width: 100%;
+            height: 265px;
+            border-radius: 10px;
+
+            @include mq(xl) {
+                height: 240px;
+            }
+            @include mq(lg) {
+                height: 275px;
+            }
+            @include mq(md) {
+                height: 220px;
+            }
+            @include mq(xs) {
+                height: 240px;
+            }
+        }
+    }
+
+    .content {
+        padding: 14px 20px 20px;
+
+        .title {
+            margin-bottom: 8px;
+
+            h3 {
+                font-weight: 600;
+                font-size: 24px;
+                line-height: 36px;
+                color: $theme-color-3;
+                margin-bottom: 0;
+
+                @include cmaq(1399px) {
+                    font-size: 20px;
+                }
+
+                a {
+                    color: $theme-color-3;
+                }
+            }
+        }
+
+        .text {
+            width: 98%;
+            margin-bottom: 24px;
+
+            p {
+                font-style: normal;
+                font-weight: 400;
+                font-size: 16px;
+                line-height: 24px;
+                color: $body-color;
+            }
+        }
+
+        .d-btn {
+            font-size: 16px;
+            font-weight: 600;
+            color: $theme-color-3;
+            background: transparent;
+            border: 2px solid argb(#004540, 0.1);
+
+            &:before {
+                background: $theme-color-2;
+            }
+
+            .icon-wrap {
+                width: 38px;
+                height: 38px;
+                background: $theme-color-3;
+                color: $light;
+
+                .icon {
+                    width: 13px;
+                    font-size: 14px;
+                }
+            }
+        }
+    }
+}
+
+.card-number-2 {
+    position: absolute;
+    right: 50px;
+    bottom: -20px;
+
+    @include mq(xl) {
+        right: 30px;
+    }
+    @include mq(lg) {
+        right: 30px;
+    }
+    @include mq(md) {
+        right: 20px;
+    }
+    @include mq(xs) {
+        right: 20px;
+    }
+
+    h1 {
+        font-family: $Outfit;
+        font-style: normal;
+        font-weight: 600;
+        font-size: 80px;
+        line-height: 82px;
+        color: $theme-color-3;
+        opacity: 0.1;
+        margin-bottom: 0;
+
+        @include mq(xl) {
+            font-size: 70px;
+        }
+        @include mq(lg) {
+            font-size: 70px;
+        }
+        @include mq(md) {
+            font-size: 60px;
+        }
+        @include mq(xs) {
+            font-size: 60px;
+        }
+    }
+}

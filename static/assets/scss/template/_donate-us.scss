@@ -1,0 +1,204 @@
+@use "../common" as *;
+
+/* 31 Donate Us Css */
+
+.donate-to-us-section {
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    padding: 210px 0 20px;
+
+    @include mq(xs) {
+        padding: 260px 0 20px;
+    }
+}
+
+.donate-to-us-layout {
+    position: relative;
+    z-index: 1;
+
+    .icon-shape-1 {
+        position: absolute;
+        top: -6%;
+        left: -2%;
+        z-index: -1;
+
+        @include mq(xxl) {
+            left: -1.8%;
+        }
+        @include mq(md) {
+            left: -2.6%;
+        }
+        @include mq(md) {
+            left: -3%;
+        }
+
+        img {
+            @include cmaq(1700px) {
+                width: 90%;
+            }
+            @include cmaq(1199px) {
+                width: 70%;
+            }
+        }
+    }
+
+    .icon-shape-2 {
+        position: absolute;
+        bottom: 52%;
+        right: -4%;
+        z-index: -1;
+
+        @include mq(xxl) {
+            bottom: 46%;
+            right: -18px;
+        }
+        @include mq(xl) {
+            bottom: 55%;
+        }
+        @include mq(xl) {
+            bottom: 53%;
+        }
+        @include mq(lg) {
+            bottom: 60%;
+            right: -5%;
+        }
+        @include mq(md) {
+            bottom: 65%;
+            right: -5%;
+        }
+        @include mq(xs) {
+            bottom: 91%;
+            right: -3%;
+        }
+
+        img {
+            @include cmaq(1700px) {
+                width: 90%;
+            }
+            @include cmaq(1199px) {
+                width: 70%;
+            }
+        }
+    }
+}
+
+.become-volunteer-card, .donate-us-card {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    max-width: 670px;
+    width: 100%;
+    background: rgba(255, 255, 255, 0.06);
+    border: 1px solid rgba(255, 255, 255, 0.11);
+    backdrop-filter: blur(13px);
+    border-radius: 8px;
+    padding: 60px 72px 80px;
+
+    @include mq(xl) {
+        max-width: 540px;
+        padding: 50px 50px 70px;
+    }
+    @include mq(lg) {
+        max-width: 450px;
+        padding: 40px 40px 50px;
+    }
+    @include mq(md) {
+        max-width: 340px;
+        padding: 30px 20px 40px;
+    }
+    @include mq(xs) {
+        max-width: 300px;
+        padding: 30px 20px 30px;
+    }
+
+    .card-icon {
+        i {
+            width: 70px;
+            height: 70px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-size: 30px;
+            color: $theme-color-2;
+            background: linear-gradient(161.69deg, #004540 12.43%, #FFE175 251.81%);
+            box-shadow: 0 15px 32.2px -9px rgba(0, 24, 25, 0.2);
+            margin-bottom: 10px;
+            border-radius: 100%;
+
+            @include mq(lg) {
+                width: 60px;
+                height: 60px;
+                font-size: 24px;
+            }
+            @include mq(md) {
+                width: 50px;
+                height: 50px;
+                font-size: 20px;
+            }
+            @include mq(xs) {
+                width: 50px;
+                height: 50px;
+                font-size: 20px;
+            }
+        }
+    }
+
+    h2 {
+        font-style: normal;
+        font-weight: 600;
+        font-size: 52px;
+        line-height: 60px;
+        color: #F8F7F0;
+        text-align: center;
+        margin-bottom: 12px;
+
+        @include mq(xl) {
+            font-size: 34px;
+            line-height: 1.5;
+        }
+        @include mq(lg) {
+            font-size: 28px;
+            line-height: 1.5;
+        }
+        @include mq(md) {
+            font-size: 24px;
+            line-height: 1.5;
+        }
+        @include mq(xs) {
+            font-size: 20px;
+            line-height: 1.2;
+        }
+    }
+
+    p {
+        font-style: normal;
+        font-weight: 400;
+        font-size: 18px;
+        line-height: 26px;
+        text-align: center;
+        color: #F8F7F0;
+        opacity: 0.8;
+        margin-bottom: 25px;
+
+        @include cmaq(1399px) {
+            font-size: 16px;
+        }
+    }
+}
+
+.become-volunteer-card {
+    margin-bottom: -60px;
+}
+
+.donate-us-card {
+    position: absolute;
+    top: -250px;
+    right: 0;
+
+    @include mq(xs) {
+        top: -300px;
+    }
+}

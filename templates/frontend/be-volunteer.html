@@ -1,0 +1,238 @@
+{% extends "frontend/base.html" %}
+{% load static %}
+{% block content %}
+
+<!-- preloader start-->
+<div id="preloader">
+	<div class="preloader">
+		<img src="{% static 'assets/img/thumbs/preloader.gif' %}" alt="preloader">
+	</div>
+</div>
+<!-- preloader end  -->
+
+<main>
+	<!-- breadcrumb-section start -->
+	<section class="breadcrumb-section">
+		<div class="container-fluid">
+			<div class="row g-0">
+				<div class="col-xl-6 col-lg-6">
+					<div class="breadcrumb-content" style="background-image: url('{% static "assets/img/bg/breadcrumb-bg.webp" %}');">
+						<div class="breadcrumb-nav" data-aos="fade-up" data-aos-duration="1000" data-aos-delay="200">
+							<ul>
+								<li><a href="{% url 'home' %}">Home</a></li>
+								<li><a href="#">Become a Volunteer</a></li>
+							</ul>
+						</div>
+						<div class="breadcrumb-title" data-aos="fade-up" data-aos-duration="1000" data-aos-delay="400">
+							<h2>Become a Volunteer</h2>
+						</div>
+						<div class="shape-1">
+							<img src="{% static 'assets/img/shapes/shape-1.webp' %}" alt="shape">
+						</div>
+					</div>
+				</div>
+				<div class="col-xl-6 col-lg-6 d-none d-lg-block">
+					<div class="breadcrumb-thumb">
+						<img src="{% static 'assets/img/thumbs/thumb-1.webp' %}" alt="thumb">
+					</div>
+				</div>
+			</div>
+		</div>
+	</section>
+	<!-- breadcrumb-section end -->
+
+	<!-- volunteer-section start -->
+	<section class="why-us-section-2 style-2 p-t-115 p-b-245">
+		<div class="container">
+			<div class="row align-items-center p-b-80">
+				<div class="col-xl-6 px-xl-5">
+					<div class="thumb" data-aos="fade-up" data-aos-delay="600" data-aos-duration="1000">
+						<div class="thumb-1">
+							<img alt="thumb-1" src="{% static 'assets/img/thumbs/thumb-24.webp' %}">
+							<div class="s-shape"><img alt="shape-1" src="{% static 'assets/img/shapes/shape-14.webp' %}"></div>
+						</div>
+						<div class="thumb-2 style-2">
+							<img alt="thumb-2" src="{% static 'assets/img/thumbs/thumb-25.webp' %}">
+							<div class="experience-shape">
+								<h3>
+									<span class="purecounter" data-purecounter-duration="2" data-purecounter-end="29">0</span>+
+								</h3>
+								<p>Years of experience</p>
+							</div>
+						</div>
+					</div>
+				</div>
+				<div class="col-xl-6 px-xl-5">
+					<div class="volunteer-form-content" data-aos="fade-up" data-aos-delay="800" data-aos-duration="1000">
+						<h3>Introduce Yourself !</h3>
+						<p>Fill out the form and Feel free to say !!</p>
+						<form action="#">
+							<div class="row form-row">
+								<div class="col-xl-6 col-md-6">
+									<div class="input-wrap">
+										<input placeholder="Full Name" type="text">
+									</div>
+								</div>
+								<div class="col-xl-6 col-md-6">
+									<div class="input-wrap">
+										<input placeholder="Phone Number" type="tel">
+									</div>
+								</div>
+							</div>
+							<div class="row form-row">
+								<div class="col-xl-6 col-md-6">
+									<div class="input-wrap">
+										<input placeholder="Email Address" type="email">
+									</div>
+								</div>
+								<div class="col-xl-6 col-md-6">
+									<div class="input-wrap">
+										<input placeholder="Current Location" type="text">
+									</div>
+								</div>
+							</div>
+							<div class="row form-row">
+								<div class="col-xl-6 col-md-6">
+									<div class="input-wrap">
+										<input placeholder="Date of Birth" type="text">
+									</div>
+								</div>
+								<div class="col-xl-6 col-md-6">
+									<div class="select-wrap">
+										<select id="" name="">
+											<option value="0">
+												Occupation
+											</option>
+											<option value="1">
+												Doctor
+											</option>
+											<option value="2">
+												Engineer
+											</option>
+											<option value="3">
+												Teacher
+											</option>
+										</select>
+										<div class="select-icon">
+											<i class="fa-regular fa-angle-down"></i>
+										</div>
+									</div>
+								</div>
+							</div>
+							<div class="row">
+								<div class="col-xl-12">
+									<div class="input-wrap">
+										<textarea placeholder="Say Something..."></textarea>
+									</div>
+									<div class="input-checkbox">
+										<input id="terms" type="checkbox">
+										<label for="terms"><span class="check-mark"></span> I Accept Terms & Conditions</label>
+									</div>
+									<div class="input-button">
+										<button class="e-primary-btn has-icon is-hover-white" type="submit">Submit Now
+											<span class="icon-wrap"><span class="icon"><i class="fa-regular fa-arrow-right"></i> <i class="fa-regular fa-arrow-right"></i></span></span>
+										</button>
+									</div>
+								</div>
+							</div>
+						</form>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="container">
+			<div class="row">
+				<div class="col-xl-12">
+					<div class="v-summary-content" data-aos="fade-up" data-aos-delay="200" data-aos-duration="1000">
+						<h4>Summary</h4>
+						<div class="content">
+							<p>Ratione doloribus optio minus cum ab. Nostrum rerum minus sapiente eveniet fuga quos
+								tenetur Bicycle rights taxidermy knausgaard, 3 wolf moon schlitz <b>kombucha freegan ugh
+									ethical kogi Déjà</b> recherche de nouvelle.</p>
+							<div class="info-wrapper">
+								<div class="info">
+									<div class="icon">
+										<i class="fa-solid fa-check"></i>
+									</div>
+									<p>Ecology is the study of the relationship between living</p>
+								</div>
+								<div class="info">
+									<div class="icon">
+										<i class="fa-solid fa-check"></i>
+									</div>
+									<p>In the long run, solar power is much more economical</p>
+								</div>
+								<div class="info">
+									<div class="icon">
+										<i class="fa-solid fa-check"></i>
+									</div>
+									<p>Focus on your important tasks and orders</p>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="c-shape-1"><img alt="shape-32" src="{% static 'assets/img/shapes/shape-32.webp' %}"></div>
+	</section>
+	<!-- volunteer-section end -->
+
+
+	<!-- contact-info-section start -->
+	<section class="contact-info-section">
+		<div class="container">
+			<div class="row">
+				<div class="col-xl-12">
+					<div class="contact-info-layout">
+						<a class="contact-info active" href="mailto:support.Domes@gmail.com">
+							<div class="icon-wrap">
+								<div class="icon-shape"></div>
+								<div class="icon">
+									<i class="fa-solid fa-paper-plane"></i>
+								</div>
+							</div>
+							<h3>support.Domes@gmail.com</h3>
+							<p>Send a Email</p>
+						</a>
+						<a class="contact-info" href="tel:+70264566579">
+							<div class="icon-wrap">
+								<div class="icon-shape"></div>
+								<div class="icon">
+									<i class="fa-solid fa-phone-arrow-up-right"></i>
+								</div>
+							</div>
+							<h3>+70 264 566 579</h3>
+							<p>Any Time Call Us</p>
+						</a>
+						<a class="contact-info" href="#">
+							<div class="icon-wrap">
+								<div class="icon-shape"></div>
+								<div class="icon">
+									<i class="fa-solid fa-location-dot"></i>
+								</div>
+							</div>
+							<h3>Jones Street, New York, USA</h3>
+							<p>Our Address</p>
+						</a>
+					</div>
+				</div>
+			</div>
+		</div>
+	</section>
+	<!-- contact-info-section end -->
+</main>
+
+<!-- Vendors Js -->
+<script src="{% static 'assets/vendor/jquery/jquery.min.js' %}"></script>
+<script src="{% static 'assets/vendor/popper/popper.min.js' %}"></script>
+<script src="{% static 'assets/vendor/bootstrap/bootstrap.min.js' %}"></script>
+<script src="{% static 'assets/vendor/swiper/swiper-bundle.min.js' %}"></script>
+<script src="{% static 'assets/vendor/aos/aos.js' %}"></script>
+<script src="{% static 'assets/vendor/fancybox/fancybox.umd.js' %}"></script>
+<script src="{% static 'assets/vendor/counter/purecounter.js' %}"></script>
+
+<!-- Main Js -->
+<script src="{% static 'assets/js/script.js' %}"></script>
+
+{% endblock %}

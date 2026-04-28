@@ -1,0 +1,600 @@
+{% extends "frontend/base.html" %}
+{% load static %}
+{% block content %}
+
+	<!-- preloader start-->
+	<div id="preloader">
+		<div class="preloader">
+			<img src="{% static 'assets/img/thumbs/preloader.gif' %}" alt="preloader">
+		</div>
+	</div>
+	<!-- preloader end  -->
+
+	
+	<main>
+		<!-- breadcrumb-section start -->
+		<section class="breadcrumb-section bg-cream">
+			<div class="container-fluid">
+				<div class="row g-0">
+					<div class="col-xl-6 col-lg-6">
+						<div class="breadcrumb-content" style="background-image: url('{% static "assets/img/bg/breadcrumb-bg.webp" %}')">
+							<div class="breadcrumb-nav" data-aos="fade-up" data-aos-delay="200"
+								data-aos-duration="1000">
+								<ul>
+									<li>
+										<a href="{% url 'home' %}">Home</a>
+									</li>
+									<li>
+										<a href="#">Blog Details</a>
+									</li>
+								</ul>
+							</div>
+							<div class="breadcrumb-title" data-aos="fade-up" data-aos-delay="400"
+								data-aos-duration="1000">
+								<h2>Blog Details</h2>
+							</div>
+							<div class="shape-1"><img alt="shape" src="{% static 'assets/img/shapes/shape-1.webp' %}"></div>
+						</div>
+					</div>
+					<div class="col-xl-6 col-lg-6 d-none d-lg-block">
+						<div class="breadcrumb-thumb"><img alt="thumb" src="{% static 'assets/img/thumbs/thumb-1.webp' %}"></div>
+					</div>
+				</div>
+			</div>
+		</section>
+		<!-- breadcrumb-section end -->
+
+		<!-- services-details-section start -->
+		<section class="services-details-section p-t-120 p-b-250 p-t-lg-80 p-t-md-80 p-t-xs-60">
+			<div class="container">
+				<div class="row">
+					<div class="col-xl-12">
+						<div class="details-layout-wrap">
+							<div class="details-content" data-aos="fade-up" data-aos-delay="600"
+								data-aos-duration="1000">
+								<div class="blog-card-5 m-b-40">
+									<div class="thumb">
+										<a href="{% url 'blog_grid' %}"><img alt="thumb-1"
+												src="{% static 'assets/img/thumbs/thumb-148.webp' %}"></a>
+									</div>
+									<div class="content">
+										<div class="blog-info">
+											<div class="publisher-info">
+												<img alt="thumb" src="{% static 'assets/img/thumbs/thumb-143.webp' %}">
+												<p>By Rebecca</p>
+											</div>
+											<div class="date">
+												<i class="fa-light fa-calendar-days"></i>
+												<p>12th Sep, 2024</p>
+											</div>
+											<div class="comment">
+												<i class="fa-light fa-comments"></i>
+												<p>02 Comments</p>
+											</div>
+											<div class="view">
+												<i class="fa-light fa-eye"></i>
+												<p>630 Views</p>
+											</div>
+										</div>
+										<div class="title">
+											<h3><a href="{% url 'blog_grid' %}">Reforestation and Tree Planting Campaign
+													2026</a></h3>
+										</div>
+										<div class="text">
+											<p class="m-b-15">
+												We work to protect and restore the natural environment.
+												prosthetic is added. Readable and Packages editors now use Lorem Ipsum
+												as
+												their default model textlayout.
+											</p>
+											<p>
+												Ratione doloribus optio minus cum ab. Nostrum rerum minus sapiente
+												eveniet
+												fuga quos tenetur &nbsp;Bicycle rights taxidermy knausgaard, <b>3 wolf
+													moon
+													schlitz kombucha freegan</b> ugh ethical kogi Déjà en recherche
+												nouvelle
+												inspiration pour la prochaine collection, qui sera toujours inspirée de
+												ses
+												origines suisse.
+											</p>
+										</div>
+									</div>
+								</div>
+								<div class="details-title m-b-15">
+									<h2>How To Improvement</h2>
+								</div>
+								<div class="detail-text m-b-25">
+									<p>
+										Readable and Packages editors now use Lorem Ipsum as their default model
+										textlayout.
+										The point of using the some is that it has a more-or-less normal distribution of
+										letters as opposed to using.
+									</p>
+								</div>
+								<div class="list-wrapper m-b-35">
+									<ul class="list-wrap">
+										<li>
+											<div class="icon">
+												<i class="fa-solid fa-check"></i>
+											</div>
+											<p>Nature ecologically aiming to optimize.</p>
+										</li>
+										<li>
+											<div class="icon">
+												<i class="fa-solid fa-check"></i>
+											</div>
+											<p>It’s reliable and immune inspirée de ses</p>
+										</li>
+										<li>
+											<div class="icon">
+												<i class="fa-solid fa-check"></i>
+											</div>
+											<p>Focus on your important to scale</p>
+										</li>
+									</ul>
+									<ul class="list-wrap">
+										<li>
+											<div class="icon">
+												<i class="fa-solid fa-check"></i>
+											</div>
+											<p>In the long run, solar power aiming to optimize.</p>
+										</li>
+										<li>
+											<div class="icon">
+												<i class="fa-solid fa-check"></i>
+											</div>
+											<p>Dental prosthetic is added a leader</p>
+										</li>
+										<li>
+											<div class="icon">
+												<i class="fa-solid fa-check"></i>
+											</div>
+											<p>Ecology is the study of seeking</p>
+										</li>
+									</ul>
+								</div>
+								<div class="gallery-slider-active m-b-50">
+									<div class="swiper">
+										<div class="swiper-wrapper">
+											<div class="swiper-slide">
+												<div class="banner-slide-wrap">
+													<div class="thumb">
+														<img alt="thumb" src="{% static 'assets/img/thumbs/thumb-109.webp' %}">
+														<a class="play-btn" data-fancybox=""
+															href="https://www.youtube.com/watch?v=fLeJJPxua3E&amp;ab_channel=Motiversity">Play</a>
+													</div>
+												</div>
+											</div>
+											<div class="swiper-slide">
+												<div class="banner-slide-wrap">
+													<div class="thumb">
+														<img alt="thumb" src="{% static 'assets/img/thumbs/thumb-109.webp' %}">
+														<a class="play-btn" data-fancybox=""
+															href="https://www.youtube.com/watch?v=fLeJJPxua3E&amp;ab_channel=Motiversity">Play</a>
+													</div>
+												</div>
+											</div>
+											<div class="swiper-slide">
+												<div class="banner-slide-wrap">
+													<div class="thumb">
+														<img alt="thumb" src="{% static 'assets/img/thumbs/thumb-109.webp' %}">
+														<a class="play-btn" data-fancybox=""
+															href="https://www.youtube.com/watch?v=fLeJJPxua3E&amp;ab_channel=Motiversity">Play</a>
+													</div>
+												</div>
+											</div>
+										</div>
+									</div>
+									<div class="gallery-pagination-wrap">
+										<div class="gallery-pagination"></div>
+									</div>
+								</div>
+								<div class="testimonial-wrap m-b-60">
+									<div class="icon"><img alt="icon" src="{% static 'assets/img/icons/icon-17.svg' %}"></div>
+									<p class="review">
+										Readable and Packages editors now use Lorem Ipsum as their default model
+										textlayout.
+										The point of using the some is that it has a more-or-less normal distribution of
+										letters as opposed to using.
+									</p>
+									<div class="author">
+										<h3>Bm Ashik (Designer)</h3>
+										<p>UX/UI Designer</p>
+									</div>
+								</div>
+								<div class="details-title m-b-15">
+									<h2>Activities & Features</h2>
+								</div>
+								<div class="detail-text m-b-25">
+									<p>
+										Readable and Packages editors now use Lorem Ipsum as their default model
+										textlayout.
+										The point of using the some is that it has a more-or-less normal distribution of
+										letters as opposed to using.
+									</p>
+								</div>
+								<div class="detail-thumb-wrap">
+									<img alt="thumb" src="{% static 'assets/img/thumbs/thumb-150.webp' %}">
+									<img alt="thumb" src="{% static 'assets/img/thumbs/thumb-149.webp' %}">
+									<img alt="thumb" src="{% static 'assets/img/thumbs/thumb-151.webp' %}">
+								</div>
+								<div class="list-wrapper m-b-35">
+									<ul class="list-wrap">
+										<li>
+											<div class="icon">
+												<i class="fa-solid fa-check"></i>
+											</div>
+											<p>
+												We work to protect and restore the natural environment.
+												recherche
+												de nouvelle inspiration.
+											</p>
+										</li>
+										<li>
+											<div class="icon">
+												<i class="fa-solid fa-check"></i>
+											</div>
+											<p>
+												Whether you’re an entrepreneur seeking to scale your venture, a leader
+												aiming to optimize.
+											</p>
+										</li>
+									</ul>
+								</div>
+								<div class="divider-2"></div>
+								<div class="blog-tags">
+									<div class="tag-wrap">
+										<p>Tags:</p>
+										<div class="tags">
+											<button>Forest</button>
+											<button>Pollution</button>
+											<button>Plantation</button>
+										</div>
+									</div>
+									<div class="socials">
+										<div class="social-links">
+											<a href="https://facebook.com"><i class="fab fa-facebook-f"></i></a>
+											<a href="https://twitter.com"><i class="fab fa-x-twitter"></i></a>
+											<a href="https://www.instagram.com"><i class="fab fa-instagram"></i></a>
+											<a href="https://linkedin.com"><i class="fab fa-linkedin-in"></i></a>
+										</div>
+									</div>
+								</div>
+								<div class="comment-section">
+									<div class="comments m-b-50">
+										<div class="details-title m-b-50">
+											<h2>Comments (02)</h2>
+										</div>
+										<div class="comment-wrap m-b-40">
+											<div class="thumb">
+												<img alt="thumb" src="{% static 'assets/img/thumbs/thumb-125.webp' %}">
+											</div>
+											<div class="info">
+												<div class="name">
+													<p>Abraham John</p>
+												</div>
+												<div class="date">
+													<p>February 03, 2024</p>
+												</div>
+												<div class="text">
+													<p>
+														Readable and Packages editors now use Lorem Ipsum as their
+														default
+														model textlayout. The point forusing the some !! ❤️
+													</p>
+												</div>
+												<a class="reply-btn">Reply</a>
+											</div>
+										</div>
+										<div class="comment-wrap">
+											<div class="thumb">
+												<img alt="thumb" src="{% static 'assets/img/thumbs/thumb-126.webp' %}">
+											</div>
+											<div class="info">
+												<div class="name">
+													<p>BMW Group</p>
+												</div>
+												<div class="date">
+													<p>March 04, 2024</p>
+												</div>
+												<div class="text">
+													<p>
+														Normal distribution of letters as opposed to using. Ratione
+														doloribus optio minus rerum minus sapiente.
+													</p>
+												</div>
+												<a class="reply-btn">Reply</a>
+											</div>
+										</div>
+									</div>
+									<div class="leave-comment m-b-60">
+										<div class="details-title m-b-30">
+											<h2>Leave a Comment</h2>
+										</div>
+										<form action="#">
+											<div class="info-input m-b-20">
+												<input class="form-control" id="exampleFormControlInput1"
+													placeholder="Jhon Abraham" type="text">
+												<input class="form-control" id="exampleFormControlInput2"
+													placeholder="Email Address" type="email">
+											</div>
+											<div class="m-b-20">
+												<textarea class="form-control" id="exampleFormControlTextarea1"
+													placeholder="Say Something..." rows="4"></textarea>
+											</div>
+											<button class="e-primary-btn has-icon" type="submit">
+												Send Message
+												<span class="icon-wrap"><span class="icon"><i
+															class="fa-regular fa-arrow-right"></i> <i
+															class="fa-regular fa-arrow-right"></i></span></span>
+											</button>
+										</form>
+									</div>
+								</div>
+							</div>
+							<div class="detail-sidebar" data-aos="fade-up" data-aos-delay="800"
+								data-aos-duration="1000">
+								<div class="detail-sidebar-inner">
+									<div class="s-widget-wrap m-b-30">
+										<div class="w-title">
+											<h3>Search Here</h3>
+											<div class="bar-wrap">
+												<div class="bar-1"></div>
+												<div class="bar-2"></div>
+											</div>
+										</div>
+										<div class="search-bar">
+											<input placeholder="Search Type.." type="text">
+											<i class="fa-solid fa-magnifying-glass"></i>
+										</div>
+										<div class="categories">
+											<button>Forest</button>
+											<button>Cleaning</button>
+											<button>Plantation</button>
+										</div>
+									</div>
+									<div class="s-widget-wrap m-b-30">
+										<div class="w-title">
+											<h3>Recent Campaigns</h3>
+											<div class="bar-wrap">
+												<div class="bar-1"></div>
+												<div class="bar-2"></div>
+											</div>
+										</div>
+										<div class="recent-campaigns">
+											<div class="campaign">
+												<div class="thumb">
+													<img alt="thumb" src="{% static 'assets/img/thumbs/thumb-121.webp' %}">
+												</div>
+												<div>
+													<div class="date">
+														<p>Plantation - Jun 13, 2024</p>
+													</div>
+													<div class="name">
+														<a href="{% url 'blog_details' %}">
+															<h5>Sustainable Energy for All: Donation Matters</h5>
+														</a>
+													</div>
+												</div>
+											</div>
+
+											<div class="campaign">
+												<div class="thumb">
+													<img alt="thumb" src="{% static 'assets/img/thumbs/thumb-122.webp' %}">
+												</div>
+												<div>
+													<div class="date">
+														<p>Forest - Jun 20, 2024</p>
+													</div>
+													<div class="name">
+														<a href="{% url 'blog_details' %}">
+															<h5>Renewable Energy Technology of Secrets</h5>
+														</a>
+													</div>
+												</div>
+											</div>
+
+											<div class="campaign">
+												<div class="thumb">
+													<img alt="thumb" src="{% static 'assets/img/thumbs/thumb-123.webp' %}">
+												</div>
+												<div>
+													<div class="date">
+														<p>Cleaning - Feb 09, 2024</p>
+													</div>
+													<div class="name">
+														<a href="{% url 'blog_details' %}">
+															<h5>Nature’s Symphony: Exploring Ecology</h5>
+														</a>
+													</div>
+												</div>
+											</div>
+
+											<div class="campaign campaign-last">
+												<div class="thumb">
+													<img alt="thumb" src="{% static 'assets/img/thumbs/thumb-124.webp' %}">
+												</div>
+												<div>
+													<div class="date">
+														<p>Forest - Jan 30, 2024</p>
+													</div>
+													<div class="name">
+														<a href="{% url 'blog_details' %}">
+															<h5>Grow with Us: Tree Planting Day</h5>
+														</a>
+													</div>
+												</div>
+											</div>
+										</div>
+									</div>
+									<div class="s-widget-wrap m-b-30">
+										<div class="w-title">
+											<h3>Categories</h3>
+											<div class="bar-wrap">
+												<div class="bar-1"></div>
+												<div class="bar-2"></div>
+											</div>
+										</div>
+										<div class="detail-list">
+											<ul>
+												<li>
+													<a href="{% url 'services' %}">
+														Tree Plantation
+														<span class="icon"><i
+																class="fa-regular fa-arrow-up-right"></i></span>
+													</a>
+												</li>
+												<li>
+													<a href="{% url 'services' %}">
+														Forest Pollution
+														<span class="icon"><i
+																class="fa-regular fa-arrow-up-right"></i></span>
+													</a>
+												</li>
+												<li>
+													<a href="{% url 'services' %}">
+														Dust Recycling
+														<span class="icon"><i
+																class="fa-regular fa-arrow-up-right"></i></span>
+													</a>
+												</li>
+												<li>
+													<a href="{% url 'services' %}">
+														Cleaning Ocean
+														<span class="icon"><i
+																class="fa-regular fa-arrow-up-right"></i></span>
+													</a>
+												</li>
+												<li>
+													<a href="{% url 'services' %}">
+														Plant Seedlings
+														<span class="icon"><i
+																class="fa-regular fa-arrow-up-right"></i></span>
+													</a>
+												</li>
+												<li>
+													<a href="{% url 'services' %}">
+														Solar Power Solution
+														<span class="icon"><i
+																class="fa-regular fa-arrow-up-right"></i></span>
+													</a>
+												</li>
+											</ul>
+										</div>
+									</div>
+									<div class="s-widget-wrap m-b-30">
+										<div class="w-title">
+											<h3>Our Gallery</h3>
+											<div class="bar-wrap">
+												<div class="bar-1"></div>
+												<div class="bar-2"></div>
+											</div>
+										</div>
+										<div class="sidebar-gallery">
+											<div class="thumb">
+												<img alt="thumb" src="{% static 'assets/img/thumbs/thumb-134.webp' %}">
+											</div>
+											<div class="thumb">
+												<img alt="thumb" src="{% static 'assets/img/thumbs/thumb-131.webp' %}">
+											</div>
+											<div class="thumb">
+												<img alt="thumb" src="{% static 'assets/img/thumbs/thumb-132.webp' %}">
+											</div>
+											<div class="thumb">
+												<img alt="thumb" src="{% static 'assets/img/thumbs/thumb-133.webp' %}">
+											</div>
+											<div class="thumb">
+												<img alt="thumb" src="{% static 'assets/img/thumbs/thumb-130.webp' %}">
+											</div>
+											<div class="thumb">
+												<img alt="thumb" src="{% static 'assets/img/thumbs/thumb-129.webp' %}">
+											</div>
+										</div>
+									</div>
+									<div class="s-widget-wrap">
+										<div class="w-title">
+											<h3>Share With Everyone</h3>
+											<div class="bar-wrap">
+												<div class="bar-1"></div>
+												<div class="bar-2"></div>
+											</div>
+										</div>
+										<div class="socials">
+											<div class="social-links">
+												<a href="https://facebook.com"><i class="fab fa-facebook-f"></i></a>
+												<a href="https://twitter.com"><i class="fab fa-x-twitter"></i></a>
+												<a href="https://www.instagram.com"><i class="fab fa-instagram"></i></a>
+												<a href="https://linkedin.com"><i class="fab fa-linkedin-in"></i></a>
+											</div>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="d-shape-1"><img alt="shape-31" src="{% static 'assets/img/shapes/shape-31.webp' %}"></div>
+		</section>
+		<!-- services-details-section end -->
+
+		<!-- contact-info-section start -->
+		<section class="contact-info-section">
+			<div class="container">
+				<div class="row">
+					<div class="col-xl-12">
+						<div class="contact-info-layout">
+							<a href="mailto:support.Domes@gmail.com" class="contact-info active">
+								<div class="icon-wrap">
+									<div class="icon-shape"></div>
+									<div class="icon">
+										<i class="fa-solid fa-paper-plane"></i>
+									</div>
+								</div>
+								<h3>support.Domes@gmail.com</h3>
+								<p>Send a Email</p>
+							</a>
+							<a href="tel:+70264566579" class="contact-info">
+								<div class="icon-wrap">
+									<div class="icon-shape"></div>
+									<div class="icon">
+										<i class="fa-solid fa-phone-arrow-up-right"></i>
+									</div>
+								</div>
+								<h3>+70 264 566 579</h3>
+								<p>Any Time Call Us</p>
+							</a>
+							<a href="#" class="contact-info">
+								<div class="icon-wrap">
+									<div class="icon-shape"></div>
+									<div class="icon">
+										<i class="fa-solid fa-location-dot"></i>
+									</div>
+								</div>
+								<h3>Jones Street, New York, USA</h3>
+								<p>Our Address</p>
+							</a>
+						</div>
+					</div>
+				</div>
+			</div>
+		</section>
+		<!-- contact-info-section end -->
+	</main>
+
+	
+
+	<!-- Vendors Js -->
+	<script src="{% static 'assets/vendor/jquery/jquery.min.js' %}"></script>
+	<script src="{% static 'assets/vendor/popper/popper.min.js' %}"></script>
+	<script src="{% static 'assets/vendor/bootstrap/bootstrap.min.js' %}"></script>
+	<script src="{% static 'assets/vendor/swiper/swiper-bundle.min.js' %}"></script>
+	<script src="{% static 'assets/vendor/aos/aos.js' %}"></script>
+	<script src="{% static 'assets/vendor/fancybox/fancybox.umd.js' %}"></script>
+	<script src="{% static 'assets/vendor/counter/purecounter.js' %}"></script>
+
+	<!-- Main Js -->
+	<script src="{% static 'assets/js/script.js' %}"></script>
+
+{% endblock %}

@@ -1,0 +1,21 @@
+@media (min-width: 1400px) {
+    .container-xxl, .container-xl, .container-lg, .container-md, .container-sm, .container {
+        max-width: 1392px;
+    }
+}
+
+.container, .container-fluid, .container-xxl, .container-xl, .container-lg, .container-md, .container-sm {
+    --bs-gutter-x: 30px;
+}
+
+.row {
+    --bs-gutter-x: 30px;
+}
+
+.g-0, .gy-0 {
+    --bs-gutter-y: 0;
+}
+
+.g-0, .gx-0 {
+    --bs-gutter-x: 0;
+}

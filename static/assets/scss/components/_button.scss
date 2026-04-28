@@ -1,0 +1,167 @@
+@use "../common" as *;
+
+/* 03 Button CSS */
+
+.e-primary-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  font-family: $AlbertSans;
+  font-weight: 600;
+  font-size: 17px;
+  line-height: 100%;
+  color: $theme-color-3;
+  padding: 16px 25px;
+  background: $theme-color-2;
+  border-radius: 100px;
+  overflow: hidden;
+  position: relative;
+  z-index: 1;
+
+  @include mq(xxl) {
+    font-size: 16px;
+  }
+
+  @include mq(xl) {
+    font-size: 16px;
+  }
+
+  @include mq(lg) {
+    font-size: 16px;
+  }
+
+  @include mq(md) {
+    font-size: 16px;
+    line-height: 20px;
+    gap: 8px;
+    padding: 5px 5px 5px 20px;
+  }
+  @include mq(xs) {
+    font-size: 16px;
+    line-height: 20px;
+    gap: 8px;
+    padding: 5px 5px 5px 20px;
+  }
+
+  &:before {
+    content: "";
+    position: absolute;
+    left: -110%;
+    top: 50%;
+    width: 200%;
+    height: 200%;
+    background: $theme-color-3;
+    z-index: -1;
+    transform: translateX(-50%) translateY(-50%);
+    border-radius: 200px;
+    @include transition(0.3s);
+  }
+
+  &.has-icon {
+    padding: 5px 5px 5px 25px;
+    gap: 15px;
+    @include mq(xl) {
+      gap: 10px;
+    }
+  }
+
+  .icon-wrap {
+    width: 50px;
+    height: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex: none;
+    background: $theme-color-3;
+    color: $white;
+    border-radius: 100%;
+    @include transition(0.3s);
+
+    @include cmaq(1399px) {
+      width: 40px;
+      height: 40px;
+    }
+    @include mq(md) {
+      font-size: 15px;
+    }
+    @include mq(xs) {
+      font-size: 15px;
+    }
+
+    .icon {
+      flex: none;
+      display: flex;
+      align-items: center;
+      justify-content: flex-end;
+      width: 15px;
+      overflow: hidden;
+
+      @include mq(xl) {
+        width: 14px;
+      }
+
+      @include mq(lg) {
+        width: 14px;
+      }
+      @include mq(md) {
+        width: 10px;
+      }
+
+      @include mq(xs) {
+        width: 10px;
+      }
+
+      i {
+        flex: none;
+        @include transition(0.3s);
+      }
+    }
+  }
+
+  &.is-hover-white {
+    &:before {
+      background: $white;
+    }
+
+    &:hover {
+      color: $theme-color-3;
+
+      .icon-wrap {
+        background: $theme-color-2;
+        color: $theme-color-3;
+      }
+    }
+  }
+
+  &:hover {
+    color: $white;
+
+    &:before {
+      left: -10%;
+      transform: translateX(0%) translateY(-50%);
+    }
+
+    .icon-wrap {
+      background: $white;
+      color: $theme-color-3;
+
+      .icon {
+        i {
+          transform: translateX(100%);
+        }
+      }
+    }
+  }
+
+  &.has-small {
+    .icon-wrap {
+      width: 34px;
+      height: 34px;
+
+      @include cmaq(991px) {
+        width: 40px;
+        height: 40px;
+      }
+    }
+  }
+}

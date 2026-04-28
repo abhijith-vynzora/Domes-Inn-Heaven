@@ -1,0 +1,657 @@
+@use "../common" as *;
+
+/* 21 Service Css */
+
+.service-card {
+    background-color: #f8f7f0;
+    border-radius: 10px;
+    padding: 30px;
+    position: relative;
+    z-index: 1;
+    overflow: hidden;
+
+    &:hover {
+        background-color: $white;
+        box-shadow: 0 35px 41.5px -16px rgba(0, 69, 64, 0.08);
+        transition: all 0.3s;
+
+        .service-top {
+            i,
+            .circled-heading {
+                background-color: $theme-color-3;
+                border: 2px solid $theme-color-3;
+                color: $theme-color-2;
+                transition: all 0.3s;
+            }
+        }
+
+        .number {
+            background: #004540 !important;
+
+            span {
+                color: #ffe175 !important;
+            }
+        }
+    }
+
+    .service-top {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        margin-bottom: 15px;
+
+        h4 {
+            max-width: 118px;
+            width: 100%;
+            font-weight: 500;
+            font-size: 28px;
+            line-height: 36px;
+            color: $theme-color-3;
+            margin-bottom: 0;
+
+            @include mq(lg) {
+                font-size: 24px;
+                line-height: 1.4;
+            }
+            @include cmaq(991px) {
+                font-size: 22px;
+                line-height: 1.3;
+            }
+        }
+
+        .number {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 70px;
+            height: 70px;
+            background: #f8f7f0;
+            border: 2px solid $theme-color-2;
+            border-radius: 100%;
+            box-shadow: 0px 15px 32.2px -9px rgba(0, 24, 25, 0.2);
+            @include transition(0.3s);
+
+            span {
+                font-family: $Outfit;
+                font-weight: 600;
+                font-size: 24px;
+                line-height: 36px;
+                color: #868681;
+            }
+        }
+
+        i,
+        .circled-heading {
+            width: 70px;
+            height: 70px;
+            font-size: 30px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 17px 15px;
+            background-color: $white;
+            border-radius: 100%;
+            border: 2px solid $theme-color-2;
+            box-shadow: 0px 15px 32.2px -9px rgba(0, 24, 25, 0.2);
+
+            @include mq(lg) {
+                font-size: 24px;
+                width: 60px;
+                height: 60px;
+            }
+            @include cmaq(991px) {
+                font-size: 20px;
+                width: 50px;
+                height: 50px;
+            }
+        }
+    }
+
+    .service-content {
+        p {
+            width: 80%;
+            padding-bottom: 10px;
+        }
+    }
+
+    .i-shape {
+        color: argb(#868681, 0.05);
+        font-size: 110px;
+        position: absolute;
+        z-index: -1;
+        bottom: -70px;
+        left: 55%;
+    }
+}
+
+.service-card-2 {
+    background-color: $white;
+    border-radius: 10px;
+    padding: 30px;
+    position: relative;
+    z-index: 1;
+    overflow: hidden;
+
+    &:hover {
+        background-color: $white;
+        box-shadow: 0 35px 41.5px -16px rgba(0, 69, 64, 0.08);
+        transition: all 0.3s;
+
+        .service-top {
+            .circled-heading {
+                background-color: $theme-color-3;
+                border: 2px solid $theme-color-2;
+                color: $theme-color-2;
+                transition: all 0.3s;
+            }
+        }
+    }
+
+    .service-top {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        margin-bottom: 15px;
+
+        h4 {
+            max-width: 118px;
+            width: 100%;
+            font-weight: 500;
+            font-size: 28px;
+            line-height: 36px;
+            color: $theme-color-3;
+            margin-bottom: 0;
+
+            @include mq(lg) {
+                font-size: 24px;
+                line-height: 1.4;
+            }
+            @include cmaq(991px) {
+                font-size: 22px;
+                line-height: 1.3;
+            }
+        }
+
+        .circled-heading {
+            width: 70px;
+            height: 70px;
+            font-size: 30px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 17px 15px;
+            background-color: $white;
+            color: $body-color;
+            border-radius: 100%;
+            border: 2px solid $theme-color-2;
+            box-shadow: 0px 15px 32.2px -9px rgba(0, 24, 25, 0.2);
+
+            @include mq(lg) {
+                font-size: 24px;
+                width: 60px;
+                height: 60px;
+            }
+            @include cmaq(991px) {
+                font-size: 20px;
+                width: 50px;
+                height: 50px;
+            }
+        }
+    }
+
+    .service-content {
+        p {
+            width: 80%;
+            padding-bottom: 10px;
+        }
+    }
+}
+
+.service-card-3 {
+    background-color: #f8f7f0;
+    border-radius: 10px;
+    position: relative;
+    z-index: 1;
+    overflow: hidden;
+
+    &:hover {
+        background-color: $white;
+        box-shadow: 0 35px 41.5px -16px rgba(0, 69, 64, 0.08);
+        transition: all 0.3s;
+
+        .service-top {
+            i,
+            .circled-heading {
+                background-color: $theme-color-3;
+                border: 2px solid $theme-color-3;
+                color: $theme-color-2;
+                transition: all 0.3s;
+            }
+        }
+
+        .number {
+            background: #004540 !important;
+
+            span {
+                color: #ffe175 !important;
+            }
+        }
+    }
+
+    .service-top {
+        display: flex;
+        flex-direction: column-reverse;
+        gap: 24px;
+        margin-bottom: 15px;
+        padding: 14px 14px 0;
+
+        h4 {
+            font-weight: 500;
+            font-size: 28px;
+            line-height: 36px;
+            color: $theme-color-3;
+            margin-bottom: 0;
+
+            @include mq(lg) {
+                font-size: 24px;
+                line-height: 1.4;
+            }
+            @include cmaq(991px) {
+                font-size: 22px;
+                line-height: 1.3;
+            }
+        }
+
+        i {
+            width: 70px;
+            height: 70px;
+            font-size: 30px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 17px 15px;
+            background-color: $white;
+            border-radius: 100%;
+            border: 2px solid $theme-color-2;
+            box-shadow: 0px 15px 32.2px -9px rgba(0, 24, 25, 0.2);
+
+            @include mq(lg) {
+                font-size: 24px;
+                width: 60px;
+                height: 60px;
+            }
+            @include cmaq(991px) {
+                font-size: 20px;
+                width: 50px;
+                height: 50px;
+            }
+        }
+    }
+
+    .service-content {
+        p {
+            width: 80%;
+            padding: 0 14px 14px;
+
+            @include cmaq(1399px) {
+                width: 100%;
+            }
+        }
+    }
+
+    .i-shape {
+        position: absolute;
+        z-index: -1;
+        top: 15%;
+        left: 58%;
+
+        @include mq(xxl) {
+            left: 62%;
+        }
+        @include mq(xl) {
+            left: 54%;
+        }
+        @include mq(lg) {
+            left: 62%;
+        }
+        @include mq(md) {
+            left: 66%;
+        }
+        @include mq(xs) {
+            left: 70%;
+        }
+
+        h1 {
+            margin-bottom: 0;
+            font-family: $Outfit;
+            font-weight: 600;
+            font-size: 100px;
+            line-height: 82px;
+            color: #004540;
+            opacity: 0.06;
+
+            @include mq(xxl) {
+                font-size: 90px;
+            }
+            @include mq(xl) {
+                font-size: 90px;
+            }
+            @include mq(lg) {
+                font-size: 80px;
+            }
+            @include mq(md) {
+                font-size: 80px;
+            }
+            @include mq(xs) {
+                font-size: 80px;
+            }
+        }
+    }
+}
+
+.service-slider-active {
+    position: relative;
+    z-index: 1;
+
+    @include mq(lg) {
+        padding-bottom: 80px;
+    }
+
+    @include mq(md) {
+        padding-bottom: 80px;
+    }
+
+    @include mq(xs) {
+        padding-bottom: 80px;
+    }
+
+    .service-button-prev {
+        position: absolute;
+        left: -82px;
+        top: 50%;
+        transform: translateY(-50%);
+        z-index: 10;
+        width: 50px;
+        height: 50px;
+        border-radius: 100%;
+        background: #FFFFFF;
+        color: #868681;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        cursor: pointer;
+        @include transition(0.3s);
+        margin-top: -50px;
+
+        @include mq(xxl) {
+            left: -25px;
+        }
+
+        @include mq(xl) {
+            left: -25px;
+        }
+
+        @include mq(lg) {
+            left: -25px;
+        }
+
+        @include mq(lg) {
+            left: 0;
+            top: auto;
+            bottom: 0;
+            margin-top: 0;
+            transform: translateY(0);
+        }
+
+        @include mq(md) {
+            left: 0;
+            top: auto;
+            bottom: 0;
+            margin-top: 0;
+            transform: translateY(0);
+        }
+
+        @include mq(xs) {
+            left: 0;
+            top: auto;
+            bottom: 0;
+            margin-top: 0;
+            transform: translateY(0);
+        }
+
+        &:hover {
+            background: $theme-color-2;
+            color: $theme-color-3;
+        }
+    }
+
+    .service-button-next {
+        position: absolute;
+        right: -82px;
+        top: 50%;
+        transform: translateY(-50%);
+        z-index: 10;
+        width: 50px;
+        height: 50px;
+        border-radius: 100%;
+        background: #FFFFFF;
+        color: #868681;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        cursor: pointer;
+        @include transition(0.3s);
+        margin-top: -50px;
+
+        @include mq(xxl) {
+            right: -25px;
+        }
+
+        @include mq(xl) {
+            right: -25px;
+        }
+
+        @include mq(lg) {
+            right: 0;
+            top: auto;
+            bottom: 0;
+            margin-top: 0;
+            transform: translateY(0);
+        }
+
+        @include mq(md) {
+            right: 0;
+            top: auto;
+            bottom: 0;
+            margin-top: 0;
+            transform: translateY(0);
+        }
+
+        @include mq(xs) {
+            right: 0;
+            top: auto;
+            bottom: 0;
+            margin-top: 0;
+            transform: translateY(0);
+        }
+
+        &:hover {
+            background: $theme-color-2;
+            color: $theme-color-3;
+        }
+    }
+
+    .service-pagination-wrap {
+        @include mq(lg) {
+            padding: 0 100px;
+            position: absolute;
+            left: 0;
+            bottom: 22px;
+            width: 100%;
+        }
+
+        @include mq(md) {
+            padding: 0 100px;
+            position: absolute;
+            left: 0;
+            bottom: 22px;
+            width: 100%;
+        }
+
+        @include mq(xs) {
+            padding: 0 100px;
+            position: absolute;
+            left: 0;
+            bottom: 22px;
+            width: 100%;
+        }
+    }
+
+    .service-pagination {
+        height: 5px;
+        border-radius: 10px;
+        margin-top: 50px;
+        background: argb(#fff, 0.5);
+        display: flex;
+
+        @include mq(xs) {
+            margin-top: 30px;
+        }
+
+        .swiper-pagination-bullet {
+            flex: 1;
+            border-radius: 10px;
+            height: 100%;
+            opacity: 1;
+            background: none;
+            margin: 0;
+
+            &.swiper-pagination-bullet-active {
+                background: $theme-color-2;
+            }
+        }
+    }
+}
+
+//services-section-2
+
+.services-section-2 {
+    background: #f8f7f0;
+    position: relative;
+    z-index: 1;
+
+    .shape-1 {
+        position: absolute;
+        left: 0;
+        bottom: 0;
+        z-index: -1;
+    }
+
+    .shape-2 {
+        width: 100%;
+        background: $white;
+        height: 50px;
+        border-radius: 10px 10px 0 0;
+
+        @include mq(lg) {
+            height: 40px;
+        }
+        @include mq(md) {
+            height: 40px;
+        }
+        @include mq(xs) {
+            height: 30px;
+        }
+    }
+}
+
+//services-section-2
+
+.services-section {
+    position: relative;
+    z-index: 1;
+
+    .c-shape-1 {
+        position: absolute;
+        z-index: -1;
+        bottom: 0;
+        left: 0;
+    }
+
+    .c-shape-2 {
+        position: absolute;
+        z-index: -1;
+        bottom: 0;
+        right: 0;
+    }
+}
+
+.process-section {
+    position: relative;
+    z-index: 1;
+    overflow: hidden;
+
+    .c-shape-1 {
+        position: absolute;
+        z-index: -1;
+        top: 35%;
+        left: 50%;
+        transform: translateX(-50%);
+    }
+}
+
+.section-top-9 {
+    max-width: 780px;
+    width: 100%;
+    margin: 0 auto;
+    text-align: center;
+
+    .common-subtitle {
+        span {
+            color: $body-color;
+        }
+    }
+
+    .common-title {
+        margin-bottom: 0;
+
+        h2 {
+            color: $theme-color-3;
+        }
+    }
+}
+
+.services-section-3 {
+    position: relative;
+
+    .icon {
+        position: absolute;
+        top: 25%;
+        left: 10%;
+
+        @include mq(lg) {
+            top: 8%;
+            left: 25%;
+        }
+        @include mq(md) {
+            top: 10%;
+            left: 23%;
+        }
+        @include mq(xs) {
+            top: 5%;
+            left: 10%;
+        }
+
+        img {
+            @include cmaq(1399px) {
+                width: 80%;
+            }
+            @include cmaq(1199px) {
+                width: 70%;
+            }
+            @include mq(xs) {
+                width: 60%;
+            }
+        }
+    }
+}

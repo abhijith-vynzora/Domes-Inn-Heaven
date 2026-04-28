@@ -1,0 +1,376 @@
+{% extends "frontend/base.html" %}
+{% load static %}
+{% block content %}
+
+<!-- preloader start-->
+<div id="preloader">
+	<div class="preloader">
+		<img src="{% static 'assets/img/thumbs/preloader.gif' %}" alt="preloader">
+	</div>
+</div>
+<!-- preloader end  -->
+
+<main>
+	<!-- breadcrumb-section start -->
+	<section class="breadcrumb-section bg-cream">
+		<div class="container-fluid">
+			<div class="row g-0">
+				<div class="col-xl-6 col-lg-6">
+					<div class="breadcrumb-content" style="background-image: url('{% static "assets/img/bg/breadcrumb-bg.webp" %}');">
+						<div class="breadcrumb-nav" data-aos="fade-up" data-aos-duration="1000" data-aos-delay="200">
+							<ul>
+								<li><a href="{% url 'home' %}">Home</a></li>
+								<li><a href="#">Volunteers</a></li>
+							</ul>
+						</div>
+						<div class="breadcrumb-title" data-aos="fade-up" data-aos-duration="1000" data-aos-delay="400">
+							<h2>We Are Friends</h2>
+						</div>
+						<div class="shape-1">
+							<img src="{% static 'assets/img/shapes/shape-1.webp' %}" alt="shape">
+						</div>
+					</div>
+				</div>
+				<div class="col-xl-6 col-lg-6 d-none d-lg-block">
+					<div class="breadcrumb-thumb">
+						<img src="{% static 'assets/img/thumbs/thumb-1.webp' %}" alt="thumb">
+					</div>
+				</div>
+			</div>
+		</div>
+	</section>
+	<!-- breadcrumb-section end -->
+
+	<!-- volunteer-section start -->
+	<section class="volunteer-section p-t-100">
+		<div class="container">
+			<div class="row" data-aos="fade-up" data-aos-duration="1000" data-aos-delay="600">
+				<div class="col-xl-3 m-b-30">
+					<div class="volunteer-card">
+						<a href="{% url 'volunteer_details' %}">
+							<div class="thumb">
+								<img src="{% static 'assets/img/thumbs/thumb-17.webp' %}" alt="thumb-17">
+							</div>
+							<div class="author-info">
+								<h5>Joshua Sendu</h5>
+								<p>CEO-Founder</p>
+							</div>
+						</a>
+						<div class="socials">
+							<button class="share-button">
+								<i class="fa-light fa-share-nodes"></i>
+							</button>
+							<div class="social-links">
+								<a href="https://facebook.com">
+									<i class="fab fa-facebook-f"></i>
+								</a>
+								<a href="https://twitter.com">
+									<i class="fab fa-x-twitter"></i>
+								</a>
+								<a href="https://www.instagram.com">
+									<i class="fab fa-instagram"></i>
+								</a>
+							</div>
+						</div>
+					</div>
+				</div>
+				<div class="col-xl-3 m-b-30">
+					<div class="volunteer-card">
+						<a href="{% url 'volunteer_details' %}">
+							<div class="thumb">
+								<img src="{% static 'assets/img/thumbs/thumb-18.webp' %}" alt="thumb-18">
+							</div>
+							<div class="author-info">
+								<h5>John Maxwell</h5>
+								<p>Team Leader</p>
+							</div>
+						</a>
+						<div class="socials">
+							<button class="share-button">
+								<i class="fa-light fa-share-nodes"></i>
+							</button>
+							<div class="social-links">
+								<a href="https://facebook.com">
+									<i class="fab fa-facebook-f"></i>
+								</a>
+								<a href="https://twitter.com">
+									<i class="fab fa-x-twitter"></i>
+								</a>
+								<a href="https://www.instagram.com">
+									<i class="fab fa-instagram"></i>
+								</a>
+							</div>
+						</div>
+					</div>
+				</div>
+				<div class="col-xl-3 m-b-30">
+					<div class="volunteer-card">
+						<a href="{% url 'volunteer_details' %}">
+							<div class="thumb">
+								<img src="{% static 'assets/img/thumbs/thumb-19.webp' %}" alt="thumb-19">
+							</div>
+							<div class="author-info">
+								<h5>Bm Ashik (Moni)</h5>
+								<p>Sr. Volunteer</p>
+							</div>
+						</a>
+						<div class="socials">
+							<button class="share-button">
+								<i class="fa-light fa-share-nodes"></i>
+							</button>
+							<div class="social-links">
+								<a href="https://facebook.com">
+									<i class="fab fa-facebook-f"></i>
+								</a>
+								<a href="https://twitter.com">
+									<i class="fab fa-x-twitter"></i>
+								</a>
+								<a href="https://www.instagram.com">
+									<i class="fab fa-instagram"></i>
+								</a>
+							</div>
+						</div>
+					</div>
+				</div>
+				<div class="col-xl-3 m-b-30">
+					<div class="volunteer-card">
+						<a href="{% url 'volunteer_details' %}">
+							<div class="thumb">
+								<img src="{% static 'assets/img/thumbs/thumb-20.webp' %}" alt="thumb-20">
+							</div>
+							<div class="author-info">
+								<h5>Denial Pasha</h5>
+								<p>Volunteer</p>
+							</div>
+						</a>
+						<div class="socials">
+							<button class="share-button">
+								<i class="fa-light fa-share-nodes"></i>
+							</button>
+							<div class="social-links">
+								<a href="https://facebook.com">
+									<i class="fab fa-facebook-f"></i>
+								</a>
+								<a href="https://twitter.com">
+									<i class="fab fa-x-twitter"></i>
+								</a>
+								<a href="https://www.instagram.com">
+									<i class="fab fa-instagram"></i>
+								</a>
+							</div>
+						</div>
+					</div>
+				</div>
+				<div class="col-xl-3 m-b-30">
+					<div class="volunteer-card">
+						<a href="{% url 'volunteer_details' %}">
+							<div class="thumb">
+								<img src="{% static 'assets/img/thumbs/thumb-78.webp' %}" alt="thumb-78">
+							</div>
+							<div class="author-info">
+								<h5>Michael Karen</h5>
+								<p>CEO-Founder</p>
+							</div>
+						</a>
+						<div class="socials">
+							<button class="share-button">
+								<i class="fa-light fa-share-nodes"></i>
+							</button>
+							<div class="social-links">
+								<a href="https://facebook.com">
+									<i class="fab fa-facebook-f"></i>
+								</a>
+								<a href="https://twitter.com">
+									<i class="fab fa-x-twitter"></i>
+								</a>
+								<a href="https://www.instagram.com">
+									<i class="fab fa-instagram"></i>
+								</a>
+							</div>
+						</div>
+					</div>
+				</div>
+				<div class="col-xl-3 m-b-30">
+					<div class="volunteer-card">
+						<a href="{% url 'volunteer_details' %}">
+							<div class="thumb">
+								<img src="{% static 'assets/img/thumbs/thumb-79.webp' %}" alt="thumb-79">
+							</div>
+							<div class="author-info">
+								<h5>Jessica Lisa</h5>
+								<p>CEO-Founder</p>
+							</div>
+						</a>
+						<div class="socials">
+							<button class="share-button">
+								<i class="fa-light fa-share-nodes"></i>
+							</button>
+							<div class="social-links">
+								<a href="https://facebook.com">
+									<i class="fab fa-facebook-f"></i>
+								</a>
+								<a href="https://twitter.com">
+									<i class="fab fa-x-twitter"></i>
+								</a>
+								<a href="https://www.instagram.com">
+									<i class="fab fa-instagram"></i>
+								</a>
+							</div>
+						</div>
+					</div>
+				</div>
+				<div class="col-xl-3 m-b-30">
+					<div class="volunteer-card">
+						<a href="{% url 'volunteer_details' %}">
+							<div class="thumb">
+								<img src="{% static 'assets/img/thumbs/thumb-80.webp' %}" alt="thumb-80">
+							</div>
+							<div class="author-info">
+								<h5>Thomas Anthony</h5>
+								<p>Sr. Volunteer</p>
+							</div>
+						</a>
+						<div class="socials">
+							<button class="share-button">
+								<i class="fa-light fa-share-nodes"></i>
+							</button>
+							<div class="social-links">
+								<a href="https://facebook.com">
+									<i class="fab fa-facebook-f"></i>
+								</a>
+								<a href="https://twitter.com">
+									<i class="fab fa-x-twitter"></i>
+								</a>
+								<a href="https://www.instagram.com">
+									<i class="fab fa-instagram"></i>
+								</a>
+							</div>
+						</div>
+					</div>
+				</div>
+				<div class="col-xl-3 m-b-30">
+					<div class="volunteer-card">
+						<a href="{% url 'volunteer_details' %}">
+							<div class="thumb">
+								<img src="{% static 'assets/img/thumbs/thumb-81.webp' %}" alt="thumb-81">
+							</div>
+							<div class="author-info">
+								<h5>Brandon Samuel</h5>
+								<p>Volunteer</p>
+							</div>
+						</a>
+						<div class="socials">
+							<button class="share-button">
+								<i class="fa-light fa-share-nodes"></i>
+							</button>
+							<div class="social-links">
+								<a href="https://facebook.com">
+									<i class="fab fa-facebook-f"></i>
+								</a>
+								<a href="https://twitter.com">
+									<i class="fab fa-x-twitter"></i>
+								</a>
+								<a href="https://www.instagram.com">
+									<i class="fab fa-instagram"></i>
+								</a>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</section>
+	<!-- volunteer-section start -->
+
+	<!-- volunteer-section start -->
+	<section class="volunteer-cta-section p-t-80 p-b-100">
+		<div class="container">
+			<div class="row">
+				<div class="col-xl-12">
+					<div class="volunteer-cta-wrap" data-aos="fade-up" data-aos-duration="1000" data-aos-delay="200">
+						<div class="content-wrap">
+							<div class="common-title text-start">
+								<h2>You can work with us if you want</h2>
+							</div>
+							<div class="text">
+								<p>We all work as friends, and if we all work together.</p>
+							</div>
+							<div class="blog-btn">
+								<a href="{% url 'be_volunteer' %}" class="e-primary-btn has-icon">
+									Become a Volunteer
+									<span class="icon-wrap">
+                                        <span class="icon"><i class="fa-regular fa-arrow-right"></i><i class="fa-regular fa-arrow-right"></i></span>
+									</span>
+								</a>
+							</div>
+						</div>
+						<div class="thumb-wrap">
+							<img src="{% static 'assets/img/thumbs/thumb-82.webp' %}" alt="thumb-82">
+						</div>
+						<div class="c-shape-1">
+							<img src="{% static 'assets/img/shapes/shape-33.webp' %}" alt="shape-33">
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</section>
+	<!-- volunteer-section end -->
+
+	<!-- contact-info-section start -->
+	<section class="contact-info-section">
+		<div class="container">
+			<div class="row">
+				<div class="col-xl-12">
+					<div class="contact-info-layout">
+						<a href="mailto:support.Domes@gmail.com" class="contact-info active">
+							<div class="icon-wrap">
+								<div class="icon-shape"></div>
+								<div class="icon">
+									<i class="fa-solid fa-paper-plane"></i>
+								</div>
+							</div>
+							<h3>support.Domes@gmail.com</h3>
+							<p>Send a Email</p>
+						</a>
+						<a href="tel:+70264566579" class="contact-info">
+							<div class="icon-wrap">
+								<div class="icon-shape"></div>
+								<div class="icon">
+									<i class="fa-solid fa-phone-arrow-up-right"></i>
+								</div>
+							</div>
+							<h3>+70 264 566 579</h3>
+							<p>Any Time Call Us</p>
+						</a>
+						<a href="#" class="contact-info">
+							<div class="icon-wrap">
+								<div class="icon-shape"></div>
+								<div class="icon">
+									<i class="fa-solid fa-location-dot"></i>
+								</div>
+							</div>
+							<h3>Jones Street, New York, USA</h3>
+							<p>Our Address</p>
+						</a>
+					</div>
+				</div>
+			</div>
+		</div>
+	</section>
+	<!-- contact-info-section end -->
+</main>
+
+<!-- Vendors Js -->
+<script src="{% static 'assets/vendor/jquery/jquery.min.js' %}"></script>
+<script src="{% static 'assets/vendor/popper/popper.min.js' %}"></script>
+<script src="{% static 'assets/vendor/bootstrap/bootstrap.min.js' %}"></script>
+<script src="{% static 'assets/vendor/swiper/swiper-bundle.min.js' %}"></script>
+<script src="{% static 'assets/vendor/aos/aos.js' %}"></script>
+<script src="{% static 'assets/vendor/fancybox/fancybox.umd.js' %}"></script>
+<script src="{% static 'assets/vendor/counter/purecounter.js' %}"></script>
+
+<!-- Main Js -->
+<script src="{% static 'assets/js/script.js' %}"></script>
+
+{% endblock %}

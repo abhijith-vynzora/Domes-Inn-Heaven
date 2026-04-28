@@ -1,0 +1,59 @@
+:root {
+    --theme-color: #85BF18;
+    --theme-shade-color: #99EF68;
+    --theme-color-2: #FFE175;
+    --theme-color-3: #004540;
+    --title-color: #15161C;
+    --body-color: #868681;
+    --gray-color: #383838;
+    --warning-color: #FFB539;
+    --success-color: #28a745;
+    --error-color: #dc3545;
+    --light-color: #f5f5f5;
+    --dark-color: #15161C;
+    --white-color: #fff;
+    --black-color: #000;
+    --hr-color: #000;
+    --outfit-font: "Outfit", sans-serif;
+    --dm-sans-font: "DM Sans", sans-serif;
+    --albert-sans-font: "Albert Sans", sans-serif;
+    --icon-font: "Font Awesome 6 Pro";
+    --body-fz: 16px;
+}
+
+$body-fonts: var(--dm-sans-font);
+$header-fonts: var(--outfit-font);
+
+$icon-font: var(--icon-font);
+$Outfit: var(--outfit-font);
+$DMSans: var(--dm-sans-font);
+$AlbertSans: var(--albert-sans-font);
+
+$body-fz: var(--body-fz);
+
+$light: var(--light-color);
+$dark: var(--dark-color);
+$white: var(--white-color);
+$black: var(--black-color);
+
+$gray-color: var(--gray-color);
+$heading-color: var(--title-color);
+$body-color: var(--body-color);
+$warning-color: var(--warning-color);
+$success-color: var(--success-color);
+$error-color: var(--error-color);
+
+$theme-color: var(--theme-color);
+$theme-shade-color: var(--theme-shade-color);
+$theme-color-2: var(--theme-color-2);
+$theme-color-3: var(--theme-color-3);
+
+$theme-color-rgb: #85BF18;
+$theme-shade-color-rgb: #99EF68;
+$theme-color-2-rgb: #FFE175;
+$theme-color-3-rgb: #004540;
+
+$warning-color: var(--warning-color);
+$success-color: var(--success-color);
+$error-color: var(--error-color);
+$hr-color: var(--hr-color);

@@ -1,0 +1,40 @@
+@use "../common" as *;
+
+/* 36 Donations Css */
+
+.notice {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    padding: 6px 10px;
+    background: #f8f7f0;
+    border: 1px solid rgba(0, 69, 64, 0.15);
+    box-shadow: 0px 6px 30px rgba(0, 69, 64, 0.09);
+    border-radius: 10px;
+
+    p {
+        font-family: $DMSans;
+        font-style: normal;
+        font-weight: 500;
+        font-size: 16px;
+        line-height: 22px;
+        color: $body-color;
+
+        span {
+            color: $theme-color-3;
+        }
+    }
+}
+
+.services-details-section-2 {
+    position: relative;
+    z-index: 1;
+    margin-bottom: -160px;
+
+    .d-shape-1 {
+        position: absolute;
+        z-index: -1;
+        bottom: 0;
+        left: 0;
+    }
+}

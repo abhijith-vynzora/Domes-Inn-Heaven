@@ -1,0 +1,876 @@
+@use "../common" as *;
+
+/* 16 Testimonial Css */
+
+.testimonial {
+    .common-title {
+        h2 {
+            span {
+                i {
+                    color: $theme-color-2;
+                    padding: 5px 10px;
+                    background: $theme-color-3;
+                    border-radius: 100%;
+                }
+            }
+        }
+    }
+
+    .reviews {
+        display: flex;
+        align-items: center;
+        gap: 10px;
+        margin-bottom: 40px;
+
+        @include mq(md) {
+            margin-bottom: 30px;
+        }
+        @include mq(xs) {
+            margin-bottom: 20px;
+        }
+
+        h3 {
+            font-weight: 600;
+            font-size: 42px;
+            line-height: 52px;
+            margin-bottom: 0;
+            color: transparent;
+            -webkit-text-stroke: 1px $body-color;
+            margin-right: 10px;
+
+            @include mq(md) {
+                font-size: 36px;
+            }
+            @include mq(xs) {
+                font-size: 30px;
+            }
+        }
+
+        img {
+            width: 40px;
+            height: 40px;
+
+            @include mq(md) {
+                width: 34px;
+                height: 34px;
+            }
+            @include mq(xs) {
+                width: 30px;
+                height: 30px;
+            }
+        }
+
+        h5 {
+            font-weight: 600;
+            font-size: 24px;
+            line-height: 36px;
+            color: $theme-color-3;
+            margin-bottom: 0;
+
+            @include mq(md) {
+                font-size: 22px;
+            }
+            @include mq(xs) {
+                font-size: 18px;
+            }
+        }
+    }
+
+    .review-btn {
+        max-width: 240px;
+        width: 100%;
+        display: inline-flex;
+        align-items: center;
+        gap: 10px;
+        padding: 10px 20px;
+        border: 2px solid rgba(0, 69, 64, 0.1);
+        border-radius: 20px;
+
+        @include mq(md) {
+            max-width: 225px;
+            gap: 8px;
+            padding: 8px 16px;
+        }
+        @include mq(xs) {
+            max-width: 220px;
+            gap: 8px;
+            padding: 8px 16px;
+        }
+
+        span {
+            color: $theme-color-3;
+            font-weight: 500;
+            line-height: 24px;
+
+            @include mq(md) {
+                line-height: 1.3;
+            }
+            @include mq(xs) {
+                line-height: 1.3;
+            }
+        }
+
+        img {
+            width: 44px;
+            height: 44px;
+
+            @include mq(md) {
+                width: 40px;
+                height: 40px;
+            }
+            @include mq(xs) {
+                width: 34px;
+                height: 34px;
+            }
+        }
+    }
+}
+
+.testimonial-card {
+    background-color: $theme-color-3;
+    padding: 20px;
+    border-radius: 16px;
+    display: flex;
+    gap: 40px;
+    align-items: center;
+
+    @include mq(xl) {
+        gap: 30px;
+    }
+
+    @include mq(md) {
+        gap: 30px;
+    }
+
+    @include mq(xs) {
+        gap: 30px;
+        flex-direction: column;
+    }
+
+    &:hover {
+        .thumb {
+            .video-play-btn {
+                visibility: visible;
+                opacity: 1;
+                transform: translate(-50%, -50%) scale(1);
+            }
+        }
+    }
+
+    .thumb {
+        border-radius: 12px;
+        position: relative;
+        height: 100%;
+        overflow: hidden;
+        flex: none;
+        width: 300px;
+
+        @include mq(xl) {
+            width: 250px;
+        }
+
+        @include mq(md) {
+            width: 250px;
+        }
+
+        @include mq(xs) {
+            width: 100%;
+        }
+
+        img {
+            height: 100%;
+            object-fit: cover;
+            width: 100%;
+            border-radius: 12px;
+        }
+
+        .video-play-btn {
+            width: 80px;
+            height: 80px;
+            text-align: center;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%) scale(0.5);
+            color: $light;
+            padding: 23px 21px;
+            border-radius: 100%;
+            border: 1px solid $light;
+            font-weight: 500;
+            font-size: 20px;
+            line-height: 30px;
+            background: rgba(255, 255, 255, 0.015);
+            backdrop-filter: blur(2px);
+            visibility: hidden;
+            opacity: 0;
+            @include transition(0.3s);
+            animation: animate-pulse 3s linear infinite;
+
+            &:hover {
+                color: $theme-color-3;
+                background: $theme-color-2;
+                border-color: $theme-color-2;
+            }
+        }
+    }
+
+    .card-content {
+        flex: 1;
+
+        .rating {
+            display: inline-flex;
+            align-items: center;
+            gap: 5px;
+            padding: 8px 12px;
+            background: rgba(255, 255, 255, 0.1);
+            border: 1.5px solid rgba(255, 255, 255, 0.3);
+            box-shadow: inset 0 4px 11px #004540,
+            inset -1px -4px 23.1px rgba(0, 24, 25, 0.28);
+            backdrop-filter: blur(23.9px);
+            border-radius: 53px;
+            margin-bottom: 20px;
+
+            p {
+                margin-bottom: 0;
+                color: $light;
+                font-weight: 500;
+                font-size: 14px;
+                line-height: 20px;
+            }
+
+            i {
+                font-size: 12px;
+                line-height: 20px;
+                color: $theme-color-2;
+            }
+
+            span {
+                color: $theme-color-2;
+                font-weight: 500;
+                line-height: 20px;
+            }
+        }
+
+        .review {
+            color: $light;
+            margin-bottom: 40px;
+            @include mq(xl) {
+                margin-bottom: 20px;
+            }
+            @include mq(md) {
+                margin-bottom: 20px;
+            }
+            @include mq(xs) {
+                margin-bottom: 20px;
+            }
+        }
+
+        .author-details {
+            h5 {
+                color: $light;
+                margin-bottom: 0;
+                font-weight: 600;
+                font-size: 20px;
+                line-height: 32px;
+
+                span {
+                    font-weight: 400;
+                    font-size: 14px;
+                }
+            }
+
+            h6 {
+                font-size: 16px;
+                font-weight: 200;
+                color: $light;
+                margin-bottom: 0;
+            }
+        }
+    }
+}
+
+.testimonial-content {
+    .text {
+        margin-bottom: 30px;
+
+        @include mq(md) {
+            margin-bottom: 20px;
+        }
+        @include mq(xs) {
+            margin-bottom: 20px;
+        }
+    }
+}
+
+.testimonial-slider-active {
+    overflow: hidden;
+
+    .swiper-slide {
+        opacity: 0.3;
+
+        &.swiper-slide-active {
+            opacity: 1;
+
+            .testimonial-card {
+                .thumb {
+                    .video-play-btn {
+                        visibility: visible;
+                        opacity: 1;
+                        transform: translate(-50%, -50%) scale(1);
+                    }
+                }
+            }
+        }
+    }
+}
+
+//testimonial-section-2 styles
+
+.testimonial-card-2 {
+    background-color: $white;
+    padding: 10px;
+    border: 2px solid $white;
+    border-radius: 16px;
+    position: relative;
+    z-index: 1;
+    display: flex;
+    gap: 40px;
+    align-items: center;
+    @include transition(0.3s);
+
+    @include mq(xl) {
+        gap: 30px;
+    }
+
+    @include mq(lg) {
+        gap: 30px;
+    }
+
+    @include mq(md) {
+        gap: 30px;
+    }
+
+    @include mq(xs) {
+        gap: 20px;
+        flex-direction: column;
+    }
+
+    &:hover {
+        border: 2px solid $theme-color-2;
+    }
+
+    .thumb {
+        border-radius: 12px;
+        position: relative;
+        z-index: 1;
+        flex: none;
+
+        @include mq(xs) {
+            width: 100%;
+        }
+
+        img {
+            width: 100%;
+            border-radius: 12px;
+        }
+
+        .video-play-btn {
+            width: 80px;
+            height: 80px;
+            text-align: center;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            color: $light;
+            padding: 23px 21px;
+            border-radius: 100%;
+            border: 1px solid $light;
+            font-weight: 500;
+            font-size: 20px;
+            line-height: 30px;
+            background: rgba(255, 255, 255, 0.015);
+            backdrop-filter: blur(6px);
+            @include transition(0.3s);
+            animation: animate-pulse 3s linear infinite;
+
+            &:hover {
+                color: $theme-color-3;
+                background: $theme-color-2;
+                border-color: $theme-color-2;
+            }
+        }
+    }
+
+    .card-content {
+        h4 {
+            font-weight: 600;
+            font-size: 24px;
+            line-height: 36px;
+            color: $theme-color-3;
+            margin-bottom: 16px;
+        }
+
+        .review {
+            color: $light;
+            margin-bottom: 80px;
+
+            @include mq(xl) {
+                margin-bottom: 20px;
+            }
+            @include mq(md) {
+                margin-bottom: 20px;
+            }
+            @include mq(xs) {
+                margin-bottom: 20px;
+            }
+
+            p {
+                color: $gray-color;
+            }
+        }
+
+        .author-details {
+            h5 {
+                color: $theme-color-3;
+                margin-bottom: 0;
+                font-weight: 600;
+                font-size: 20px;
+                line-height: 32px;
+
+                span {
+                    font-weight: 400;
+                    font-size: 14px;
+                }
+            }
+
+            h6 {
+                font-size: 16px;
+                font-weight: 200;
+                color: $body-color;
+                margin-bottom: 0;
+            }
+        }
+    }
+
+    .quote-icon {
+        position: absolute;
+        bottom: 0;
+        right: 50px;
+        z-index: -1;
+    }
+}
+
+.section-top-4 {
+    display: flex;
+    justify-content: space-between;
+    align-items: end;
+    margin-bottom: 60px;
+
+    @include mq(xs) {
+        flex-direction: column;
+        align-items: start;
+        gap: 20px;
+        margin-bottom: 40px;
+    }
+
+    .left {
+        .common-subtitle {
+            span {
+                color: $theme-color-3;
+            }
+        }
+
+        .common-title {
+            margin-bottom: 0;
+
+            h2 {
+                color: $theme-color-3;
+            }
+        }
+    }
+}
+
+.section-top-8 {
+    display: flex;
+    justify-content: space-between;
+    align-items: end;
+    margin-bottom: 60px;
+
+    @include mq(xs) {
+        flex-direction: column;
+        align-items: start;
+        gap: 20px;
+        margin-bottom: 40px;
+    }
+
+    .left {
+        .common-subtitle {
+            span {
+                color: $white;
+            }
+        }
+
+        .common-title {
+            margin-bottom: 0;
+
+            h2 {
+                color: $white;
+            }
+        }
+    }
+}
+
+.testimonial-section-2 {
+    background-color: #f8f7f0;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center center;
+    position: relative;
+
+    .shape-1 {
+        position: absolute;
+        top: 0;
+        left: 0;
+
+        @include cmaq(1700px) {
+            width: 80%;
+        }
+    }
+
+    .shape-2 {
+        position: absolute;
+        bottom: 0;
+        right: 2%;
+
+        @include mq(xxl) {
+            width: 14%;
+        }
+        @include mq(xl) {
+            width: 16%;
+        }
+        @include mq(lg) {
+            width: 20%;
+        }
+        @include mq(md) {
+            width: 25%;
+        }
+        @include mq(xs) {
+            width: 30%;
+        }
+    }
+
+    .e-primary-btn {
+        color: $theme-color-2;
+        background: $theme-color-3;
+
+        &:before {
+            background: $theme-color-3;
+        }
+
+        .icon-wrap {
+            background: $theme-color-2;
+            color: $theme-color-3;
+        }
+
+        &:hover {
+            color: $theme-color-3;
+
+            &:before {
+                background: $theme-color-2;
+                left: -10%;
+                transform: translateX(0%) translateY(-50%);
+            }
+
+            .icon-wrap {
+                background: $theme-color-3;
+                color: $theme-color-2;
+            }
+        }
+    }
+}
+
+//testimonial-section-2 styles
+
+//testimonial-section-3
+
+.testimonial-card-3 {
+    background-color: $theme-color-3;
+    border-radius: 10px;
+
+    &:hover {
+        .testimonial-card-thumb {
+            &:before {
+                opacity: 1;
+            }
+
+            .circled-quote {
+                background-color: $theme-color-2;
+                border: 2px solid $theme-color-3;
+                color: $theme-color-3;
+            }
+
+            .author-info {
+                border: 1px solid $theme-color-2;
+            }
+        }
+    }
+
+    .testimonial-card-content {
+        padding: 30px;
+        margin-bottom: 20px;
+
+        h5 {
+            font-style: normal;
+            font-weight: 600;
+            font-size: 24px;
+            line-height: 36px;
+            color: $white;
+            margin-bottom: 10px;
+
+            @include mq(md) {
+                font-size: 20px;
+            }
+            @include mq(xs) {
+                font-size: 20px;
+            }
+        }
+
+        p {
+            font-style: normal;
+            font-weight: 400;
+            font-size: 18px;
+            line-height: 32px;
+            color: $white;
+            margin-bottom: 0;
+
+            @include mq(md) {
+                font-size: 16px;
+                line-height: 1.6;
+            }
+            @include mq(xs) {
+                font-size: 16px;
+                line-height: 1.5;
+            }
+        }
+    }
+
+    .testimonial-card-thumb {
+        overflow: hidden;
+        position: relative;
+        z-index: 1;
+        padding-top: 10px;
+        border-radius: 10px;
+
+        &:before {
+            content: "";
+            width: 100%;
+            height: 100%;
+            position: absolute;
+            top: 0px;
+            left: -30px;
+            z-index: -1;
+            background: $theme-color-2;
+            clip-path: url(#c-mask-shape);
+            opacity: 0.08;
+            @include transition(0.3s);
+        }
+
+        .clippy {
+            position: absolute;
+            top: -999px;
+            left: -999px;
+            width: 0;
+            height: 0;
+            opacity: 0;
+        }
+
+        img {
+            border-bottom-left-radius: 10px;
+            overflow: hidden;
+            clip-path: url(#c-mask-image);
+            margin-left: -20px;
+        }
+
+        .circled-quote {
+            width: 80px;
+            height: 80px;
+            font-size: 36px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background-color: $theme-color-3;
+            border-radius: 100%;
+            border: 2px solid $theme-color-2;
+            color: $theme-color-2;
+            position: absolute;
+            top: 0;
+            right: 70px;
+
+            @include mq(lg) {
+                width: 70px;
+                height: 70px;
+                font-size: 32px;
+                top: 10px;
+                right: 80px;
+            }
+            @include mq(md) {
+                width: 60px;
+                height: 60px;
+                font-size: 28px;
+                top: 0;
+                right: 30px;
+            }
+            @include mq(xs) {
+                width: 60px;
+                height: 60px;
+                font-size: 24px;
+                top: 10px;
+                right: 50px;
+            }
+        }
+
+        .author-info {
+            background: rgba(255, 255, 255, 0.1);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(15px);
+            border-radius: 8px;
+            padding: 20px;
+            max-width: 280px;
+            width: 100%;
+            position: absolute;
+            bottom: 20px;
+            left: 20px;
+
+            @include mq(md) {
+                max-width: 240px;
+            }
+
+            h5 {
+                font-style: normal;
+                font-weight: 600;
+                font-size: 20px;
+                line-height: 20px;
+                color: $white;
+                margin-bottom: 4px;
+
+                @include cmaq(991px) {
+                    font-size: 18px;
+                }
+            }
+
+            p {
+                font-style: normal;
+                font-weight: 400;
+                font-size: 18px;
+                color: $white;
+                margin-bottom: 0;
+
+                @include cmaq(991px) {
+                    font-size: 16px;
+                }
+            }
+        }
+    }
+}
+
+.section-top-10 {
+    text-align: center;
+    width: 50%;
+    margin: 0 auto;
+    margin-bottom: 50px;
+
+    .common-title {
+        h2 {
+            img {
+                @include mq(md) {
+                    width: 32px;
+                }
+                @include mq(xs) {
+                    width: 22px;
+                }
+            }
+        }
+    }
+
+    @include mq(lg) {
+        width: 60%;
+    }
+    @include mq(md) {
+        width: 60%;
+    }
+    @include mq(xs) {
+        margin-bottom: 40px;
+        width: 80%;
+    }
+}
+
+.testimonial-slider-active-2 {
+    .testimonial-pagination-wrap {
+        display: flex;
+        justify-content: center;
+
+        .testimonial-pagination-2 {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            gap: 10px;
+            background: #ffffff;
+            border: 1.5px solid rgba(255, 255, 255, 0.3);
+            backdrop-filter: blur(8.5px);
+            border-radius: 100px;
+            width: auto;
+            padding: 10px 16px;
+            margin-top: 50px;
+
+            .swiper-pagination-bullet {
+                width: 20px;
+                height: 20px;
+                background: none;
+                border: 1px solid transparent;
+                backdrop-filter: blur(4.75px);
+                margin: 0;
+                opacity: 1;
+                border-radius: 100%;
+                position: relative;
+                cursor: pointer;
+                @include transition(0.3s);
+
+                &:before {
+                    content: "";
+                    width: 7px;
+                    height: 7px;
+                    border-radius: 100%;
+                    background: #868681;
+                    position: absolute;
+                    left: 50%;
+                    top: 50%;
+                    transform: translateX(-50%) translateY(-50%);
+                }
+
+                &.swiper-pagination-bullet-active {
+                    border-color: $theme-color-3;
+
+                    &:before {
+                        background: radial-gradient(
+                                        92.09% 85.42% at 86.3% 87.5%,
+                                        rgba(0, 0, 0, 0.23) 0%,
+                                        rgba(0, 0, 0, 0) 86.18%
+                        ) /* warning: gradient uses a rotation that is not supported by CSS and may not behave as expected */
+                        ,
+                        radial-gradient(
+                                        65.28% 65.28% at 26.39% 20.83%,
+                                        rgba(255, 255, 255, 0.413) 0%,
+                                        rgba(255, 255, 255, 0) 69.79%,
+                                        rgba(255, 255, 255, 0) 100%
+                        ) /* warning: gradient uses a rotation that is not supported by CSS and may not behave as expected */
+                        ,
+                        #004540;
+                    }
+                }
+            }
+        }
+    }
+}
+
+//testimonial-section-3

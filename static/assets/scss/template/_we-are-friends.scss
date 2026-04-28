@@ -1,0 +1,183 @@
+@use "../common" as *;
+
+/* 32 We Are Friends Css */
+
+.we-are-friends-section {
+
+    .common-subtitle {
+        margin-bottom: 20px;
+    }
+
+    .common-title {
+        margin-bottom: 20px;
+    }
+
+    .text {
+        max-width: 550px;
+        width: 100%;
+        margin-bottom: 30px;
+    }
+
+    .blog-btn {
+        margin-bottom: 50px;
+    }
+}
+
+.friends-left {
+    position: sticky;
+    top: 20px;
+
+    .shape {
+        position: absolute;
+        bottom: -30%;
+        left: 40%;
+
+        @include mq(lg) {
+            bottom: 10%;
+            width: 5%;
+            left: 30%;
+        }
+        @include mq(md) {
+            bottom: 10%;
+            width: 6%;
+            left: 40%;
+        }
+        @include mq(xs) {
+            bottom: 10%;
+            width: 10%;
+            left: 70%;
+        }
+    }
+}
+
+.friends-card {
+    background: #F8F7F0;
+    border-radius: 10px;
+    padding: 10px;
+    position: sticky;
+    top: 20px;
+
+    &:hover {
+        .details-btn-3 {
+            right: 10px;
+            transition: all 0.3s;
+        }
+    }
+
+    .author-details {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        padding: 26px;
+        width: 100%;
+        height: 100%;
+
+        .author-info {
+            h5 {
+                font-weight: 600;
+                font-size: 24px;
+                line-height: 36px;
+                color: $theme-color-3;
+                margin-bottom: 5px;
+
+                @include mq(xs) {
+                    font-size: 20px;
+                }
+            }
+
+            p {
+                font-style: normal;
+                font-weight: 400;
+                line-height: 22px;
+                margin-bottom: 16px;
+            }
+
+            .description {
+                p {
+                    font-style: normal;
+                    font-weight: 400;
+                    font-size: 18px;
+                    line-height: 30px;
+                    color: $body-color;
+                }
+            }
+        }
+
+        .socials {
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+
+            .social-links {
+                display: flex;
+                gap: 10px;
+                transition: all 0.3s;
+
+                a {
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
+                    width: 40px;
+                    height: 40px;
+                    border-radius: 50px;
+                    background: $white;
+                    color: $body-color;
+
+                    &:hover {
+                        background: $theme-color-2;
+                        color: $theme-color-3;
+                    }
+                }
+            }
+        }
+    }
+
+    .thumb {
+        position: relative;
+        overflow: hidden;
+        border-radius: 10px;
+        height: 100%;
+
+        &::before {
+            position: absolute;
+            content: "";
+            width: 100%;
+            height: 100%;
+            top: 0;
+            right: 0;
+            background: linear-gradient(109.34deg, rgba(255, 225, 117, 0) 64.88%, #FFE175 100%);
+        }
+
+        .category {
+            position: absolute;
+            right: 0;
+            bottom: 0;
+        }
+
+        img {
+            border-radius: 10px;
+            height: 100%;
+            object-fit: cover;
+            width: 100%;
+        }
+    }
+}
+
+.details-btn-3 {
+    box-shadow: -7px 9px 31.3px #FFE175;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 50px;
+    height: 50px;
+    background-color: $theme-color-2;
+    color: $theme-color-3;
+    transform: rotate(-45deg);
+    padding: 12px 20px;
+    border-radius: 53px;
+    transition: all 0.3s;
+    position: absolute;
+    top: 10px;
+    right: -60px;
+}

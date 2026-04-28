@@ -1,0 +1,226 @@
+@use "../common" as *;
+
+/* 11 Camping Css */
+
+.contact-info-section {
+    position: relative;
+    z-index: 1;
+}
+
+.contact-info-layout {
+    background: $theme-color-2;
+    border-radius: 12px;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    margin-bottom: -45px;
+    margin-top: 20px;
+    padding-left: 15px;
+    padding-right: 15px;
+
+    @include mq(xs){
+        padding-top: 15px;
+        padding-bottom: 15px;
+    }
+
+    @include mq(md){
+        padding-top: 15px;
+        padding-bottom: 15px;
+    }
+
+    @include cmaq(991px) {
+        grid-template-columns: 1fr;
+        overflow: hidden;
+    }
+}
+
+.contact-info {
+    padding: 30px;
+    border-radius: 12px;
+    @include transition(0.3s);
+
+    .icon-wrap {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: 20px;
+
+        .icon-shape {
+            flex: 1;
+            width: 100%;
+            height: 1px;
+            background: linear-gradient(
+                            90deg,
+                            rgba(0, 69, 64, 0) 0%,
+                            $theme-color-3 100%
+            );
+        }
+
+        .icon {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            color: $theme-color-3;
+            background: argb($theme-color-3-rgb, 0.1);
+            flex: none;
+        }
+    }
+
+    h3 {
+        font-family: $Outfit;
+        font-weight: 600;
+        font-size: 24px;
+        line-height: 36px;
+        color: $theme-color-3;
+        margin-bottom: 10px;
+        @include transition(0.3s);
+
+        @include mq(lg) {
+            font-size: 20px;
+        }
+        @include mq(md) {
+            font-size: 20px;
+        }
+        @include mq(xs) {
+            font-size: 18px;
+        }
+    }
+
+    p {
+        font-weight: 400;
+        font-size: 18px;
+        line-height: 30px;
+        color: $theme-color-3;
+        @include transition(0.3s);
+
+        @include mq(md) {
+            font-size: 16px;
+        }
+
+        @include mq(xs) {
+            font-size: 16px;
+        }
+    }
+
+    &.active {
+        background: $theme-color-3;
+        transform: translateY(-20px);
+        box-shadow: 0px 33px 50.3px -27px rgba(0, 69, 64, 0.3);
+
+        @include mq(md) {
+            transform: translateY(0);
+        }
+        @include mq(xs) {
+            transform: translateY(0);
+        }
+
+        .icon-wrap {
+            .icon-shape {
+                background: linear-gradient(
+                                90deg,
+                                rgba(0, 69, 64, 0) 0%,
+                                $theme-color-2 100%
+                );
+            }
+
+            .icon {
+                color: $theme-color-2;
+                background: argb($theme-color-2-rgb, 0.1);
+            }
+        }
+
+        h3 {
+            color: $white;
+        }
+
+        p {
+            color: $white;
+        }
+    }
+}
+
+.contact-form-wrap {
+    background: #f8f7f0;
+    border-radius: 24px;
+    padding: 40px 50px 50px;
+    text-align: center;
+
+    h3 {
+        font-weight: 600;
+        font-size: 48px;
+        line-height: 60px;
+        color: #010a15;
+        margin-bottom: 7px;
+    }
+
+    p {
+        font-weight: 400;
+        font-size: 18px;
+        line-height: 30px;
+        color: #868681;
+        margin-bottom: 32px;
+    }
+
+    .input-wrap {
+        input {
+            background: #ffffff;
+
+            &:focus {
+                background: #ffffff;
+            }
+        }
+
+        textarea {
+            background: #ffffff;
+
+            &:focus {
+                background: #ffffff;
+            }
+        }
+    }
+
+    .select-wrap {
+        select {
+            background: #ffffff;
+
+            &:focus {
+                background: #ffffff;
+            }
+        }
+    }
+}
+
+.contact-section {
+    position: relative;
+    z-index: 1;
+
+    .c-shape-1 {
+        position: absolute;
+        z-index: -1;
+        bottom: 0;
+        left: 0;
+    }
+
+    .c-shape-2 {
+        position: absolute;
+        z-index: -1;
+        bottom: 0;
+        right: 0;
+    }
+}
+
+.contact-map {
+    width: 100%;
+    height: 650px;
+
+    iframe {
+        width: 100%;
+        height: 100%;
+    }
+}
+
+.map-section {
+    margin-bottom: -165px;
+}
