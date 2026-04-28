@@ -5,7 +5,7 @@
 <!-- preloader start-->
 <div id="preloader">
     <div class="preloader">
-        <img src="{% static 'assets/img/thumbs/preloader.gif' %}" alt="preloader">
+        <img src="{% static 'assets/img/thumbs/preloader_new.png' %}" alt="preloader">
     </div>
 </div>
 <!-- preloader end  -->
@@ -43,8 +43,9 @@
     <section class="services-details-section p-t-120 p-b-250 p-t-lg-80 p-t-md-80 p-t-xs-60">
         <div class="container">
             <div class="row">
-                <div class="col-xl-8">
-                    <div class="details-content" data-aos="fade-up" data-aos-duration="1000" data-aos-delay="400">
+                <div class="col-xl-12">
+                    <div class="details-layout-wrap">
+                        <div class="details-content">
                         <div class="thumb-wrap m-b-50">
                             <img src="{{ package.main_image.url }}" alt="{{ package.name }}">
                         </div>
@@ -52,7 +53,7 @@
                             <h2>{{ package.name }}</h2>
                         </div>
                         <div class="detail-text m-b-30">
-                            <p>{{ package.description }}</p>
+                            <p>{{ package.description|safe }}</p>
                         </div>
                         <div class="details-title m-b-15">
                             <h2>Stay Details</h2>
@@ -84,9 +85,7 @@
                             </div>
                         </div>
                     </div>
-                </div>
-                <div class="col-xl-4">
-                    <div class="detail-sidebar" data-aos="fade-up" data-aos-duration="1000" data-aos-delay="600">
+                    <div class="detail-sidebar">
                         <div class="detail-sidebar-inner">
                             <div class="s-widget-wrap m-b-30">
                                 <div class="w-title">

@@ -1,0 +1,239 @@
+{% extends "frontend/base.html" %}
+{% load static %}
+{% block content %}
+
+<!-- preloader start-->
+<div id="preloader">
+	<div class="preloader">
+		<img src="{% static 'assets/img/thumbs/preloader_new.png' %}" alt="preloader">
+	</div>
+</div>
+<!-- preloader end  -->
+
+<main>
+	<!-- breadcrumb-section start -->
+	<section class="breadcrumb-section">
+		<div class="container-fluid">
+			<div class="row g-0">
+				<div class="col-xl-6 col-lg-6">
+					<div class="breadcrumb-content" style="background-image: url('{% static "assets/img/bg/breadcrumb-bg.webp" %}');">
+						<div class="breadcrumb-nav" data-aos="fade-up" data-aos-duration="1000" data-aos-delay="200">
+							<ul>
+								<li><a href="{% url 'home' %}">Home</a></li>
+								<li><a href="#">Our Gallery</a></li>
+							</ul>
+						</div>
+						<div class="breadcrumb-title" data-aos="fade-up" data-aos-duration="1000" data-aos-delay="400">
+							<h2>Photo Gallery</h2>
+						</div>
+						<div class="shape-1">
+							<img src="{% static 'assets/img/shapes/shape-1.webp' %}" alt="shape">
+						</div>
+					</div>
+				</div>
+				<div class="col-xl-6 col-lg-6 d-none d-lg-block">
+					<div class="breadcrumb-thumb">
+						<img src="{% static 'assets/img/thumbs/thumb-110.webp' %}" alt="thumb">
+					</div>
+				</div>
+			</div>
+		</div>
+	</section>
+	<!-- breadcrumb-section end -->
+
+    <!-- Gallery Section Start -->
+    <section class="gallery-section p-t-120 p-b-120 p-t-lg-80 p-b-lg-80">
+        <div class="container">
+            <!-- Gallery Navigation -->
+            <div class="row m-b-50">
+                <div class="col-12 text-center" data-aos="fade-up" data-aos-duration="1000">
+                    <ul class="custom-gallery-nav">
+                        <li><button class="active filter-btn e-primary-btn" data-filter="all">All</button></li>
+                        {% for category in categories %}
+                        <li><button class="filter-btn e-primary-btn" data-filter="cat-{{ category.id }}">{{ category.name }}</button></li>
+                        {% endfor %}
+                    </ul>
+                </div>
+            </div>
+
+            <!-- Gallery Grid -->
+            <div class="row custom-gallery-grid" data-aos="fade-up" data-aos-duration="1000" data-aos-delay="200">
+                {% for image in gallery_images %}
+                <div class="col-lg-4 col-md-6 m-b-30 gallery-item cat-{{ image.category.id }}">
+                    <div class="gallery-thumb-wrap">
+                        <a href="{{ image.image.url }}" data-fancybox="gallery" class="image-popup">
+                            <figure class="image-wrapper">
+                                <img src="{{ image.image.url }}" alt="{{ image.title|default:image.category.name }}" class="img-fluid">
+                                <div class="overlay">
+                                    <i class="fa-regular fa-expand"></i>
+                                </div>
+                            </figure>
+                        </a>
+                    </div>
+                </div>
+                {% empty %}
+                <div class="col-12 text-center">
+                    <p>No gallery images available yet.</p>
+                </div>
+                {% endfor %}
+            </div>
+        </div>
+    </section>
+    <!-- Gallery Section End -->
+     
+</main>
+
+<style>
+/* Custom Gallery Styling matching Domes aesthetics */
+.custom-gallery-nav {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 15px;
+}
+
+.custom-gallery-nav li {
+    display: inline-block;
+}
+
+.custom-gallery-nav .filter-btn {
+    border: none;
+    cursor: pointer;
+    font-size: 16px;
+    font-weight: 600;
+    padding: 10px 25px;
+    border-radius: 30px;
+    transition: all 0.3s ease;
+}
+
+.custom-gallery-nav .filter-btn.active {
+    background-color: var(--theme-color-3);
+    color: #fff;
+}
+
+.custom-gallery-nav .filter-btn:not(.active) {
+    background-color: transparent;
+    border: 1px solid #ddd;
+    color: #333;
+}
+
+.custom-gallery-nav .filter-btn:not(.active):hover {
+    background-color: var(--theme-color-3);
+    border-color: var(--theme-color-3);
+    color: #fff;
+}
+
+/* Image Hover Effects */
+.gallery-thumb-wrap {
+    position: relative;
+    overflow: hidden;
+    border-radius: 15px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
+}
+
+.gallery-thumb-wrap .image-wrapper {
+    margin: 0;
+    position: relative;
+    overflow: hidden;
+    padding-top: 75%; /* 4:3 Aspect Ratio */
+}
+
+.gallery-thumb-wrap .image-wrapper img {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.5s ease;
+}
+
+.gallery-thumb-wrap:hover img {
+    transform: scale(1.1);
+}
+
+.gallery-thumb-wrap .overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: var(--theme-color-3);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    opacity: 0;
+    transition: all 0.4s ease;
+}
+
+.gallery-thumb-wrap:hover .overlay {
+    opacity: 0.75;
+}
+
+.gallery-thumb-wrap .overlay i {
+    font-size: 30px;
+    color: #fff;
+    transform: translateY(20px);
+    transition: all 0.4s ease;
+}
+
+.gallery-thumb-wrap:hover .overlay i {
+    transform: translateY(0);
+}
+
+/* Gallery Filter Transition */
+.gallery-item {
+    transition: all 0.4s ease;
+}
+
+.gallery-item.hide {
+    display: none;
+}
+</style>
+
+<!-- Vendors Js -->
+<script src="{% static 'assets/vendor/jquery/jquery.min.js' %}"></script>
+<script src="{% static 'assets/vendor/popper/popper.min.js' %}"></script>
+<script src="{% static 'assets/vendor/bootstrap/bootstrap.min.js' %}"></script>
+<script src="{% static 'assets/vendor/swiper/swiper-bundle.min.js' %}"></script>
+<script src="{% static 'assets/vendor/aos/aos.js' %}"></script>
+<script src="{% static 'assets/vendor/fancybox/fancybox.umd.js' %}"></script>
+<script src="{% static 'assets/vendor/counter/purecounter.js' %}"></script>
+
+<!-- Custom Filtering Script -->
+<script>
+    document.addEventListener("DOMContentLoaded", function() {
+        const filterBtns = document.querySelectorAll('.filter-btn');
+        const galleryItems = document.querySelectorAll('.gallery-item');
+
+        filterBtns.forEach(btn => {
+            btn.addEventListener('click', function() {
+                // Update active class
+                filterBtns.forEach(b => b.classList.remove('active'));
+                this.classList.add('active');
+
+                // Filter logic
+                const filterValue = this.getAttribute('data-filter');
+
+                galleryItems.forEach(item => {
+                    if (filterValue === 'all' || item.classList.contains(filterValue)) {
+                        item.classList.remove('hide');
+                        // Optional: Add a slight fade-in animation by resetting opacity
+                        item.style.opacity = '0';
+                        setTimeout(() => { item.style.opacity = '1'; }, 50);
+                    } else {
+                        item.classList.add('hide');
+                    }
+                });
+            });
+        });
+    });
+</script>
+
+<!-- Main Js -->
+<script src="{% static 'assets/js/script.js' %}"></script>
+
+{% endblock %}

@@ -1147,8 +1147,8 @@
                         <a href="#">
                             <i class="icofont-ui-messaging"></i>
                             Enquiries
-                            {% if admin_unread_contact_count > 0 %}
-                            <span class="badge bg-danger ms-2">{{ admin_unread_contact_count }}</span>
+                            {% if admin_unread_enquiries_total > 0 %}
+                            <span class="badge bg-danger ms-2">{{ admin_unread_enquiries_total }}</span>
                             {% endif %}
                         </a>
                         <ul class="submenu">
@@ -1174,6 +1174,9 @@
                                 <a href="{% url 'admin_view_bookings' %}"
                                     class="{% if request.resolver_match.url_name == 'admin_view_bookings' %}active{% endif %}">
                                     Bookings
+                                    {% if admin_unread_booking_count > 0 %}
+                                    <span class="badge bg-danger ms-2">{{ admin_unread_booking_count }}</span>
+                                    {% endif %}
                                 </a>
                             </li>
                         </ul>

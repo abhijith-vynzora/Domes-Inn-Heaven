@@ -14,10 +14,12 @@ from .forms import BlogForm, ContactForm, TestimonialForm, ActivityForm, Camping
 from .models import Blog, Category, ContactMessage, GalleryImage, Testimonial, Activity, CampingPackage, Booking
 
 def home(request):
-    return render(request, 'frontend/index.html')
+    testimonials = Testimonial.objects.all().order_by("-created_at")[:5]
+    return render(request, 'frontend/index.html', {'testimonials': testimonials})
 
 def about(request):
-    return render(request, 'frontend/about.html')
+    testimonials = Testimonial.objects.all().order_by("-created_at")[:5]
+    return render(request, 'frontend/about.html', {'testimonials': testimonials})
 
 def services(request):
     return render(request, 'frontend/services.html')
@@ -25,11 +27,17 @@ def services(request):
 def services_details(request):
     return render(request, 'frontend/services-details.html')
 
-def project(request):
-    return render(request, 'frontend/project.html')
+def activities(request):
+    activities_qs = Activity.objects.all().order_by('-created_at')
+    paginator = Paginator(activities_qs, 6) # Show 6 activities per page
+    page_number = request.GET.get("page")
+    activities_list = paginator.get_page(page_number)
+    testimonials = Testimonial.objects.all().order_by("-created_at")[:5]
+    return render(request, 'frontend/activities.html', {'activities': activities_list, 'testimonials': testimonials})
 
-def project_details(request):
-    return render(request, 'frontend/project-details.html')
+def activity_details(request, slug):
+    activity = get_object_or_404(Activity, slug=slug)
+    return render(request, 'frontend/activity-details.html', {'activity': activity})
 
 def blog_grid(request):
     blogs_qs = Blog.objects.all().order_by("-created_at")
@@ -41,6 +49,14 @@ def blog_grid(request):
 
 def blog_standard(request):
     return render(request, 'frontend/blog-standard.html')
+
+def gallery(request):
+    categories = Category.objects.all()
+    gallery_images = GalleryImage.objects.select_related('category').all().order_by('-uploaded_at')
+    return render(request, 'frontend/gallery.html', {
+        'categories': categories,
+        'gallery_images': gallery_images
+    })
 
 def blog_details(request, slug=None):
     if slug:
@@ -441,189 +457,20 @@ def delete_contact(request, pk):
 def booking(request):
     packages = CampingPackage.objects.all()
     form = BookingForm(request.POST or None)
-    whatsapp_redirect_url = request.session.pop("booking_whatsapp_redirect_url", None)
     if request.method == "POST":
         if form.is_valid():
-            booking_obj = form.save()
-            
-            # Email sending logic
-            try:
-                subject = f"New Booking Inquiry - {booking_obj.name}"
-                
-                html_message = f"""
-                
-                <!DOCTYPE html>
-                <html>
-                <head><meta charset="UTF-8"></head>
-                <body style="margin:0; padding:0; background-color:#F0FDF4; font-family: Arial, sans-serif;">
-                    <table width="100%" cellpadding="0" cellspacing="0" style="padding:40px 20px;">
-                        <tr>
-                            <td align="center">
-                                <table width="620" cellpadding="0" cellspacing="0" style="background:#ffffff; border-radius:16px; overflow:hidden; box-shadow:0 4px 24px rgba(15,54,32,0.10);">
-
-                                    <!-- Header -->
-                                    <tr>
-                                        <td style="background: linear-gradient(135deg, #0F3620 0%, #1a5c36 60%, #3A9612 100%); padding:40px 30px; text-align:center;">
-                                            <p style="margin:0 0 8px; color:#a7f3a0; font-size:11px; letter-spacing:3px; text-transform:uppercase; font-weight:600;">Koodaram by Nature Farm</p>
-                                            <h1 style="margin:0 0 6px; color:#ffffff; font-size:24px; font-weight:700; letter-spacing:0.5px;">New Booking Inquiry</h1>
-                                            <p style="margin:0; color:#bbf7d0; font-size:13px;">A guest has submitted a booking request via the website</p>
-                                        </td>
-                                    </tr>
-
-                                    <!-- Accent bar -->
-                                    <tr>
-                                        <td style="height:4px; background: linear-gradient(90deg, #3A9612, #16a34a, #0F3620);"></td>
-                                    </tr>
-
-                                    <!-- Body -->
-                                    <tr>
-                                        <td style="padding:36px 30px 28px;">
-                                            <p style="color:#2D5A3D; font-size:14px; margin:0 0 28px; line-height:1.7;">
-                                                Please find below the details of a new booking inquiry submitted through the Koodaram website. Kindly review and follow up with the guest at your earliest convenience.
-                                            </p>
-
-                                            <!-- Details Table -->
-                                            <table width="100%" cellpadding="0" cellspacing="0" style="border-radius:10px; overflow:hidden; border:1px solid #dcfce7;">
-
-                                                <tr>
-                                                    <td style="padding:13px 18px; background:#f0fdf4; width:38%; vertical-align:middle;">
-                                                        <span style="font-size:11px; font-weight:700; color:#0F3620; text-transform:uppercase; letter-spacing:0.8px;">Guest Name</span>
-                                                    </td>
-                                                    <td style="padding:13px 18px; background:#ffffff; border-left:1px solid #dcfce7; vertical-align:middle;">
-                                                        <span style="font-size:14px; color:#1a3a26; font-weight:600;">{booking_obj.name}</span>
-                                                    </td>
-                                                </tr>
-
-                                                <tr><td colspan="2" style="height:1px; background:#dcfce7;"></td></tr>
-
-                                                <tr>
-                                                    <td style="padding:13px 18px; background:#f0fdf4; vertical-align:middle;">
-                                                        <span style="font-size:11px; font-weight:700; color:#0F3620; text-transform:uppercase; letter-spacing:0.8px;">Phone</span>
-                                                    </td>
-                                                    <td style="padding:13px 18px; background:#ffffff; border-left:1px solid #dcfce7; vertical-align:middle;">
-                                                        <span style="font-size:14px; color:#1a3a26;">{booking_obj.phone}</span>
-                                                    </td>
-                                                </tr>
-
-                                                <tr><td colspan="2" style="height:1px; background:#dcfce7;"></td></tr>
-
-                                                <tr>
-                                                    <td style="padding:13px 18px; background:#f0fdf4; vertical-align:middle;">
-                                                        <span style="font-size:11px; font-weight:700; color:#0F3620; text-transform:uppercase; letter-spacing:0.8px;">Email</span>
-                                                    </td>
-                                                    <td style="padding:13px 18px; background:#ffffff; border-left:1px solid #dcfce7; vertical-align:middle;">
-                                                        <span style="font-size:14px; color:#1a3a26;">{booking_obj.email}</span>
-                                                    </td>
-                                                </tr>
-
-                                                <tr><td colspan="2" style="height:1px; background:#dcfce7;"></td></tr>
-
-                                                <tr>
-                                                    <td style="padding:13px 18px; background:#dcfce7; vertical-align:middle;">
-                                                        <span style="font-size:11px; font-weight:700; color:#0F3620; text-transform:uppercase; letter-spacing:0.8px;">Check-in / Check-out</span>
-                                                    </td>
-                                                    <td style="padding:13px 18px; background:#f0fdf4; border-left:1px solid #bbf7d0; vertical-align:middle;">
-                                                        <span style="font-size:14px; color:#0F3620; font-weight:700;">{booking_obj.check_in}</span>
-                                                        <span style="color:#3A9612; font-weight:600; margin:0 10px;">&#8594;</span>
-                                                        <span style="font-size:14px; color:#0F3620; font-weight:700;">{booking_obj.check_out}</span>
-                                                    </td>
-                                                </tr>
-
-                                                <tr><td colspan="2" style="height:1px; background:#dcfce7;"></td></tr>
-
-                                                <tr>
-                                                    <td style="padding:13px 18px; background:#f0fdf4; vertical-align:middle;">
-                                                        <span style="font-size:11px; font-weight:700; color:#0F3620; text-transform:uppercase; letter-spacing:0.8px;">Package</span>
-                                                    </td>
-                                                    <td style="padding:13px 18px; background:#ffffff; border-left:1px solid #dcfce7; vertical-align:middle;">
-                                                        <span style="display:inline-block; background:#0F3620; color:#ffffff; font-size:12px; font-weight:600; padding:4px 14px; border-radius:20px;">
-                                                            {booking_obj.camping_package.name if booking_obj.camping_package else 'No specific package'}
-                                                        </span>
-                                                    </td>
-                                                </tr>
-
-                                                <tr><td colspan="2" style="height:1px; background:#dcfce7;"></td></tr>
-
-                                                <tr>
-                                                    <td style="padding:13px 18px; background:#f0fdf4; vertical-align:middle;">
-                                                        <span style="font-size:11px; font-weight:700; color:#0F3620; text-transform:uppercase; letter-spacing:0.8px;">Number of Guests</span>
-                                                    </td>
-                                                    <td style="padding:13px 18px; background:#ffffff; border-left:1px solid #dcfce7; vertical-align:middle;">
-                                                        <span style="font-size:20px; font-weight:700; color:#3A9612;">{booking_obj.guests}</span>
-                                                        <span style="font-size:13px; color:#2D5A3D; margin-left:5px;">person(s)</span>
-                                                    </td>
-                                                </tr>
-
-                                            </table>
-
-                                            <!-- Message Box -->
-                                            <table width="100%" cellpadding="0" cellspacing="0" style="margin-top:24px;">
-                                                <tr>
-                                                    <td style="background:#f0fdf4; border-left:4px solid #3A9612; border-radius:0 8px 8px 0; padding:16px 20px;">
-                                                        <p style="margin:0 0 8px; font-size:11px; font-weight:700; color:#0F3620; text-transform:uppercase; letter-spacing:0.8px;">Message / Additional Request</p>
-                                                        <p style="margin:0; font-size:14px; color:#2D5A3D; line-height:1.7;">{booking_obj.message or 'No additional message provided.'}</p>
-                                                    </td>
-                                                </tr>
-                                            </table>
-
-                                        </td>
-                                    </tr>
-
-                                    <!-- Footer -->
-                                    <tr>
-                                        <td style="background:#0F3620; padding:22px 30px; text-align:center;">
-                                            <p style="margin:0 0 4px; font-size:13px; color:#86efac; font-weight:600;">Koodaram by Nature Farm</p>
-                                            <p style="margin:0; font-size:11px; color:#4ade80;">&copy; {timezone.now().year} &nbsp;·&nbsp; Booking Management System</p>
-                                        </td>
-                                    </tr>
-
-                                </table>
-                            </td>
-                        </tr>
-                    </table>
-                </body>
-                </html>
-                """
-                
-                plain_message = strip_tags(html_message)
-                email = EmailMultiAlternatives(
-                    subject,
-                    plain_message,
-                    settings.EMAIL_HOST_USER,
-                    [settings.EMAIL_HOST_USER]
-                )
-                email.attach_alternative(html_message, "text/html")
-                email.send(fail_silently=False)
-                
-            except Exception as e:
-                print(f"Error sending email: {e}")
-                # We still redirect successfully since the booking was saved.
-
-            package_name = booking_obj.camping_package.name if booking_obj.camping_package else "No specific package"
-            message_text = (
-                "New Booking Request - Koodaram\n\n"
-                f"Name: {booking_obj.name}\n"
-                f"Phone: {booking_obj.phone}\n"
-                f"Email: {booking_obj.email}\n"
-                f"Check-in: {booking_obj.check_in}\n"
-                f"Check-out: {booking_obj.check_out}\n"
-                f"Package: {package_name}\n"
-                f"Guests: {booking_obj.guests}\n"
-                f"Message: {booking_obj.message or 'No additional message'}"
-            )
-            whatsapp_url = f"https://wa.me/919995497856?text={quote(message_text)}"
-            request.session["booking_whatsapp_redirect_url"] = whatsapp_url
+            form.save()
             messages.success(request, "Booking request sent successfully. We will contact you soon.")
             return redirect("booking")
         messages.error(request, "Please check the form and try again.")
     return render(request, "frontend/booking.html", {
         "form": form,
         "packages": packages,
-        "whatsapp_redirect_url": whatsapp_redirect_url,
     })
 
 @login_required(login_url="admin_login")
 def admin_view_bookings(request):
+    Booking.objects.filter(is_read=False).update(is_read=True)
     bookings = Booking.objects.all().order_by("-created_at")
     paginator = Paginator(bookings, 10)
     page_number = request.GET.get("page")

@@ -33,6 +33,79 @@
         object-fit: cover !important; /* Ensures it looks good in any orientation */
     }
  </style>
+{% if request.path == '/' %}
+<header class="header-section-1">
+    <div class="top-bar d-none d-md-block">
+        <div class="container-fluid">
+            <div class="row">
+                <div class="col-xl-12">
+                    <div class="top-bar-content text-center">
+                        <div class="text-wrap">
+                            <img src="{% static 'assets/img/icons/calendar-time.svg' %}" alt="icon">
+                            <span>Join Our Event (28 Nov, 2024) New Market, California.</span>
+                        </div>
+                        <a href="{% url 'donations' %}" class="e-primary-btn is-hover-white top-btn">Donate Now</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+	<div class="header-bottom-layout-2">
+		<div class="header-left">
+			<div class="logo-wrap-2">
+				<a href="{% url 'home' %}">
+					<img src="{% static 'assets/img/logo/logo-white.svg' %}" alt="logo"/>
+				</a>
+			</div>
+		</div>
+		<div class="w-100 d-none d-xl-block">
+			<div class="header-middle">
+				<nav class="main-menu-2 d-none d-xl-block">
+					<ul>
+                        <li><a href="{% url 'home' %}">Home</a></li>
+                        <li><a href="{% url 'about' %}">Who we are?</a></li>
+                        <li><a href="{% url 'services' %}">Domes</a></li>
+                        <li><a href="{% url 'activities' %}">Activities</a></li>
+                        <li><a href="{% url 'blog_grid' %}">Blog</a></li>
+                        <li><a href="{% url 'gallery' %}">Gallery</a></li>
+                        <li><a href="{% url 'contact' %}">Contact Us</a></li>
+					</ul>
+				</nav>
+				<div class="header-info-wrap">
+					<div class="header-info-3 d-none d-xl-flex">
+						<a href="tel:+16295550129" class="header-info-icon">
+							<i class="fa-regular fa-phone-volume"></i>
+						</a>
+					</div>
+					<div class="header-btn-wrap d-none d-xl-flex">
+						<a href="{% url 'booking' %}" class="e-primary-btn has-icon">
+							Book Now
+							<span class="icon-wrap">
+								<span class="icon">
+									<i class="fa-regular fa-arrow-right"></i>
+									<i class="fa-regular fa-arrow-right"></i>
+								</span>
+							</span>
+						</a>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="header-right">
+			<div class="header-bar-3 d-none d-xl-flex" data-toggle="sidebar">
+				<div class="bar bar-1"></div>
+				<div class="bar bar-2"></div>
+				<div class="bar bar-3"></div>
+			</div>
+			<div class="header-bar-3 d-xl-none" data-toggle="menubar">
+				<div class="bar bar-1"></div>
+				<div class="bar bar-2"></div>
+				<div class="bar bar-3"></div>
+			</div>
+		</div>
+	</div>
+</header>
+{% else %}
 <header class="header-section">
     <div class="top-bar d-none d-md-block">
         <div class="container-fluid">
@@ -64,26 +137,23 @@
                                 <ul>
                                     <li><a href="{% url 'home' %}">Home</a></li>
                                     <li><a href="{% url 'about' %}">Who we are?</a></li>
-                                    <li><a href="{% url 'services' %}">Services</a></li>
-                                    {% comment %} <li><a href="{% url 'project' %}">Projects</a></li> {% endcomment %}
+                                    <li><a href="{% url 'services' %}">Domes</a></li>
+                                    <li><a href="{% url 'activities' %}">Activities</a></li>
                                     <li><a href="{% url 'blog_grid' %}">Blog</a></li>
+                                    <li><a href="{% url 'gallery' %}">Gallery</a></li>
                                     <li><a href="{% url 'contact' %}">Contact Us</a></li>
                                 </ul>
                             </nav>
                         </div>
                         <div class="header-right">
                             <div class="header-info d-none d-xl-flex">
-                                <div class="header-info-icon">
+                                <a href="tel:+16295550129" class="header-info-icon">
                                     <i class="fa-regular fa-phone-volume"></i>
-                                </div>
-                                <div class="header-info-content">
-                                    <span>Contact Us!</span>
-                                    <p><a href="tel:+16295550129">+1 (629) 555-0129</a></p>
-                                </div>
+                                </a>
                             </div>
                             <div class="header-btn-wrap d-none d-xl-flex">
-                                <a href="{% url 'services' %}" class="e-primary-btn has-icon">
-                                    Explore More
+                                <a href="{% url 'booking' %}" class="e-primary-btn has-icon">
+                                    Book Now
                                     <span class="icon-wrap">
                                         <span class="icon"><i class="fa-regular fa-arrow-right"></i><i class="fa-regular fa-arrow-right"></i></span>
                                     </span>
@@ -106,6 +176,7 @@
         </div>
     </div>
 </header>
+{% endif %}
 <!-- header-section end -->
 
 <!-- off-canvas-sidebar start -->
@@ -152,7 +223,7 @@
                 <li><a href="{% url 'home' %}">Home</a></li>
                 <li><a href="{% url 'about' %}">Who we are?</a></li>
                 <li><a href="{% url 'services' %}">Services</a></li>
-                <li><a href="{% url 'project' %}">Projects</a></li>
+                <li><a href="{% url 'activities' %}">Activities</a></li>
                 <li><a href="{% url 'blog_grid' %}">Blog</a></li>
                 <li><a href="{% url 'contact' %}">Contact Us</a></li>
             </ul>
@@ -213,9 +284,9 @@
                         <li><a href="{% url 'camping_details' %}">Tree Plantation</a></li>
                         <li><a href="{% url 'camping_donation' %}">Forest Cleaning</a></li>
                         <li><a href="{% url 'services_details' %}">Plastic Recycling</a></li>
-                        <li><a href="{% url 'project' %}">Natural Power</a></li>
-                        <li><a href="{% url 'project' %}">Renewable Energy</a></li>
-                        <li><a href="{% url 'project_details' %}">Water Refine</a></li>
+                        <li><a href="{% url 'activities' %}">Natural Power</a></li>
+                        <li><a href="{% url 'activities' %}">Renewable Energy</a></li>
+                        <li><a href="{% url 'activities' %}">Water Refine</a></li>
                     </ul>
                 </div>
             </div>
@@ -258,5 +329,90 @@
 </footer>
 <!-- footer-section end -->
 {% endblock %}
+<style>
+    .global-toast {
+        position: fixed;
+        top: 20px;
+        right: 20px;
+        min-width: 300px;
+        max-width: 500px;
+        background: #fff;
+        border-radius: 8px;
+        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+        padding: 16px 20px;
+        display: flex;
+        align-items: center;
+        z-index: 99999;
+        transform: translateX(120%);
+        opacity: 0;
+        transition: all 0.3s ease;
+        border-left: 4px solid var(--theme-color);
+    }
+    .global-toast.show {
+        transform: translateX(0);
+        opacity: 1;
+    }
+    .global-toast.success { border-left-color: var(--theme-color); }
+    .global-toast.error { border-left-color: var(--error-color); }
+    .global-toast.warning { border-left-color: var(--warning-color); }
+    .global-toast.info { border-left-color: var(--theme-color-3); }
+    .toast-content { display: flex; align-items: center; flex: 1; }
+    .toast-icon { font-size: 20px; margin-right: 12px; }
+    .global-toast.success .toast-icon { color: var(--theme-color); content: '✓'; }
+    .global-toast.error .toast-icon { color: var(--error-color); content: '⚠'; }
+    .global-toast.warning .toast-icon { color: var(--warning-color); content: '⚠'; }
+    .global-toast.info .toast-icon { color: var(--theme-color-3); content: 'ℹ'; }
+    .toast-message { font-size: 14px; color: #333; line-height: 1.4; }
+    .toast-progress {
+        position: absolute; bottom: 0; left: 0; height: 3px; width: 100%; background: rgba(0, 0, 0, 0.1);
+    }
+    .toast-progress:before {
+        content: ''; position: absolute; bottom: 0; left: 0; height: 100%; width: 100%;
+        background: currentColor; animation: toastProgress 5s linear forwards;
+    }
+    .global-toast.success .toast-progress:before { background: var(--theme-color); }
+    .global-toast.error .toast-progress:before { background: var(--error-color); }
+    .global-toast.warning .toast-progress:before { background: var(--warning-color); }
+    .global-toast.info .toast-progress:before { background: var(--theme-color-3); }
+    @keyframes toastProgress { 0% { width: 100%; } 100% { width: 0%; } }
+</style>
+
+<div id="global-toast" class="global-toast">
+    <div class="toast-content">
+        <i class="toast-icon"></i>
+        <span class="toast-message"></span>
+    </div>
+    <div class="toast-progress"></div>
+</div>
+
+<script>
+    function showGlobalToast(message, type = 'success') {
+        const toast = document.getElementById('global-toast');
+        const toastMessage = toast.querySelector('.toast-message');
+        const toastIcon = toast.querySelector('.toast-icon');
+        toastMessage.textContent = message;
+        toast.classList.remove('success', 'error', 'warning', 'info');
+        toast.classList.add(type);
+        switch (type) {
+            case 'success': toastIcon.className = 'toast-icon fas fa-check-circle'; break;
+            case 'error': toastIcon.className = 'toast-icon fas fa-times-circle'; break;
+            case 'warning': toastIcon.className = 'toast-icon fas fa-exclamation-triangle'; break;
+            case 'info': toastIcon.className = 'toast-icon fas fa-info-circle'; break;
+            default: toastIcon.className = 'toast-icon fas fa-info-circle';
+        }
+        toast.classList.add('show');
+        setTimeout(() => { toast.classList.remove('show'); }, 5000);
+    }
+    document.getElementById('global-toast').addEventListener('click', function () {
+        this.classList.remove('show');
+    });
+    document.addEventListener('DOMContentLoaded', function () {
+        {% if messages %}
+        {% for message in messages %}
+        showGlobalToast("{{ message }}", "{{ message.tags }}");
+        {% endfor %}
+        {% endif %}
+    });
+</script>
 </body>
 </html>

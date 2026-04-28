@@ -3,7 +3,7 @@ from __future__ import annotations
 from typing import Any
 
 from django.conf import settings
-from .models import CampingPackage, ContactMessage
+from .models import CampingPackage, ContactMessage, Booking
 
 
 def _star_parts(rating: float) -> list[str]:
@@ -35,7 +35,13 @@ def footer_packages(request) -> dict[str, Any]:
 
 
 def admin_unread_contacts(request) -> dict[str, Any]:
-    unread_count = 0
+    unread_contacts = 0
+    unread_bookings = 0
     if request.user.is_authenticated and request.user.is_staff:
-        unread_count = ContactMessage.objects.filter(is_read=False).count()
-    return {"admin_unread_contact_count": unread_count}
+        unread_contacts = ContactMessage.objects.filter(is_read=False).count()
+        unread_bookings = Booking.objects.filter(is_read=False).count()
+    return {
+        "admin_unread_contact_count": unread_contacts,
+        "admin_unread_booking_count": unread_bookings,
+        "admin_unread_enquiries_total": unread_contacts + unread_bookings
+    }

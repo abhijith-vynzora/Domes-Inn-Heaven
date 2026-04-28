@@ -5,7 +5,7 @@
 <!-- preloader start-->
 <div id="preloader">
 	<div class="preloader">
-		<img src="{% static 'assets/img/thumbs/preloader.gif' %}" alt="preloader">
+		<img src="{% static 'assets/img/thumbs/preloader_new.png' %}" alt="preloader">
 	</div>
 </div>
 <!-- preloader end  -->
@@ -20,11 +20,11 @@
 						<div class="breadcrumb-nav" data-aos="fade-up" data-aos-duration="1000" data-aos-delay="200">
 							<ul>
 								<li><a href="{% url 'home' %}">Home</a></li>
-								<li><a href="#">Become a Volunteer</a></li>
+								<li><a href="#">Book Your Stay</a></li>
 							</ul>
 						</div>
 						<div class="breadcrumb-title" data-aos="fade-up" data-aos-duration="1000" data-aos-delay="400">
-							<h2>Become a Volunteer</h2>
+							<h2>Book Your Stay</h2>
 						</div>
 						<div class="shape-1">
 							<img src="{% static 'assets/img/shapes/shape-1.webp' %}" alt="shape">
@@ -64,72 +64,85 @@
 				</div>
 				<div class="col-xl-6 px-xl-5">
 					<div class="volunteer-form-content" data-aos="fade-up" data-aos-delay="800" data-aos-duration="1000">
-						<h3>Introduce Yourself !</h3>
-						<p>Fill out the form and Feel free to say !!</p>
-						<form action="#">
+						<h3>Book Your Stay !</h3>
+						<p>Fill out the form below to reserve your dome or camping package.</p>
+						
+
+
+						<form action="{% url 'booking' %}" method="post">
+							{% csrf_token %}
+							{% if form.errors %}
+								<div class="alert alert-danger">
+									Please correct the errors below.
+									{{ form.non_field_errors }}
+								</div>
+							{% endif %}
 							<div class="row form-row">
 								<div class="col-xl-6 col-md-6">
 									<div class="input-wrap">
-										<input placeholder="Full Name" type="text">
+										<input placeholder="Full Name" type="text" name="name" value="{{ form.name.value|default:'' }}" required>
+										{{ form.name.errors }}
 									</div>
 								</div>
 								<div class="col-xl-6 col-md-6">
 									<div class="input-wrap">
-										<input placeholder="Phone Number" type="tel">
+										<input placeholder="Phone Number" type="tel" name="phone" value="{{ form.phone.value|default:'' }}" required>
+										{{ form.phone.errors }}
 									</div>
 								</div>
 							</div>
 							<div class="row form-row">
 								<div class="col-xl-6 col-md-6">
 									<div class="input-wrap">
-										<input placeholder="Email Address" type="email">
+										<input placeholder="Email Address" type="email" name="email" value="{{ form.email.value|default:'' }}" required>
+										{{ form.email.errors }}
 									</div>
 								</div>
 								<div class="col-xl-6 col-md-6">
 									<div class="input-wrap">
-										<input placeholder="Current Location" type="text">
+										<input placeholder="Number of Guests" type="number" name="guests" value="{{ form.guests.value|default:'' }}" required min="1">
+										{{ form.guests.errors }}
 									</div>
 								</div>
 							</div>
 							<div class="row form-row">
 								<div class="col-xl-6 col-md-6">
 									<div class="input-wrap">
-										<input placeholder="Date of Birth" type="text">
+										<input placeholder="Check-in Date" type="date" name="check_in" value="{{ form.check_in.value|default:'' }}" required style="font-weight: 400 !important; font-family: inherit;">
+										{{ form.check_in.errors }}
 									</div>
 								</div>
 								<div class="col-xl-6 col-md-6">
-									<div class="select-wrap">
-										<select id="" name="">
-											<option value="0">
-												Occupation
-											</option>
-											<option value="1">
-												Doctor
-											</option>
-											<option value="2">
-												Engineer
-											</option>
-											<option value="3">
-												Teacher
-											</option>
+									<div class="input-wrap">
+										<input placeholder="Check-out Date" type="date" name="check_out" value="{{ form.check_out.value|default:'' }}" required style="font-weight: 400 !important; font-family: inherit;">
+										{{ form.check_out.errors }}
+									</div>
+								</div>
+							</div>
+							<div class="row form-row">
+								<div class="col-xl-12">
+									<div class="select-wrap mb-4">
+										<select name="camping_package">
+											<option value="">Select Package (Optional)</option>
+											{% for pkg in packages %}
+												<option value="{{ pkg.id }}" {% if form.camping_package.value|stringformat:"s" == pkg.id|stringformat:"s" %}selected{% endif %}>{{ pkg.name }}</option>
+											{% endfor %}
 										</select>
 										<div class="select-icon">
 											<i class="fa-regular fa-angle-down"></i>
 										</div>
+										{{ form.camping_package.errors }}
 									</div>
 								</div>
 							</div>
 							<div class="row">
 								<div class="col-xl-12">
 									<div class="input-wrap">
-										<textarea placeholder="Say Something..."></textarea>
-									</div>
-									<div class="input-checkbox">
-										<input id="terms" type="checkbox">
-										<label for="terms"><span class="check-mark"></span> I Accept Terms & Conditions</label>
+										<textarea placeholder="Any special requests or messages?" name="message">{{ form.message.value|default:'' }}</textarea>
+										{{ form.message.errors }}
 									</div>
 									<div class="input-button">
-										<button class="e-primary-btn has-icon is-hover-white" type="submit">Submit Now
+										<button class="e-primary-btn has-icon is-hover-white" type="submit">Book Now
 											<span class="icon-wrap"><span class="icon"><i class="fa-regular fa-arrow-right"></i> <i class="fa-regular fa-arrow-right"></i></span></span>
 										</button>
 									</div>
@@ -144,29 +157,27 @@
 			<div class="row">
 				<div class="col-xl-12">
 					<div class="v-summary-content" data-aos="fade-up" data-aos-delay="200" data-aos-duration="1000">
-						<h4>Summary</h4>
+						<h4>Why Book With Us?</h4>
 						<div class="content">
-							<p>Ratione doloribus optio minus cum ab. Nostrum rerum minus sapiente eveniet fuga quos
-								tenetur Bicycle rights taxidermy knausgaard, 3 wolf moon schlitz <b>kombucha freegan ugh
-									ethical kogi Déjà</b> recherche de nouvelle.</p>
+							<p>Experience the perfect blend of nature and luxury at Domes Inn Heaven. Whether you are looking for an adventurous camping package or a peaceful stay in our luxury domes, we ensure a memorable experience.</p>
 							<div class="info-wrapper">
 								<div class="info">
 									<div class="icon">
 										<i class="fa-solid fa-check"></i>
 									</div>
-									<p>Ecology is the study of the relationship between living</p>
+									<p>Immersive nature experience with modern amenities</p>
 								</div>
 								<div class="info">
 									<div class="icon">
 										<i class="fa-solid fa-check"></i>
 									</div>
-									<p>In the long run, solar power is much more economical</p>
+									<p>Variety of camping packages tailored to your needs</p>
 								</div>
 								<div class="info">
 									<div class="icon">
 										<i class="fa-solid fa-check"></i>
 									</div>
-									<p>Focus on your important tasks and orders</p>
+									<p>Dedicated staff and 24/7 support during your stay</p>
 								</div>
 							</div>
 						</div>

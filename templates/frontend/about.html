@@ -5,7 +5,7 @@
 <!-- preloader start-->
 <div id="preloader">
 	<div class="preloader">
-		<img src="{% static 'assets/img/thumbs/preloader.gif' %}" alt="preloader">
+		<img src="{% static 'assets/img/thumbs/preloader_new.png' %}" alt="preloader">
 	</div>
 </div>
 <!-- preloader end  -->
@@ -118,8 +118,8 @@
 							</div>
 							<div class="annual-donation-wrap">
 								<div class="blog-btn">
-									<a href="{% url 'project' %}" class="e-primary-btn has-icon">
-										Explore More
+									<a href="{% url 'booking' %}" class="e-primary-btn has-icon">
+										Book Now
 										<span class="icon-wrap">
                                             <span class="icon"><i class="fa-regular fa-arrow-right"></i><i class="fa-regular fa-arrow-right"></i></span>
                                         </span>
@@ -235,7 +235,7 @@
 											</p>
 										</div>
 										<div class="annual-donation-wrap">
-											<a href="{% url 'project' %}" class="e-primary-btn has-icon">
+											<a href="{% url 'booking' %}" class="e-primary-btn has-icon">
 												See Our Achievement
 												<span class="icon-wrap">
                                                     <span class="icon"><i class="fa-regular fa-arrow-right"></i><i class="fa-regular fa-arrow-right"></i></span>
@@ -261,7 +261,7 @@
 											</p>
 										</div>
 										<div class="annual-donation-wrap">
-											<a href="{% url 'project' %}" class="e-primary-btn has-icon">
+											<a href="{% url 'booking' %}" class="e-primary-btn has-icon">
 												See Our Achievement
 												<span class="icon-wrap"><span class="icon"><i class="fa-regular fa-arrow-right"></i><i class="fa-regular fa-arrow-right"></i></span>
                                                 </span>
@@ -286,7 +286,7 @@
 											</p>
 										</div>
 										<div class="annual-donation-wrap">
-											<a href="{% url 'project' %}" class="e-primary-btn has-icon">
+											<a href="{% url 'booking' %}" class="e-primary-btn has-icon">
 												See Our Achievement
 												<span class="icon-wrap">
 													<span class="icon"><i class="fa-regular fa-arrow-right"></i><i class="fa-regular fa-arrow-right"></i></span>
@@ -312,7 +312,7 @@
 											</p>
 										</div>
 										<div class="annual-donation-wrap">
-											<a href="{% url 'project' %}" class="e-primary-btn has-icon">
+											<a href="{% url 'booking' %}" class="e-primary-btn has-icon">
 												See Our Achievement
 												<span class="icon-wrap">
 													<span class="icon"><i class="fa-regular fa-arrow-right"></i><i class="fa-regular fa-arrow-right"></i></span>
@@ -338,7 +338,7 @@
 											</p>
 										</div>
 										<div class="annual-donation-wrap">
-											<a href="{% url 'project' %}" class="e-primary-btn has-icon">
+											<a href="{% url 'booking' %}" class="e-primary-btn has-icon">
 												See Our Achievement
 												<span class="icon-wrap">
 													<span class="icon"><i class="fa-regular fa-arrow-right"></i><i class="fa-regular fa-arrow-right"></i></span>
@@ -549,126 +549,34 @@
 					<div class="testimonial-slider-active" data-aos="fade-up" data-aos-duration="1000" data-aos-delay="400">
 						<div class="swiper">
 							<div class="swiper-wrapper">
+								{% for testimonial in testimonials %}
 								<div class="swiper-slide">
 									<div class="testimonial-card">
 										<div class="thumb">
-											<img src="{% static 'assets/img/thumbs/thumb-10.webp' %}" alt="thumb-10"/>
-											<a href="https://www.youtube.com/watch?v=fLeJJPxua3E&ab_channel=Motiversity" data-fancybox class="video-play-btn">Play</a>
+											{% if testimonial.image %}
+											<img alt="{{ testimonial.name }}" src="{{ testimonial.image.url }}">
+											{% else %}
+											<img alt="{{ testimonial.name }}" src="{% static 'assets/img/thumbs/thumb-10.webp' %}">
+											{% endif %}
 										</div>
 										<div class="card-content">
 											<div class="rating">
-												<p>Rating</p>
-												<i class="fa-solid fa-star-sharp"></i>
-												<span>5.0</span>
+												<p>Rating</p><i class="fa-solid fa-star-sharp"></i> <span>5.0</span>
 											</div>
 											<div class="review">
-												<p>
-													I was very impressed — they provided excellent advice and guidance.
-													advice and guidance on energy-related for matters.
-													Understand the advantages hiring professionals to
-													design and maintain your garden. 🙋
-												</p>
+												<p>{{ testimonial.review | safe}}</p>
 											</div>
 											<div class="author-details">
-												<h5>
-													Penelope Miller
-													<span> (Arjun) </span>
-												</h5>
-												<h6>Sr. Volunteer</h6>
+												<h5>{{ testimonial.name }}</h5>
 											</div>
 										</div>
 									</div>
 								</div>
-								<div class="swiper-slide">
-									<div class="testimonial-card">
-										<div class="thumb">
-											<img src="{% static 'assets/img/thumbs/thumb-10.2.webp' %}" alt="thumb-10"/>
-											<a href="https://www.youtube.com/watch?v=fLeJJPxua3E&ab_channel=Motiversity" data-fancybox class="video-play-btn">Play</a>
-										</div>
-										<div class="card-content">
-											<div class="rating">
-												<p>Rating</p>
-												<i class="fa-solid fa-star-sharp"></i>
-												<span>5.0</span>
-											</div>
-											<div class="review">
-												<p>
-													I was very impressed — they provided excellent advice and guidance.
-													advice and guidance on energy-related for matters.
-													Understand the advantages hiring professionals to
-													design and maintain your garden. 🙋
-												</p>
-											</div>
-											<div class="author-details">
-												<h5>
-													Penelope Miller
-													<span> (Arjun) </span>
-												</h5>
-												<h6>Sr. Volunteer</h6>
-											</div>
-										</div>
-									</div>
+								{% empty %}
+								<div class="col-12 text-center">
+									<p>No testimonials yet.</p>
 								</div>
-								<div class="swiper-slide">
-									<div class="testimonial-card">
-										<div class="thumb">
-											<img src="{% static 'assets/img/thumbs/thumb-10.3.webp' %}" alt="thumb-10"/>
-											<a href="https://www.youtube.com/watch?v=fLeJJPxua3E&ab_channel=Motiversity" data-fancybox class="video-play-btn">Play</a>
-										</div>
-										<div class="card-content">
-											<div class="rating">
-												<p>Rating</p>
-												<i class="fa-solid fa-star-sharp"></i>
-												<span>5.0</span>
-											</div>
-											<div class="review">
-												<p>
-													I was very impressed — they provided excellent advice and guidance.
-													advice and guidance on energy-related for matters.
-													Understand the advantages hiring professionals to
-													design and maintain your garden. 🙋
-												</p>
-											</div>
-											<div class="author-details">
-												<h5>
-													Penelope Miller
-													<span> (Arjun) </span>
-												</h5>
-												<h6>Sr. Volunteer</h6>
-											</div>
-										</div>
-									</div>
-								</div>
-								<div class="swiper-slide">
-									<div class="testimonial-card">
-										<div class="thumb">
-											<img src="{% static 'assets/img/thumbs/thumb-10.2.webp' %}" alt="thumb-10"/>
-											<a href="https://www.youtube.com/watch?v=fLeJJPxua3E&ab_channel=Motiversity" data-fancybox class="video-play-btn">Play</a>
-										</div>
-										<div class="card-content">
-											<div class="rating">
-												<p>Rating</p>
-												<i class="fa-solid fa-star-sharp"></i>
-												<span>5.0</span>
-											</div>
-											<div class="review">
-												<p>
-													I was very impressed — they provided excellent advice and guidance.
-													advice and guidance on energy-related for matters.
-													Understand the advantages hiring professionals to
-													design and maintain your garden. 🙋
-												</p>
-											</div>
-											<div class="author-details">
-												<h5>
-													Penelope Miller
-													<span> (Arjun) </span>
-												</h5>
-												<h6>Sr. Volunteer</h6>
-											</div>
-										</div>
-									</div>
-								</div>
+								{% endfor %}
 							</div>
 						</div>
 					</div>

@@ -12,8 +12,10 @@ urlpatterns = [
     path('services/<slug:slug>/', views.service_single, name='service_single'),
     path('services-details/', views.services_details, name='services_details'),
 
-    path('project/', views.project, name='project'),
-    path('project-details/', views.project_details, name='project_details'),
+    path('activities/', views.activities, name='activities'),
+    path('activities/<slug:slug>/', views.activity_details, name='activity_details'),
+    
+    path('gallery/', views.gallery, name='gallery'),
 
     path('blog-grid/', views.blog_grid, name='blog_grid'),
     path('blog-standard/', views.blog_standard, name='blog_standard'),

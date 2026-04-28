@@ -5,7 +5,7 @@
 <!-- preloader start-->
 <div id="preloader">
 	<div class="preloader">
-		<img src="{% static 'assets/img/thumbs/preloader.gif' %}" alt="preloader">
+		<img src="{% static 'assets/img/thumbs/preloader_new.png' %}" alt="preloader">
 	</div>
 </div>
 <!-- preloader end  -->
@@ -162,13 +162,7 @@
 								</div>
 							</div>
 						</form>
-						{% if messages %}
-							{% for message in messages %}
-								<p class="form-message {% if message.tags %}{{ message.tags }}{% endif %}">{{ message }}</p>
-							{% endfor %}
-						{% else %}
-							<p class="form-message"></p>
-						{% endif %}
+
 					</div>
 				</div>
 			</div>

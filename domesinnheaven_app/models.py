@@ -179,6 +179,7 @@ class Booking(models.Model):
     camping_package = models.ForeignKey(CampingPackage, on_delete=models.SET_NULL, null=True, blank=True)
     guests = models.IntegerField()
     message = models.TextField(blank=True)
+    is_read = models.BooleanField(default=False)
     created_at = models.DateTimeField(auto_now_add=True)
 
     def __str__(self):

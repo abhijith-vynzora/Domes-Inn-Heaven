@@ -5,7 +5,7 @@
 <!-- preloader start-->
 <div id="preloader">
 	<div class="preloader">
-		<img src="{% static 'assets/img/thumbs/preloader.gif' %}" alt="preloader">
+		<img src="{% static 'assets/img/thumbs/preloader_new.png' %}" alt="preloader">
 	</div>
 </div>
 <!-- preloader end  -->
@@ -191,7 +191,7 @@
 							</div>
 							<div class="content">
 								<h5>{{ package.name }}</h5>
-								<p>{{ package.description|truncatewords:14 }}</p>
+								<p>{{ package.description|truncatewords:14|safe }}</p>
 								<div class="join-us">
 									<a class="e-primary-btn has-icon is-hover-white" href="{% url 'service_single' package.slug %}">Read More <span class="icon-wrap"><span class="icon"><i class="fa-regular fa-arrow-right"></i> <i class="fa-regular fa-arrow-right"></i></span></span></a>
 								</div>
