@@ -41,3 +41,5 @@ htmlcov/
 .idea/
 
 static/*.mp4
+
+index_v2.html
