@@ -13,7 +13,7 @@ ENV/
 .DS_Store
 
 # Database
-db.sqlite3
+
 
 # User uploads
 media/

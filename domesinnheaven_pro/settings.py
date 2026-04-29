@@ -42,6 +42,8 @@ STORAGES = {
     },
 }
 
+WHITENOISE_MANIFEST_STRICT = False
+
 ROOT_URLCONF = 'domesinnheaven_pro.urls'
 
 # TEMPLATES
