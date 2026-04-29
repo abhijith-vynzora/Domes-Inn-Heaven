@@ -47,7 +47,7 @@
 			<div class="row justify-content-center text-center m-b-50 m-b-xs-40">
 				<div class="col-xl-6">
 					<div class="common-subtitle" data-aos="fade-up" data-aos-delay="600" data-aos-duration="1000">
-						<img alt="icon-1" src="{% static 'assets/img/icons/icon-2.svg' %}"> <span>What We Do</span>
+						<!-- <img alt="icon-1" src="{% static 'assets/img/icons/icon-2.svg' %}"> --> <span>What We Do</span>
 					</div>
 					<div class="common-title m-b-0" data-aos="fade-up" data-aos-delay="800" data-aos-duration="1000">
 						<h2>We Offer Different Services For Helped You</h2>
@@ -171,7 +171,7 @@
 			<div class="row justify-content-center text-center m-b-50 m-b-xs-40">
 				<div class="col-xl-6">
 					<div class="common-subtitle" data-aos="fade-up" data-aos-delay="600" data-aos-duration="1000">
-						<img alt="icon-1" src="{% static 'assets/img/icons/icon-2.svg' %}"> <span>What We Do</span>
+						<!-- <img alt="icon-1" src="{% static 'assets/img/icons/icon-2.svg' %}"> --> <span>What We Do</span>
 					</div>
 					<div class="common-title m-b-0" data-aos="fade-up" data-aos-delay="800" data-aos-duration="1000">
 						<h2>We Offer Different Services For Helped You</h2>
@@ -191,7 +191,7 @@
 							</div>
 							<div class="content">
 								<h5>{{ package.name }}</h5>
-								<p>{{ package.description|truncatewords:14|safe }}</p>
+								<p>{{ package.description|truncatewords_html:14|safe }}</p>
 								<div class="join-us">
 									<a class="e-primary-btn has-icon is-hover-white" href="{% url 'service_single' package.slug %}">Read More <span class="icon-wrap"><span class="icon"><i class="fa-regular fa-arrow-right"></i> <i class="fa-regular fa-arrow-right"></i></span></span></a>
 								</div>
@@ -219,7 +219,7 @@
 					<div class="row justify-content-center text-center m-b-50 m-b-xs-40">
 						<div class="col-xl-6">
 							<div class="common-subtitle" data-aos="fade-up" data-aos-delay="200" data-aos-duration="1000">
-								<img alt="icon-1" src="{% static 'assets/img/icons/icon-2.svg' %}"> <span>Work Process</span>
+								<!-- <img alt="icon-1" src="{% static 'assets/img/icons/icon-2.svg' %}"> --> <span>Work Process</span>
 							</div>
 							<div class="common-title m-b-0" data-aos="fade-up" data-aos-delay="400" data-aos-duration="1000">
 								<h2>How To Work With Us</h2>
@@ -333,7 +333,7 @@
 			<div class="row faq">
 				<div class="col-xl-5" data-aos="fade-up" data-aos-delay="200" data-aos-duration="1000">
 					<div class="common-subtitle">
-						<img alt="icon-2" src="{% static 'assets/img/icons/icon-2.svg' %}"> <span>Question &amp; Answer</span>
+						<!-- <img alt="icon-2" src="{% static 'assets/img/icons/icon-2.svg' %}"> --> <span>Question &amp; Answer</span>
 					</div>
 					<div class="common-title text-start">
 						<h2>Frequently Asked Question <span>?</span></h2>
