@@ -12,6 +12,7 @@
 
 <main>
 	<!-- hero-section start -->
+    {% comment %}
 	<section class="hero-slider-active-1">
 		<div class="swiper">
 			<div class="swiper-wrapper">
@@ -151,6 +152,60 @@
 			<div class="text">Join Social:</div>
 		</div>
 	</section>
+    {% endcomment %}
+
+    <section class="hero-slider-active-1 hero-video-section" style="position: relative; overflow: hidden; height: 100vh; min-height: 700px; display: flex; align-items: center;">
+        <video autoplay muted loop playsinline id="hero-video" style="position: absolute; top: 50%; left: 50%; min-width: 100%; min-height: 100%; width: auto; height: auto; z-index: -2; transform: translate(-50%, -50%); object-fit: cover;">
+            <source src="{% static 'assets/img/new/video.mp4' %}" type="video/mp4">
+        </video>
+        <div class="overlay" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0,0,0,0.4); z-index: -1;"></div>
+        
+        <div class="container" style="position: relative; z-index: 1;">
+            <div class="row">
+                <div class="col-xl-12">
+                    <div class="hero-content-1">
+                        <div class="subtitle animate__animated animate__fadeInUp" style="animation-delay: 0.3s;">
+                            <img src="{% static 'assets/img/icons/icon-1.svg' %}" alt="icon-1"/>
+                            <span style="color: white;">A Luxury Glamping Retreat</span>
+                        </div>
+                        <div class="title animate__animated animate__fadeInUp" style="animation-delay: 0.5s;">
+                            <h1 style="color: white;">
+                                Sleep Under the Stars in <span>Kerala</span>
+                            </h1>
+                        </div>
+                        <div class="text animate__animated animate__fadeInUp" style="animation-delay: 0.7s;">
+                            <p style="color: rgba(255,255,255,0.9);">
+                                Geodesic domes perched on hillsides, wrapped in mist and moonlight — your most unforgettable night begins here.
+                            </p>
+                        </div>
+                        <div class="join-us animate__animated animate__fadeInUp" style="animation-delay: 0.9s;">
+                            <a href="{% url 'booking' %}" class="e-primary-btn has-icon">
+                                Book Your Stay
+                                <span class="icon-wrap"><span class="icon"><i class="fa-regular fa-arrow-right"></i><i class="fa-regular fa-arrow-right"></i></span></span>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+        {% comment %} <div class="s-shape-1">
+            <img src="{% static 'assets/img/shapes/shape-2.webp' %}" alt="s-shape-1"/>
+        </div> {% endcomment %}
+
+        <!-- Social Links -->
+        <div class="hero-slider-social">
+            <div class="social-links">
+                <a href="https://facebook.com"><i class="fab fa-facebook-f"></i></a>
+                <a href="https://twitter.com"><i class="fab fa-x-twitter"></i></a>
+                <a href="https://www.instagram.com"><i class="fab fa-instagram"></i></a>
+                <a href="https://linkedin.com"><i class="fab fa-linkedin-in"></i></a>
+            </div>
+            {% comment %} <div class="text">Join Social:</div> {% endcomment %}
+        </div>
+    </section>
+	<!-- hero-section end -->
 	<!-- hero-section end -->
 
 	<!-- about-us-section start -->
