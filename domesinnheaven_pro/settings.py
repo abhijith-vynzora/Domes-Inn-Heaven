@@ -10,7 +10,7 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 # WARNING: Keep secret key, passwords, and API keys secret in production!
 SECRET_KEY = 'your-secret-key-here-change-in-production'
 DEBUG = True  # Changed to False for production safety
-ALLOWED_HOSTS = ['your-domain.com', 'www.your-domain.com', 'localhost', '127.0.0.1']
+ALLOWED_HOSTS = ['*']
 
 # APPS
 INSTALLED_APPS = [
@@ -27,6 +27,7 @@ INSTALLED_APPS = [
 # MIDDLEWARE
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
+    'whitenoise.middleware.WhiteNoiseMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
     'django.middleware.common.CommonMiddleware',
     'django.middleware.csrf.CsrfViewMiddleware',
@@ -34,6 +35,12 @@ MIDDLEWARE = [
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
 ]
+
+STORAGES = {
+    "staticfiles": {
+        "BACKEND": "whitenoise.storage.CompressedManifestStaticFilesStorage",
+    },
+}
 
 ROOT_URLCONF = 'domesinnheaven_pro.urls'
 
