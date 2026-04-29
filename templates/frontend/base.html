@@ -54,7 +54,7 @@
 		<div class="header-left">
 			<div class="logo-wrap-2">
 				<a href="{% url 'home' %}">
-					<img src="{% static 'assets/img/logo/logo-white.svg' %}" alt="logo"/>
+					<img src="{% static 'white.png' %}" alt="logo"/>
 				</a>
 			</div>
 		</div>
@@ -130,7 +130,7 @@
                         <div class="header-left">
                             <div class="logo-wrap">
                                 <a href="{% url 'home' %}">
-                                    <img src="{% static 'assets/img/logo/logo.svg' %}" alt="logo">
+                                    <img src="{% static 'green.png' %}" alt="logo">
                                 </a>
                             </div>
                             <nav class="main-menu d-none d-xl-block">
@@ -187,7 +187,7 @@
         </div>
         <div class="off-canvas-logo m-b-20">
             <a href="{% url 'home' %}">
-                <img src="{% static 'assets/img/logo/logo.svg' %}" alt="logo"/>
+                <img src="{% static 'green.png' %}" alt="logo"/>
             </a>
         </div>
         <div class="off-canvas-contact m-b-40">
@@ -211,7 +211,7 @@
         <div class="off-canvas-head">
             <div class="off-canvas-logo">
                 <a href="{% url 'home' %}">
-                    <img src="{% static 'assets/img/logo/logo.svg' %}" alt="logo"/>
+                    <img src="{% static 'green.png' %}" alt="logo"/>
                 </a>
             </div>
             <div class="off-canvas-menubar-close" data-close="menubar">
@@ -236,14 +236,14 @@
 {% block content %}{% endblock %}
 {% block footer %}
 <!-- footer-section start -->
-<footer class="footer-section p-t-125" style="background-image: url('{% static "assets/img/new/6.jpeg" %}')">
+<footer class="footer-section p-t-80" style="background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('{% static "assets/img/new/6.jpeg" %}'); background-size: cover; background-position: center;">
     <div class="container">
         <div class="row justify-content-between row-gap-md-5 row-gap-4 p-b-30">
             <div class="col-xl-4 col-lg-8 col-md-7">
                 <div class="footer-widget">
                     <div class="about-widget">
                         <div class="footer-logo">
-                            <a href="{% url 'home' %}"><img alt="logo" src="{% static 'assets/img/logo/logo-white.svg' %}"></a>
+                            <a href="{% url 'home' %}"><img alt="logo" src="{% static 'white.png' %}"></a>
                         </div>
                         <div class="text">
                             <p>
@@ -267,47 +267,38 @@
                 <div class="footer-widget">
                     <h3 class="w-title">Quick Links</h3>
                     <ul>
-                        <li><a href="{% url 'about' %}">About Company</a></li>
-                        <li><a href="{% url 'services' %}">Our Causes</a></li>
-                        <li><a href="{% url 'camping_donation' %}">Investor Presentation</a></li>
-                        <li><a href="{% url 'donations' %}">Pricing Plan</a></li>
-                        <li><a href="{% url 'volunteer' %}">Meet Our Team</a></li>
+                        <li><a href="{% url 'home' %}">Home</a></li>
+                        <li><a href="{% url 'about' %}">Who we are?</a></li>
+                        <li><a href="{% url 'services' %}">Our Domes</a></li>
+                        <li><a href="{% url 'activities' %}">Activities</a></li>
+                        <li><a href="{% url 'blog_grid' %}">Latest Blog</a></li>
+                        <li><a href="{% url 'gallery' %}">Gallery</a></li>
                         <li><a href="{% url 'contact' %}">Contact Us</a></li>
                     </ul>
                 </div>
             </div>
             <div class="col-xl-2 col-lg-4 col-md-5">
                 <div class="footer-widget">
-                    <h3 class="w-title">Our Services</h3>
+                    <h3 class="w-title">Our Stays</h3>
                     <ul>
-                        <li><a href="{% url 'camping_details' %}">Tree Plantation</a></li>
-                        <li><a href="{% url 'camping_donation' %}">Forest Cleaning</a></li>
-                        <li><a href="{% url 'services_details' %}">Plastic Recycling</a></li>
-                        <li><a href="{% url 'activities' %}">Natural Power</a></li>
-                        <li><a href="{% url 'activities' %}">Renewable Energy</a></li>
-                        <li><a href="{% url 'activities' %}">Water Refine</a></li>
+                        <li><a href="{% url 'camping' %}">Dome Stays</a></li>
+                        <li><a href="{% url 'services' %}">Glamping Packages</a></li>
+                        <li><a href="{% url 'activities' %}">Nature Activities</a></li>
+                        <li><a href="{% url 'booking' %}">Book Your Stay</a></li>
+                        <li><a href="{% url 'contact' %}">Support</a></li>
                     </ul>
                 </div>
             </div>
             <div class="col-xl-3 col-lg-4 col-md-5">
                 <div class="footer-widget">
-                    <h3 class="w-title">Newsletter</h3>
-                    <div class="subscribe-form">
-                        <form action="#">
-                            <div class="input-wrap">
-                                <input placeholder="ashikulislambsl@gmail.com" type="text">
-                            </div>
-                            <div class="input-button">
-                                <button class="e-primary-btn has-icon is-hover-white" type="submit">Subscribe Now
-                                    <span class="icon-wrap"><span class="icon"><i class="fa-regular fa-arrow-right"></i> <i class="fa-regular fa-arrow-right"></i></span></span>
-                                </button>
-                            </div>
-                            <div class="input-checkbox">
-                                <input id="agree" type="checkbox"> <label for="agree"><span class="check-mark"></span> I
-                                agree the policy</label>
-                            </div>
-                        </form>
+                    <h3 class="w-title">Book Your Stay</h3>
+                    <div class="text m-b-25">
+                        <p>Ready to wake up to the mist? Secure your premium dome experience today and reconnect with nature.</p>
                     </div>
+                    <a href="{% url 'booking' %}" class="e-primary-btn has-icon">
+                        Book Now
+                        <span class="icon-wrap"><span class="icon"><i class="fa-regular fa-arrow-right"></i> <i class="fa-regular fa-arrow-right"></i></span></span>
+                    </a>
                 </div>
             </div>
         </div>

@@ -176,7 +176,7 @@
 	<!-- about-us-section-3 start -->
 	<section class="about-us-section-3" style="
           background-image: url('{% static "assets/img/bg/why-us-bg.webp" %}'),
-            url('{% static "assets/img/new/1.jpeg" %}');
+            url('{% static "assets/img/bg/about-us-bg.webp" %}');
         ">
 		<div class="container">
 			<div class="row align-items-center justify-content-center">
@@ -190,14 +190,43 @@
 							<h2>The Domes Inn Heaven Story</h2>
 						</div>
 						<div class="text mt-4">
-							<p>It started with a hillside, an open sky, and a question: <em>What if the most luxurious hotel room had no walls?</em></p>
-							<p>Domes Inn Heaven was born from that question — and from a deep, personal love for Kerala's extraordinary natural beauty. Our founders, avid travellers themselves, noticed that the most powerful travel memories were never about thread counts or city skylines. They were about waking up to mist rolling over a valley, or sitting still as a forest came alive at dusk. They wanted to build a place that made those moments the entire point of the stay.</p>
-							<p>The first dome went up on a quiet hillside in Kerala, surrounded by the kind of scenery that makes you forget your phone exists. Guests arrived expecting a novelty. They left describing it as a life experience.</p>
-							<p>Since then, Domes Inn Heaven has grown — thoughtfully and intentionally — into a full glamping retreat with multiple uniquely designed domes, each one a distinct experience in itself. From the romance of the Stargazer Dome to the cultural richness of the Heritage Dome, every structure is designed to connect you more deeply with the place you're in.</p>
-							<h4 class="mt-5 mb-3">Our Values</h4>
-							<p>We believe that luxury is not about excess — it is about attention. Attention to the quality of your sleep, the flavour of your food, the view from your pillow, and the feeling you carry home. We are committed to sustainable practices that protect the very landscape that makes us what we are, from eco-friendly construction to locally sourced meals.</p>
-							<p>We are also deeply proud of our team — a close-knit family of guides, hosts, chefs, and caretakers who treat every guest as a personal guest of the house.</p>
-							<p><strong>Domes Inn Heaven is not just a place to stay. It is a place to remember.</strong></p>
+							<p>Domes Inn Heaven was born from a simple question: <em>What if luxury had no walls?</em> We've grown from a single hillside dome into Kerala's premier glamping retreat, designed to connect you deeply with the nature around you.</p>
+						</div>
+						<div class="c-tabs-wrapper mt-4">
+							<ul class="nav nav-tabs" id="myTab" role="tablist">
+								<li class="nav-item" role="presentation">
+									<button class="nav-link active" id="vision-tab" data-bs-toggle="tab" data-bs-target="#vision-tab-pane" type="button" role="tab" aria-controls="vision-tab-pane" aria-selected="true">
+										Our Vision
+									</button>
+								</li>
+								<li class="nav-item" role="presentation">
+									<button class="nav-link" id="mission-tab" data-bs-toggle="tab" data-bs-target="#mission-tab-pane" type="button" role="tab" aria-controls="mission-tab-pane" aria-selected="false">
+										Our Mission
+									</button>
+								</li>
+							</ul>
+							<div class="tab-content" id="myTabContent">
+								<div class="tab-pane fade show active" id="vision-tab-pane" role="tabpanel" aria-labelledby="vision-tab" tabindex="0">
+									<div class="tab-content p-t-20">
+										<div class="reward">
+											<h5>Redefining Nature Luxury</h5>
+										</div>
+										<div class="text">
+											<p>To be the world’s most sought-after glamping destination where luxury and wilderness coexist in perfect harmony, inspiring a deeper connection with the Earth.</p>
+										</div>
+									</div>
+								</div>
+								<div class="tab-pane fade" id="mission-tab-pane" role="tabpanel" aria-labelledby="mission-tab" tabindex="0">
+									<div class="tab-content p-t-20">
+										<div class="reward">
+											<h5>Sustainable & Soulful Stays</h5>
+										</div>
+										<div class="text">
+											<p>To provide exceptional hospitality through eco-friendly dome stays, ensuring every guest experiences the raw beauty of Kerala without compromising on premium comfort.</p>
+										</div>
+									</div>
+								</div>
+							</div>
 						</div>
 					</div>
 				</div>
@@ -206,7 +235,7 @@
 	</section>
 	<!-- about-us-section-3 end -->
 
-	<!-- volunteer-section start -->
+	{% comment %} <!-- volunteer-section start -->
 	<section class="volunteer-section p-t-120 p-b-120 p-t-xs-80 p-b-xs-80" style="background-color: #f8f7f0">
 		<div class="container">
 			<div class="section-top-13">
@@ -359,7 +388,7 @@
 			</div>
 		</div>
 	</section>
-	<!-- volunteer-section end -->
+	<!-- volunteer-section end --> {% endcomment %}
 
 	<!-- testimonial start -->
 	<section class="testimonial p-t-120 p-t-xs-80">
@@ -513,15 +542,15 @@
 				<div class="col-xl-6 col-md-8 m-b-xs-20">
 					<div class="common-subtitle" data-aos="fade-up" data-aos-duration="1000" data-aos-delay="200">
 						<img src="{% static 'assets/img/icons/icon-2.svg' %}" alt="icon-1"/>
-						<span>Our Arrange</span>
+						<span>Our Collection</span>
 					</div>
 					<div class="common-title m-b-0 style-color-3 text-start" data-aos="fade-up" data-aos-duration="1000" data-aos-delay="400">
-						<h2>Domes Upcoming Events</h2>
+						<h2>Explore Our Camping Packages</h2>
 					</div>
 				</div>
 				<div class="col-xl-6 col-md-4 text-md-end">
 					<a href="{% url 'camping' %}" class="e-primary-btn has-icon" data-aos="fade-up" data-aos-duration="1000" data-aos-delay="600">
-						View All Events
+						View All Packages
 						<span class="icon-wrap">
 							<span class="icon"><i class="fa-regular fa-arrow-right"></i><i class="fa-regular fa-arrow-right"></i></span>
                         </span>
@@ -530,101 +559,55 @@
 			</div>
 			<div class="row" data-aos="fade-up" data-aos-duration="1000" data-aos-delay="800">
 				<div class="col-xl-12">
+					{% for package in camping_packages %}
 					<div class="event-card-2 m-b-30">
 						<div class="event-thumb">
-							<a href="{% url 'camping_details' %}">
-								<img src="{% static 'assets/img/thumbs/thumb-36.webp' %}" alt="thumb-1"/>
+							<a href="{% url 'package_details' package.slug %}">
+								<img src="{{ package.main_image.url }}" alt="{{ package.name }}"/>
 							</a>
 							<div class="event-date">
-								<h5>12 Jan-20 Jan, 2026</h5>
+								<h5>Experience Nature</h5>
 							</div>
 						</div>
 						<div class="card-content">
 							<div class="event-card-title">
 								<h2>
-									<a href="{% url 'camping_details' %}">
-										The forest is our life, it is our job to keep the forest
-										clean
+									<a href="{% url 'package_details' package.slug %}">
+										{{ package.name }}
 									</a>
 								</h2>
 							</div>
 							<div class="address">
 								<div class="time">
 									<i class="fa-regular fa-clock"></i>
-									<span>8:30am - 4:00pm</span>
+									<span>Check-in: {{ package.check_in }}</span>
 								</div>
 								<div class="location">
 									<i class="fa-regular fa-location-dot"></i>
-									<span>Jones Street, New York</span>
+									<span>Check-out: {{ package.check_out }}</span>
 								</div>
 							</div>
 							<div class="join-event">
 								<div class="blog-btn">
-									<a href="{% url 'camping_details' %}" class="e-primary-btn has-icon">
-										Join Event
+									<a href="{% url 'package_details' package.slug %}" class="e-primary-btn has-icon">
+										Book Now
 										<span class="icon-wrap">
 											<span class="icon"><i class="fa-regular fa-arrow-right"></i><i class="fa-regular fa-arrow-right"></i></span>
                                         </span>
 									</a>
 								</div>
 								<div class="top-right">
-									<img src="{% static 'assets/img/authors/author-1.webp' %}" alt="authors"/>
 									<div class="people-joined">
-										<h5>236</h5>
-										<span>Joined People</span>
+										<h5>₹{{ package.special_price|default:package.normal_price }}</h5>
+										<span>Starting From</span>
 									</div>
 								</div>
 							</div>
 						</div>
 					</div>
-
-					<div class="event-card-2">
-						<div class="event-thumb">
-							<a href="{% url 'camping_details' %}">
-								<img src="{% static 'assets/img/thumbs/thumb-37.webp' %}" alt="thumb-2"/>
-							</a>
-							<div class="event-date">
-								<h5>12 Jan-20 Jan, 2026</h5>
-							</div>
-						</div>
-						<div class="card-content">
-							<div class="event-card-title">
-								<h2>
-									<a href="{% url 'camping_details' %}">
-										The forest is our life, it is our job to keep the forest
-										clean
-									</a>
-								</h2>
-							</div>
-							<div class="address">
-								<div class="time">
-									<i class="fa-regular fa-clock"></i>
-									<span>9:00am - 6:00pm</span>
-								</div>
-								<div class="location">
-									<i class="fa-regular fa-location-dot"></i>
-									<span>85 Great Portland Street, London</span>
-								</div>
-							</div>
-							<div class="join-event">
-								<div class="blog-btn">
-									<a href="{% url 'camping_details' %}" class="e-primary-btn has-icon">
-										Join Event
-										<span class="icon-wrap">
-                                            <span class="icon"><i class="fa-regular fa-arrow-right"></i><i class="fa-regular fa-arrow-right"></i></span>
-                                        </span>
-									</a>
-								</div>
-								<div class="top-right">
-									<img src="{% static 'assets/img/authors/author-1.webp' %}" alt="authors"/>
-									<div class="people-joined">
-										<h5>162</h5>
-										<span>Joined People</span>
-									</div>
-								</div>
-							</div>
-						</div>
-					</div>
+					{% empty %}
+					<p class="text-center">No packages available at the moment.</p>
+					{% endfor %}
 				</div>
 			</div>
 		</div>

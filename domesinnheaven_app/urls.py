@@ -24,6 +24,7 @@ urlpatterns = [
 
     path('camping/', views.camping, name='camping'),
     path('camping-details/', views.camping_details, name='camping_details'),
+    path('camping/<slug:slug>/', views.camping_details, name='package_details'),
     path('camping-donation/', views.camping_donation, name='camping_donation'),
 
     path('donations/', views.donations, name='donations'),

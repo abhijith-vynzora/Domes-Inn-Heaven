@@ -15,11 +15,23 @@ from .models import Blog, Category, ContactMessage, GalleryImage, Testimonial, A
 
 def home(request):
     testimonials = Testimonial.objects.all().order_by("-created_at")[:5]
-    return render(request, 'frontend/index.html', {'testimonials': testimonials})
+    camping_packages = CampingPackage.objects.all().order_by("-created_at")[:6]
+    activities = Activity.objects.all().order_by("-created_at")[:6]
+    blogs = Blog.objects.all().order_by("-created_at")[:3]
+    return render(request, 'frontend/index.html', {
+        'testimonials': testimonials,
+        'camping_packages': camping_packages,
+        'activities': activities,
+        'blogs': blogs
+    })
 
 def about(request):
     testimonials = Testimonial.objects.all().order_by("-created_at")[:5]
-    return render(request, 'frontend/about.html', {'testimonials': testimonials})
+    camping_packages = CampingPackage.objects.all().order_by("-created_at")[:6]
+    return render(request, 'frontend/about.html', {
+        'testimonials': testimonials,
+        'camping_packages': camping_packages
+    })
 
 def services(request):
     return render(request, 'frontend/services.html')
@@ -77,8 +89,14 @@ def blog_details(request, slug=None):
 def camping(request):
     return render(request, 'frontend/camping.html')
 
-def camping_details(request):
-    return render(request, 'frontend/camping-details.html')
+def camping_details(request, slug=None):
+    if slug:
+        package = get_object_or_404(CampingPackage, slug=slug)
+    else:
+        # Fallback for old URL if needed, or just redirect
+        package = CampingPackage.objects.first()
+    
+    return render(request, 'frontend/camping-details.html', {'package': package})
 
 def camping_donation(request):
     return render(request, 'frontend/camping-donation.html')
