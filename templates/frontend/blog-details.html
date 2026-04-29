@@ -83,12 +83,11 @@
               <div class="s-widget-wrap m-b-30">
                 <div class="w-title"><h3>Our Gallery</h3><div class="bar-wrap"><div class="bar-1"></div><div class="bar-2"></div></div></div>
                 <div class="sidebar-gallery">
-                  <div class="thumb"><img alt="thumb" src="{% static 'assets/img/thumbs/thumb-134.webp' %}"></div>
-                  <div class="thumb"><img alt="thumb" src="{% static 'assets/img/thumbs/thumb-131.webp' %}"></div>
-                  <div class="thumb"><img alt="thumb" src="{% static 'assets/img/thumbs/thumb-132.webp' %}"></div>
-                  <div class="thumb"><img alt="thumb" src="{% static 'assets/img/thumbs/thumb-133.webp' %}"></div>
-                  <div class="thumb"><img alt="thumb" src="{% static 'assets/img/thumbs/thumb-130.webp' %}"></div>
-                  <div class="thumb"><img alt="thumb" src="{% static 'assets/img/thumbs/thumb-129.webp' %}"></div>
+                  {% for image in gallery_images %}
+                  <div class="thumb"><a href="{% url 'gallery' %}"><img alt="{{ image.title }}" src="{{ image.image.url }}"></a></div>
+                  {% empty %}
+                  <p>No images in gallery.</p>
+                  {% endfor %}
                 </div>
               </div> 
 

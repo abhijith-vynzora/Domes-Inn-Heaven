@@ -67,10 +67,11 @@ def blog_details(request, slug=None):
             return redirect("blog_grid")
     recent_blogs = Blog.objects.exclude(id=blog.id).order_by("-created_at")[:4]
     testimonials = Testimonial.objects.all().order_by("-created_at")[:3]
+    gallery_images = GalleryImage.objects.all().order_by('-uploaded_at')[:6]
     return render(
         request,
         "frontend/blog-details.html",
-        {"blog": blog, "recent_blogs": recent_blogs, "testimonials": testimonials},
+        {"blog": blog, "recent_blogs": recent_blogs, "testimonials": testimonials, "gallery_images": gallery_images},
     )
 
 def camping(request):
