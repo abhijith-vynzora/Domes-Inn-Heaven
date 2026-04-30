@@ -14421,7 +14421,7 @@ label {
 }
 @media (max-width: 767px) {
   .shape-wrapped-thumb-1 {
-    margin: 0 0 240px;
+    margin: 0 0 80px;
   }
 }
 .shape-wrapped-thumb-1 > img {

@@ -25,6 +25,19 @@ def home(request):
         'blogs': blogs
     })
 
+def home_v2(request):
+    """Luxury scrollytelling homepage — index_v2.html."""
+    testimonials = Testimonial.objects.all().order_by("-created_at")[:5]
+    camping_packages = CampingPackage.objects.all().order_by("-created_at")[:6]
+    activities = Activity.objects.all().order_by("-created_at")[:6]
+    blogs = Blog.objects.all().order_by("-created_at")[:3]
+    return render(request, 'frontend/index_v2.html', {
+        'testimonials': testimonials,
+        'camping_packages': camping_packages,
+        'activities': activities,
+        'blogs': blogs
+    })
+
 def about(request):
     testimonials = Testimonial.objects.all().order_by("-created_at")[:5]
     camping_packages = CampingPackage.objects.all().order_by("-created_at")[:6]
