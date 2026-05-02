@@ -46,8 +46,6 @@ htmlcov/
 
 static/*.mp4
 
-index_v2.html
-templates/frontend/index_v2.html
 
 # Scrollytelling clips
 static/assets/img/clips/

@@ -35,7 +35,8 @@ def home_v2(request):
         'testimonials': testimonials,
         'camping_packages': camping_packages,
         'activities': activities,
-        'blogs': blogs
+        'blogs': blogs,
+        'clips_base_url': settings.CLOUDINARY_CLIPS_BASE_URL,
     })
 
 def about(request):
