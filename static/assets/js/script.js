@@ -296,17 +296,20 @@
 
             breakpoints: {
                 320: {
-                    slidesPerView: 1,centeredSlides: false,
+                    slidesPerView: 1,
+                    centeredSlides: false,
                 },
                 768: {
-                    slidesPerView: 2,centeredSlides: false,
-                },
-                1024: {
                     slidesPerView: 2,
                     centeredSlides: false,
                 },
+                1024: {
+                    slidesPerView: 3,
+                    centeredSlides: true,
+                },
                 1200: {
                     slidesPerView: 3,
+                    centeredSlides: true,
                 },
             },
         })
@@ -346,11 +349,12 @@
                     slidesPerView: 2,
                 },
                 1024: {
-                    centeredSlides: false,
-                    slidesPerView: 2,
+                    slidesPerView: 3,
+                    centeredSlides: true,
                 },
                 1200: {
                     slidesPerView: 3,
+                    centeredSlides: true,
                 },
             },
         })
@@ -388,7 +392,7 @@
                     slidesPerView: 2,
                 },
                 1024: {
-                    slidesPerView: 2,
+                    slidesPerView: 3,
                 },
                 1200: {
                     slidesPerView: 3,
