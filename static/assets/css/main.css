@@ -44,17 +44,17 @@ Version: 1.0
 37 Blog Standard CSS
 ************ TABLE OF CONTENTS ***************/
 :root {
-  --theme-color: #85BF18;
-  --theme-shade-color: #99EF68;
-  --theme-color-2: #FFE175;
-  --theme-color-3: #004540;
-  --title-color: #15161C;
-  --body-color: #868681;
+  --theme-color: #3C4B33;
+  --theme-shade-color: #5A6A50;
+  --theme-color-2: #FFEFCB;
+  --theme-color-3: #3C4B33;
+  --title-color: #2A3324;
+  --body-color: #5F635A;
   --gray-color: #383838;
   --warning-color: #FFB539;
   --success-color: #28a745;
   --error-color: #dc3545;
-  --light-color: #f5f5f5;
+  --light-color: #FFF8E8;
   --dark-color: #15161C;
   --white-color: #fff;
   --black-color: #000;
